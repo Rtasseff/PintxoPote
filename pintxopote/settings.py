@@ -1,3 +1,5 @@
+import os
+
 """
 Django settings for pintxopote project.
 
@@ -25,7 +27,9 @@ SECRET_KEY = "django-insecure-6na475y3yrk)zqr@=ki5d3=$bds1vod9l*8=5ra+9e1!1c#btk
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+
+ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS", "").split(",")
+
 
 
 # Application definition
