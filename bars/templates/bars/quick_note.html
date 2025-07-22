@@ -1,0 +1,59 @@
+{% extends 'bars/base.html' %}
+
+{% block title %}Quick Note for {{ bar.name }} - PintxoPote{% endblock %}
+
+{% block content %}
+<div class="max-w-2xl mx-auto">
+    <!-- Back Button -->
+    <div class="mb-6">
+        <a href="{% url 'bars:detail' bar.pk %}" class="inline-flex items-center text-blue-600 hover:text-blue-800">
+            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+            </svg>
+            Back to {{ bar.name }}
+        </a>
+    </div>
+
+    <!-- Quick Note Form -->
+    <div class="bg-white rounded-lg shadow-md p-6">
+        <h1 class="text-2xl font-bold text-gray-900 mb-2">Quick Note</h1>
+        <p class="text-gray-600 mb-6">Add a quick note to {{ bar.name }}. This will be appended to existing notes.</p>
+
+        <form method="post" class="space-y-6">
+            {% csrf_token %}
+            
+            <div>
+                <label for="{{ form.note.id_for_label }}" class="block text-sm font-medium text-gray-700 mb-2">
+                    {{ form.note.label }}
+                </label>
+                {{ form.note }}
+                {% if form.note.errors %}
+                    <p class="text-red-500 text-sm mt-1">{{ form.note.errors.0 }}</p>
+                {% endif %}
+            </div>
+
+            <!-- Existing Notes Preview -->
+            {% if bar.notes %}
+                <div class="bg-gray-50 rounded-lg p-4">
+                    <h3 class="text-sm font-medium text-gray-700 mb-2">Current Notes</h3>
+                    <p class="text-gray-900 text-sm whitespace-pre-wrap">{{ bar.notes|truncatewords:50 }}</p>
+                    {% if bar.notes|wordcount > 50 %}
+                        <p class="text-gray-500 text-xs mt-2">... (showing first 50 words)</p>
+                    {% endif %}
+                </div>
+            {% endif %}
+
+            <!-- Form Actions -->
+            <div class="flex flex-col sm:flex-row gap-3">
+                <button type="submit" class="flex-1 bg-green-600 text-white py-2 px-4 rounded-md hover:bg-green-700 font-medium">
+                    Add Note
+                </button>
+                <a href="{% url 'bars:detail' bar.pk %}" 
+                   class="flex-1 bg-gray-300 text-gray-700 py-2 px-4 rounded-md hover:bg-gray-400 font-medium text-center">
+                    Cancel
+                </a>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

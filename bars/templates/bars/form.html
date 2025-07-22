@@ -1,0 +1,136 @@
+{% extends 'bars/base.html' %}
+
+{% block title %}
+    {% if object %}Edit {{ object.name }}{% else %}Add Bar{% endif %} - PintxoPote
+{% endblock %}
+
+{% block content %}
+<div class="max-w-2xl mx-auto">
+    <!-- Back Button -->
+    <div class="mb-6">
+        <a href="{% if object %}{% url 'bars:detail' object.pk %}{% else %}{% url 'bars:home' %}{% endif %}" 
+           class="inline-flex items-center text-blue-600 hover:text-blue-800">
+            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+            </svg>
+            Back
+        </a>
+    </div>
+
+    <!-- Form -->
+    <div class="bg-white rounded-lg shadow-md p-6">
+        <h1 class="text-2xl font-bold text-gray-900 mb-6">
+            {% if object %}Edit {{ object.name }}{% else %}Add New Bar{% endif %}
+        </h1>
+
+        <form method="post" enctype="multipart/form-data" class="space-y-6">
+            {% csrf_token %}
+            
+            <!-- Required Fields Section -->
+            <div class="space-y-4">
+                <h2 class="text-lg font-medium text-gray-900">Required Information</h2>
+                
+                <div>
+                    <label for="{{ form.name.id_for_label }}" class="block text-sm font-medium text-gray-700 mb-1">
+                        Bar Name <span class="text-red-500">*</span>
+                    </label>
+                    {{ form.name }}
+                    {% if form.name.errors %}
+                        <p class="text-red-500 text-sm mt-1">{{ form.name.errors.0 }}</p>
+                    {% endif %}
+                </div>
+                
+                <div>
+                    <label for="{{ form.address.id_for_label }}" class="block text-sm font-medium text-gray-700 mb-1">
+                        Address <span class="text-red-500">*</span>
+                    </label>
+                    {{ form.address }}
+                    {% if form.address.errors %}
+                        <p class="text-red-500 text-sm mt-1">{{ form.address.errors.0 }}</p>
+                    {% endif %}
+                </div>
+                
+                <div>
+                    <label for="{{ form.notes.id_for_label }}" class="block text-sm font-medium text-gray-700 mb-1">
+                        Notes <span class="text-red-500">*</span>
+                    </label>
+                    {{ form.notes }}
+                    {% if form.notes.errors %}
+                        <p class="text-red-500 text-sm mt-1">{{ form.notes.errors.0 }}</p>
+                    {% endif %}
+                </div>
+            </div>
+
+            <!-- Optional Fields Section -->
+            <div class="space-y-4 pt-6 border-t border-gray-200">
+                <h2 class="text-lg font-medium text-gray-900">Additional Details</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <label for="{{ form.price_range.id_for_label }}" class="block text-sm font-medium text-gray-700 mb-1">
+                            Price Range
+                        </label>
+                        {{ form.price_range }}
+                    </div>
+                    
+                    <div>
+                        <label for="{{ form.cana_price.id_for_label }}" class="block text-sm font-medium text-gray-700 mb-1">
+                            Caña Price (€)
+                        </label>
+                        {{ form.cana_price }}
+                    </div>
+                    
+                    <div>
+                        <label for="{{ form.crowd_level.id_for_label }}" class="block text-sm font-medium text-gray-700 mb-1">
+                            Crowd Level
+                        </label>
+                        {{ form.crowd_level }}
+                    </div>
+                    
+                    <div>
+                        <label for="{{ form.last_visited.id_for_label }}" class="block text-sm font-medium text-gray-700 mb-1">
+                            Last Visited
+                        </label>
+                        {{ form.last_visited }}
+                    </div>
+                </div>
+                
+                <div>
+                    <label for="{{ form.map_link.id_for_label }}" class="block text-sm font-medium text-gray-700 mb-1">
+                        Map Link
+                    </label>
+                    {{ form.map_link }}
+                    <p class="text-sm text-gray-500 mt-1">Link to Google Maps or similar</p>
+                </div>
+                
+                <div>
+                    <label for="{{ form.specialties.id_for_label }}" class="block text-sm font-medium text-gray-700 mb-1">
+                        Specialties
+                    </label>
+                    {{ form.specialties }}
+                    <p class="text-sm text-gray-500 mt-1">What are they known for?</p>
+                </div>
+                
+                <div>
+                    <label for="{{ form.tags.id_for_label }}" class="block text-sm font-medium text-gray-700 mb-1">
+                        Tags
+                    </label>
+                    {{ form.tags }}
+                    <p class="text-sm text-gray-500 mt-1">{{ form.tags.help_text }}</p>
+                </div>
+            </div>
+
+            <!-- Form Actions -->
+            <div class="flex flex-col sm:flex-row gap-3 pt-6 border-t border-gray-200">
+                <button type="submit" class="flex-1 bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 font-medium">
+                    {% if object %}Update Bar{% else %}Add Bar{% endif %}
+                </button>
+                <a href="{% if object %}{% url 'bars:detail' object.pk %}{% else %}{% url 'bars:home' %}{% endif %}" 
+                   class="flex-1 bg-gray-300 text-gray-700 py-2 px-4 rounded-md hover:bg-gray-400 font-medium text-center">
+                    Cancel
+                </a>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

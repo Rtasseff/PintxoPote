@@ -1,0 +1,72 @@
+{% extends 'bars/base.html' %}
+
+{% block title %}Quick Photo for {{ bar.name }} - PintxoPote{% endblock %}
+
+{% block content %}
+<div class="max-w-2xl mx-auto">
+    <!-- Back Button -->
+    <div class="mb-6">
+        <a href="{% url 'bars:detail' bar.pk %}" class="inline-flex items-center text-blue-600 hover:text-blue-800">
+            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+            </svg>
+            Back to {{ bar.name }}
+        </a>
+    </div>
+
+    <!-- Quick Photo Form -->
+    <div class="bg-white rounded-lg shadow-md p-6">
+        <h1 class="text-2xl font-bold text-gray-900 mb-2">Quick Photo</h1>
+        <p class="text-gray-600 mb-6">Add a photo to {{ bar.name }}.</p>
+
+        <form method="post" enctype="multipart/form-data" class="space-y-6">
+            {% csrf_token %}
+            
+            <div>
+                <label for="{{ form.image.id_for_label }}" class="block text-sm font-medium text-gray-700 mb-2">
+                    Photo
+                </label>
+                {{ form.image }}
+                {% if form.image.errors %}
+                    <p class="text-red-500 text-sm mt-1">{{ form.image.errors.0 }}</p>
+                {% endif %}
+            </div>
+            
+            <div>
+                <label for="{{ form.caption.id_for_label }}" class="block text-sm font-medium text-gray-700 mb-2">
+                    Caption (Optional)
+                </label>
+                {{ form.caption }}
+                {% if form.caption.errors %}
+                    <p class="text-red-500 text-sm mt-1">{{ form.caption.errors.0 }}</p>
+                {% endif %}
+            </div>
+
+            <!-- Existing Photos Preview -->
+            {% if bar.photos.exists %}
+                <div class="bg-gray-50 rounded-lg p-4">
+                    <h3 class="text-sm font-medium text-gray-700 mb-2">Recent Photos ({{ bar.photos.count }})</h3>
+                    <div class="grid grid-cols-3 gap-2">
+                        {% for photo in bar.photos|slice:":6" %}
+                            <div class="aspect-square">
+                                <img src="{{ photo.image.url }}" alt="Photo of {{ bar.name }}" class="w-full h-full object-cover rounded">
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            {% endif %}
+
+            <!-- Form Actions -->
+            <div class="flex flex-col sm:flex-row gap-3">
+                <button type="submit" class="flex-1 bg-purple-600 text-white py-2 px-4 rounded-md hover:bg-purple-700 font-medium">
+                    Add Photo
+                </button>
+                <a href="{% url 'bars:detail' bar.pk %}" 
+                   class="flex-1 bg-gray-300 text-gray-700 py-2 px-4 rounded-md hover:bg-gray-400 font-medium text-center">
+                    Cancel
+                </a>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

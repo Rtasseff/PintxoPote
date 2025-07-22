@@ -1,0 +1,101 @@
+{% if bars %}
+    <div class="space-y-4">
+        {% for bar in bars %}
+            <div class="bg-white rounded-lg shadow-md p-4 hover:shadow-lg transition-shadow cursor-pointer" 
+                 onclick="location.href='{% url 'bars:detail' bar.pk %}'">
+                <div class="flex justify-between items-start">
+                    <div class="flex-1">
+                        <h3 class="text-lg font-semibold text-gray-900">{{ bar.name }}</h3>
+                        <p class="text-sm text-gray-600 mt-1">{{ bar.address }}</p>
+                        
+                        <div class="flex items-center space-x-4 mt-2 text-sm text-gray-500">
+                            {% if bar.price_range %}
+                                <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded-full text-xs font-medium">{{ bar.price_range }}</span>
+                            {% endif %}
+                            {% if bar.cana_price %}
+                                <span>Caña: €{{ bar.cana_price }}</span>
+                            {% endif %}
+                            {% if bar.crowd_level %}
+                                <span class="capitalize">{{ bar.get_crowd_level_display }}</span>
+                            {% endif %}
+                        </div>
+                        
+                        {% if bar.get_tags_list %}
+                            <div class="mt-2">
+                                {% for tag in bar.get_tags_list %}
+                                    <span class="inline-block bg-gray-100 text-gray-700 text-xs px-2 py-1 rounded mr-1 mb-1">{{ tag }}</span>
+                                {% endfor %}
+                            </div>
+                        {% endif %}
+                        
+                        {% if bar.notes %}
+                            <p class="text-sm text-gray-600 mt-2 line-clamp-2">{{ bar.notes|truncatewords:20 }}</p>
+                        {% endif %}
+                    </div>
+                    
+                    <div class="ml-4">
+                        {% if bar.photos.exists %}
+                            <div class="w-16 h-16 rounded-lg overflow-hidden">
+                                <img src="{{ bar.photos.first.image.url }}" alt="{{ bar.name }}" class="w-full h-full object-cover">
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+                
+                <div class="flex justify-between items-center mt-3 pt-3 border-t border-gray-200">
+                    <div class="text-xs text-gray-500">
+                        {% if bar.last_visited %}
+                            Last visited: {{ bar.last_visited }}
+                        {% endif %}
+                    </div>
+                    <div>
+                        <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    
+    <!-- Pagination -->
+    {% if is_paginated %}
+        <div class="flex justify-center mt-6">
+            <nav class="flex space-x-2">
+                {% if page_obj.has_previous %}
+                    <a href="?page={{ page_obj.previous_page_number }}" class="px-3 py-2 bg-white border border-gray-300 rounded-md text-sm hover:bg-gray-50">Previous</a>
+                {% endif %}
+                
+                <span class="px-3 py-2 text-sm text-gray-700">
+                    Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
+                </span>
+                
+                {% if page_obj.has_next %}
+                    <a href="?page={{ page_obj.next_page_number }}" class="px-3 py-2 bg-white border border-gray-300 rounded-md text-sm hover:bg-gray-50">Next</a>
+                {% endif %}
+            </nav>
+        </div>
+    {% endif %}
+{% else %}
+    <div class="text-center py-12">
+        <svg class="w-16 h-16 mx-auto text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0H5m14 0a2 2 0 01-2 2H7a2 2 0 01-2-2m7-10V9a2 2 0 00-2-2H7a2 2 0 00-2 2v2m7 0a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2a2 2 0 012-2z"></path>
+        </svg>
+        <h3 class="text-lg font-medium text-gray-900 mt-4">No bars found</h3>
+        <p class="text-gray-500 mt-2">
+            {% if search_query %}
+                No bars match your search criteria.
+            {% else %}
+                Get started by adding your first bar!
+            {% endif %}
+        </p>
+        {% if is_admin %}
+            <a href="{% url 'bars:add' %}" class="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 mt-4">
+                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
+                </svg>
+                Add First Bar
+            </a>
+        {% endif %}
+    </div>
+{% endif %}
