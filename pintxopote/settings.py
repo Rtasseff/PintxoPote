@@ -12,17 +12,27 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 
 from pathlib import Path
 import os
+from django.core.management.utils import get_random_secret_key
+from dotenv import load_dotenv
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-DATA_DIR = Path("/app/data")
+load_dotenv(BASE_DIR / ".env")  # Load local .env file if it exists
+
+# Detect Railway by its env var; fall back to a local folder
+if os.getenv("RAILWAY_STATIC_URL"):          # Railway sets this automatically
+    DATA_DIR = Path("/app/data")             # production mount
+else:
+    DATA_DIR = BASE_DIR / "data"             # ./data inside your repo
+    DATA_DIR.mkdir(exist_ok=True)            # create if missing
+
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-6na475y3yrk)zqr@=ki5d3=$bds1vod9l*8=5ra+9e1!1c#btk"
+SECRET_KEY = os.getenv("DJANGO_SECRET_KEY", get_random_secret_key())
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -41,6 +51,8 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "django_htmx",
+    "bars",
 ]
 
 MIDDLEWARE = [
@@ -49,6 +61,7 @@ MIDDLEWARE = [
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
+    "django_htmx.middleware.HtmxMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
@@ -85,6 +98,8 @@ DATABASES = {
 
 MEDIA_ROOT = DATA_DIR / "uploads"
 MEDIA_URL = "/media/"
+# Make sure MEDIA_ROOT exists at startup (works locally & in Railway)
+MEDIA_ROOT.mkdir(parents=True, exist_ok=True)
 
 
 # Password validation

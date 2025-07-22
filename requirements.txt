@@ -3,3 +3,4 @@ django-htmx>=1.17
 pillow>=10.0
 gunicorn>=22.0
 
+python-dotenv>=1.0 # keeps remote in sync

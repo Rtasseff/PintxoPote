@@ -65,7 +65,7 @@
 3) Select Bar and be directed to Bar view.
 4) Review Bar name, address, notes and other fields by scrolling.
 5) Further scrolling to view Bar photos. 
-6) (if NOT read-only) Select a Quick Note action to easily append aditional info to existing Note field for this Bar. Save and redirect to Bar view.
+6) (if NOT read-only) Select a Quick Note action to easily append additional info to existing Note field for this Bar. Save and redirect to Bar view.
 7) (if NOT read-only) Select a Quick Photo action to use the devices native controls to snap or select a new photo to add to list of existing Photos. Save and redirect to Bar view.
 8) (if NOT read-only) Select Edit button to edit any field for this Bar. Save and redirect to Bar view.
 9) Back button to navigate back to Home view with list having the same sort and/or filter options as before navigating to bar in step 3. 
@@ -101,3 +101,4 @@
 | Env | `python -m venv`, requirements.txt |
 | CI/CD | Auto‑deploy to Railway on push to `main` |
 | Secrets | Stored as Railway env vars (ADMIN_TOKEN, etc.) |
+| Style | Avoid over engineered code and provide sufficient comments to describe variable, logic and flow |

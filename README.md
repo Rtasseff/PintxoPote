@@ -13,7 +13,12 @@ python manage.py migrate
 python manage.py runserver
 ```
 
-Set enviornmental variable DJANGO_ALLOWED_HOSTS for allowed hosts.
+Set environmental variable. 
+(LOCAL ONLY
+DJANGO_SECRET_KEY=anything-long-and-random
+DJANGO_ALLOWED_HOSTS=localhost,127.0.0.1
+ADMIN_TOKEN=devadmintoken
+
 
 The app will be available at `http://127.0.0.1:8000/`.
 
