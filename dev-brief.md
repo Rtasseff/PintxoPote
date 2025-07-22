@@ -16,7 +16,7 @@
 |---------|---------|
 | Entry form | All fields shown, single **Save** button |
 | Search / filter priority | 1️⃣ Name search (live)<br>2️⃣ Caña price filter<br>3️⃣ Tag<br>4️⃣ Street<br>5️⃣ Price range |
-| Views | Searchable / sortable **list** for MVP; map view slated for v2 |
+| Views | Home: Searchable / sortable **list** for MVP; map view slated for v2<br> Bar: Single scrolling panel showing (in order) Name, Address, Notes, other fileds, srolling Photos<br> Add Bar: Simple form to add a Bar showing all visible properties and denoting requiered fields |
 | Connectivity | Assume online |
 | Sharing | One public URL (read‑only) |
 | Quick actions | Quick Note & Quick Photo buttons (append, never overwrite) |
@@ -58,7 +58,26 @@
 
 ---
 
-## 5. Tech Stack & Deployment
+## 5. User Story (MVP)
+### Primary Use-Case 
+1) Opens app to find Home view with list of bars.
+2) Filter, sort and/or search list to navigate to a specific bar.
+3) Select Bar and be directed to Bar view.
+4) Review Bar name, address, notes and other fields by scrolling.
+5) Further scrolling to view Bar photos. 
+6) (if NOT read-only) Select a Quick Note action to easily append aditional info to existing Note field for this Bar. Save and redirect to Bar view.
+7) (if NOT read-only) Select a Quick Photo action to use the devices native controls to snap or select a new photo to add to list of existing Photos. Save and redirect to Bar view.
+8) (if NOT read-only) Select Edit button to edit any field for this Bar. Save and redirect to Bar view.
+9) Back button to navigate back to Home view with list having the same sort and/or filter options as before navigating to bar in step 3. 
+
+### Add Bar
+1) Open app to find Home view with list of bars.
+2) Select floating "+" to be directed to Add Bar view.
+3) Fill in form and save to open Bar view for newly added. 
+
+---
+
+## 6. Tech Stack & Deployment
 | Layer | Choice |
 |-------|--------|
 | Backend | **Django** + SQLite |
@@ -70,7 +89,7 @@
 
 ---
 
-## 6. AI‑gen Coding & Repo Workflow
+## 7. AI‑gen Coding & Repo Workflow
 | Topic | Decision |
 |-------|----------|
 | Repo | GitHub (private) |
