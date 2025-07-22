@@ -1,55 +1,72 @@
 {% if bars %}
     <div class="space-y-4">
         {% for bar in bars %}
-            <div class="bg-white rounded-lg shadow-md p-4 hover:shadow-lg transition-shadow cursor-pointer" 
+            <div class="bg-amber-50 rounded-lg shadow-md p-6 hover:shadow-lg hover:bg-amber-100 transition-all cursor-pointer border border-amber-200" 
                  onclick="location.href='{% url 'bars:detail' bar.pk %}'">
                 <div class="flex justify-between items-start">
                     <div class="flex-1">
-                        <h3 class="text-lg font-semibold text-gray-900">{{ bar.name }}</h3>
-                        <p class="text-sm text-gray-600 mt-1">{{ bar.address }}</p>
+                        <h3 class="text-xl font-bold text-gray-800">{{ bar.name }}</h3>
+                        <p class="text-sm text-gray-700 mt-1 flex items-center">
+                            <svg class="w-4 h-4 mr-1 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                            </svg>
+                            {{ bar.address }}
+                        </p>
                         
-                        <div class="flex items-center space-x-4 mt-2 text-sm text-gray-500">
+                        <div class="flex items-center space-x-4 mt-3 text-sm">
                             {% if bar.price_range %}
-                                <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded-full text-xs font-medium">{{ bar.price_range }}</span>
+                                <span class="bg-yellow-500 text-white px-3 py-1 rounded-full text-xs font-semibold">{{ bar.price_range }}</span>
                             {% endif %}
                             {% if bar.cana_price %}
-                                <span>Caña: €{{ bar.cana_price }}</span>
+                                <span class="text-gray-700 font-medium">Caña: €{{ bar.cana_price }}</span>
                             {% endif %}
                             {% if bar.crowd_level %}
-                                <span class="capitalize">{{ bar.get_crowd_level_display }}</span>
+                                <span class="bg-amber-200 text-amber-800 px-2 py-1 rounded text-xs capitalize font-medium">{{ bar.get_crowd_level_display }}</span>
                             {% endif %}
                         </div>
                         
                         {% if bar.get_tags_list %}
-                            <div class="mt-2">
+                            <div class="mt-3">
                                 {% for tag in bar.get_tags_list %}
-                                    <span class="inline-block bg-gray-100 text-gray-700 text-xs px-2 py-1 rounded mr-1 mb-1">{{ tag }}</span>
+                                    <span class="inline-block bg-amber-100 text-amber-800 text-xs px-2 py-1 rounded-full mr-2 mb-1 border border-amber-300">{{ tag }}</span>
                                 {% endfor %}
                             </div>
                         {% endif %}
                         
                         {% if bar.notes %}
-                            <p class="text-sm text-gray-600 mt-2 line-clamp-2">{{ bar.notes|truncatewords:20 }}</p>
+                            <p class="text-sm text-gray-700 mt-3 leading-relaxed">{{ bar.notes|truncatewords:20 }}</p>
                         {% endif %}
                     </div>
                     
-                    <div class="ml-4">
+                    <div class="ml-6">
                         {% if bar.photos.exists %}
-                            <div class="w-16 h-16 rounded-lg overflow-hidden">
+                            <div class="w-20 h-20 rounded-lg overflow-hidden border-2 border-amber-200">
                                 <img src="{{ bar.photos.first.image.url }}" alt="{{ bar.name }}" class="w-full h-full object-cover">
+                            </div>
+                        {% else %}
+                            <div class="w-20 h-20 rounded-lg bg-amber-200 flex items-center justify-center border-2 border-amber-300">
+                                <svg class="w-8 h-8 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                                </svg>
                             </div>
                         {% endif %}
                     </div>
                 </div>
                 
-                <div class="flex justify-between items-center mt-3 pt-3 border-t border-gray-200">
-                    <div class="text-xs text-gray-500">
+                <div class="flex justify-between items-center mt-4 pt-3 border-t border-amber-300">
+                    <div class="text-xs text-gray-600">
                         {% if bar.last_visited %}
-                            Last visited: {{ bar.last_visited }}
+                            <span class="flex items-center">
+                                <svg class="w-3 h-3 mr-1 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                                </svg>
+                                Last visited: {{ bar.last_visited }}
+                            </span>
                         {% endif %}
                     </div>
                     <div>
-                        <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg class="w-5 h-5 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
                         </svg>
                     </div>
@@ -60,41 +77,41 @@
     
     <!-- Pagination -->
     {% if is_paginated %}
-        <div class="flex justify-center mt-6">
-            <nav class="flex space-x-2">
+        <div class="flex justify-center mt-8">
+            <nav class="flex space-x-3">
                 {% if page_obj.has_previous %}
-                    <a href="?page={{ page_obj.previous_page_number }}" class="px-3 py-2 bg-white border border-gray-300 rounded-md text-sm hover:bg-gray-50">Previous</a>
+                    <a href="?page={{ page_obj.previous_page_number }}" class="px-4 py-2 bg-amber-100 border border-amber-300 rounded-lg text-sm text-gray-700 hover:bg-amber-200 transition-colors">Previous</a>
                 {% endif %}
                 
-                <span class="px-3 py-2 text-sm text-gray-700">
+                <span class="px-4 py-2 text-sm text-gray-700 bg-yellow-500 text-white rounded-lg font-medium">
                     Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
                 </span>
                 
                 {% if page_obj.has_next %}
-                    <a href="?page={{ page_obj.next_page_number }}" class="px-3 py-2 bg-white border border-gray-300 rounded-md text-sm hover:bg-gray-50">Next</a>
+                    <a href="?page={{ page_obj.next_page_number }}" class="px-4 py-2 bg-amber-100 border border-amber-300 rounded-lg text-sm text-gray-700 hover:bg-amber-200 transition-colors">Next</a>
                 {% endif %}
             </nav>
         </div>
     {% endif %}
 {% else %}
-    <div class="text-center py-12">
-        <svg class="w-16 h-16 mx-auto text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <div class="text-center py-12 bg-amber-50 rounded-lg border-2 border-dashed border-amber-300">
+        <svg class="w-16 h-16 mx-auto text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0H5m14 0a2 2 0 01-2 2H7a2 2 0 01-2-2m7-10V9a2 2 0 00-2-2H7a2 2 0 00-2 2v2m7 0a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2a2 2 0 012-2z"></path>
         </svg>
-        <h3 class="text-lg font-medium text-gray-900 mt-4">No bars found</h3>
-        <p class="text-gray-500 mt-2">
+        <h3 class="text-xl font-bold text-gray-800 mt-4">No pintxo bars found</h3>
+        <p class="text-gray-700 mt-2">
             {% if search_query %}
-                No bars match your search criteria.
+                No bars match your search criteria. Try adjusting your filters!
             {% else %}
-                Get started by adding your first bar!
+                Ready to discover San Sebastián's best pintxo bars?
             {% endif %}
         </p>
         {% if is_admin %}
-            <a href="{% url 'bars:add' %}" class="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 mt-4">
+            <a href="{% url 'bars:add' %}" class="inline-flex items-center px-6 py-3 bg-red-600 text-white rounded-lg hover:bg-red-700 mt-6 font-medium transition-colors">
                 <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
                 </svg>
-                Add First Bar
+                Add Your First Bar
             </a>
         {% endif %}
     </div>

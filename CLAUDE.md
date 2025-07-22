@@ -87,3 +87,41 @@ Core entity is a pintxo bar with fields including:
 - Edit rights controlled by `ADMIN_TOKEN` environment variable
 - Public visitors have read-only access
 - No user registration/login system planned for MVP
+
+## Design System
+
+### Spanish-Inspired Color Palette
+When updating UI components, use these cohesive Tailwind classes:
+
+**Primary Colors:**
+- **Terracotta/Rust**: `bg-red-600`, `bg-red-700`, `bg-red-800` (buttons, headers, accents)
+- **Warm Stone**: `bg-amber-100`, `bg-amber-200`, `bg-amber-300` (card backgrounds, subtle highlights)
+- **Saffron**: `bg-yellow-500`, `bg-yellow-600` (call-to-action, highlights)
+
+**Secondary Colors:**
+- **Basque Green**: `bg-emerald-600`, `bg-emerald-700` (success states, secondary actions)
+- **Mediterranean Blue**: `bg-blue-500`, `bg-blue-600` (links, info states)
+- **Warm Cream**: `bg-amber-50`, `bg-amber-100` (page backgrounds, input fields)
+
+**Neutral Colors:**
+- **Charcoal**: `bg-gray-700`, `bg-gray-800`, `text-gray-800` (headers, primary text)
+- **Warm Gray**: `text-gray-700`, `text-gray-600` (body text, secondary text)
+
+### Typography Guidelines
+- **Headers**: `font-bold text-gray-800` (warm, authoritative)
+- **Body Text**: `text-gray-700` (readable, slightly warm)
+- **Highlights**: `text-yellow-600` (saffron accents for emphasis)
+- **Links**: `text-blue-600 hover:text-blue-800` (Mediterranean blue)
+
+### Component Styling Patterns
+- **Cards**: `bg-amber-50 shadow-md` (warm stone background)
+- **Primary Buttons**: `bg-red-600 hover:bg-red-700 text-white` (terracotta)
+- **Secondary Buttons**: `bg-emerald-600 hover:bg-emerald-700 text-white` (Basque green)
+- **Tags/Badges**: `bg-amber-100 text-amber-800` (warm stone with darker text)
+- **Success Messages**: `bg-emerald-100 border-emerald-400 text-emerald-700`
+- **Form Inputs**: `bg-white border-gray-300 focus:ring-yellow-500` (saffron focus states)
+
+### Spacing & Layout
+- Use generous spacing (`space-y-6`, `p-6`) to create a relaxed, café-like atmosphere
+- Cards should have rounded corners (`rounded-lg`) and subtle shadows (`shadow-md`)
+- Maintain warm, inviting feeling throughout the interface

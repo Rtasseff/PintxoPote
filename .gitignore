@@ -20,6 +20,14 @@ db.sqlite3
 # Uploaded media (kept on Railway volume, not in repo)
 static/uploads/
 media/
+uploads/
+**/uploads/
+
+# Data directory (database, static files, uploads)
+data/
+
+# TSV data files
+*.tsv
 
 # Migrations you may want to ignore until stable
 # Uncomment if you prefer committing migrations later

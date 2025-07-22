@@ -87,6 +87,20 @@
 | Hosting | Railway (auto‑deploy on push) |
 | PWA | manifest.json + minimal SW |
 
+### Design System
+**Spanish-Inspired Color Palette:**
+- **Primary**: Terracotta (`bg-red-600/700`) - Spanish roof tiles & pottery
+- **Secondary**: Warm Stone (`bg-amber-100/200`) - Mediterranean limestone  
+- **Accent**: Saffron (`bg-yellow-500/600`) - Spain's golden spice
+- **Supporting**: Basque Green (`bg-emerald-600`), Mediterranean Blue (`bg-blue-500`)
+- **Neutrals**: Warm Cream (`bg-amber-50`), Charcoal (`bg-gray-700/800`)
+
+**Typography & Feel:**
+- Warm, readable fonts with generous spacing
+- Headers in bold charcoal (`font-bold text-gray-800`)
+- Body text in warm gray (`text-gray-700`)
+- Highlights in saffron (`text-yellow-600`)
+
 ---
 
 ## 7. AI‑gen Coding & Repo Workflow
