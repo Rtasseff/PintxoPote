@@ -157,9 +157,9 @@ def quick_note(request, pk):
 
 
 def quick_photo(request, pk):
-    """Add a quick photo to an existing bar"""
-    if not is_admin(request):
-        messages.error(request, 'You need write permissions to add photos.')
+    """Add a quick photo to an existing bar (any authenticated user)"""
+    if not request.user.is_authenticated:
+        messages.error(request, 'You need to be logged in to add photos.')
         return redirect('bars:detail', pk=pk)
         
     bar = get_object_or_404(Bar.objects.prefetch_related('photos'), pk=pk)
@@ -169,6 +169,7 @@ def quick_photo(request, pk):
         if form.is_valid():
             photo = form.save(commit=False)
             photo.bar = bar
+            photo.uploaded_by = request.user
             photo.save()
             messages.success(request, 'Photo added successfully!')
             return redirect('bars:detail', pk=pk)

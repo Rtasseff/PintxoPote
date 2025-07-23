@@ -87,6 +87,13 @@ class BarPhoto(models.Model):
     bar = models.ForeignKey(Bar, on_delete=models.CASCADE, related_name='photos')
     image = models.ImageField(upload_to='bars/')
     caption = models.CharField(max_length=200, blank=True)
+    uploaded_by = models.ForeignKey(
+        User, 
+        on_delete=models.SET_NULL, 
+        null=True,
+        blank=True,
+        help_text="User who uploaded this photo"
+    )
     is_featured = models.BooleanField(
         default=False, 
         help_text="Display this photo on the home page list for this bar"
@@ -98,7 +105,8 @@ class BarPhoto(models.Model):
     
     def __str__(self):
         featured_text = " (Featured)" if self.is_featured else ""
-        return f"Photo for {self.bar.name}{featured_text}"
+        uploader_text = f" by {self.uploaded_by.username}" if self.uploaded_by else ""
+        return f"Photo for {self.bar.name}{featured_text}{uploader_text}"
     
     def save(self, *args, **kwargs):
         # Ensure only one featured photo per bar

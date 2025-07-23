@@ -127,29 +127,48 @@
         </div>
     </div>
 
-    <!-- Quick Actions -->
-    {% if is_admin %}
+    <!-- User Actions -->
+    {% if user.is_authenticated %}
         <div class="bg-amber-50 rounded-lg shadow-md p-6 border border-amber-200">
-            <h3 class="text-xl font-bold text-gray-800 mb-4">Quick Actions</h3>
-            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                <a href="{% url 'bars:quick_note' bar.pk %}" class="inline-flex items-center justify-center px-6 py-3 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 font-medium transition-colors">
-                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path>
-                    </svg>
-                    Add Quick Note
-                </a>
+            <h3 class="text-xl font-bold text-gray-800 mb-4">
+                {% if is_admin %}Quick Actions{% else %}Contribute{% endif %}
+            </h3>
+            <div class="grid grid-cols-1 sm:grid-cols-{% if is_admin %}3{% else %}1{% endif %} gap-4">
+                {% if is_admin %}
+                    <a href="{% url 'bars:quick_note' bar.pk %}" class="inline-flex items-center justify-center px-6 py-3 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 font-medium transition-colors">
+                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path>
+                        </svg>
+                        Add Quick Note
+                    </a>
+                {% endif %}
                 <a href="{% url 'bars:quick_photo' bar.pk %}" class="inline-flex items-center justify-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 font-medium transition-colors">
                     <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"></path>
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"></path>
                     </svg>
-                    Add Quick Photo
+                    Add Photo
                 </a>
-                <a href="{% url 'bars:photo_management' bar.pk %}" class="inline-flex items-center justify-center px-6 py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700 font-medium transition-colors">
-                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-                    </svg>
-                    Manage Photos
+                {% if is_admin %}
+                    <a href="{% url 'bars:photo_management' bar.pk %}" class="inline-flex items-center justify-center px-6 py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700 font-medium transition-colors">
+                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                        </svg>
+                        Manage Photos
+                    </a>
+                {% endif %}
+            </div>
+        </div>
+    {% elif not user.is_authenticated %}
+        <div class="bg-amber-50 rounded-lg shadow-md p-6 border border-amber-200 text-center">
+            <h3 class="text-xl font-bold text-gray-800 mb-4">Want to Contribute?</h3>
+            <p class="text-gray-600 mb-4">Login to add photos and comments to this bar!</p>
+            <div class="space-x-4">
+                <a href="{% url 'bars:login' %}" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg transition-colors">
+                    Login
+                </a>
+                <a href="{% url 'bars:register' %}" class="bg-gray-500 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-lg transition-colors">
+                    Register
                 </a>
             </div>
         </div>

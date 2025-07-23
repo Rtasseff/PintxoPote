@@ -14,9 +14,9 @@ class BarAdmin(admin.ModelAdmin):
 
 @admin.register(BarPhoto)
 class BarPhotoAdmin(admin.ModelAdmin):
-    list_display = ['bar', 'caption', 'is_featured', 'uploaded_at', 'image_preview']
-    list_filter = ['is_featured', 'uploaded_at', 'bar']
-    search_fields = ['bar__name', 'caption']
+    list_display = ['bar', 'caption', 'uploaded_by', 'is_featured', 'uploaded_at', 'image_preview']
+    list_filter = ['is_featured', 'uploaded_at', 'bar', 'uploaded_by']
+    search_fields = ['bar__name', 'caption', 'uploaded_by__username']
     list_editable = ['is_featured']
     actions = ['make_featured', 'remove_featured', 'delete_selected_photos']
     readonly_fields = ['image_preview']
