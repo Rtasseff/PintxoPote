@@ -160,7 +160,7 @@ def quick_photo(request, pk):
         messages.error(request, 'You need write permissions to add photos.')
         return redirect('bars:detail', pk=pk)
         
-    bar = get_object_or_404(Bar, pk=pk)
+    bar = get_object_or_404(Bar.objects.prefetch_related('photos'), pk=pk)
     
     if request.method == 'POST':
         form = QuickPhotoForm(request.POST, request.FILES)
@@ -170,6 +170,9 @@ def quick_photo(request, pk):
             photo.save()
             messages.success(request, 'Photo added successfully!')
             return redirect('bars:detail', pk=pk)
+        else:
+            # Re-add error message to help debug
+            messages.error(request, 'Please check the form and try again.')
     else:
         form = QuickPhotoForm()
     
