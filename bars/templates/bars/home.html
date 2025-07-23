@@ -1,5 +1,4 @@
 {% extends 'bars/base.html' %}
-{% load static %}
 
 {% block title %}Home - PintxoPote{% endblock %}
 
@@ -8,7 +7,7 @@
     <!-- Hero Section with Donostia Image -->
     <div class="relative rounded-xl overflow-hidden shadow-xl">
         <div class="absolute inset-0">
-            <img src="{% static 'bars/images/donostia1.jpg' %}" alt="Beautiful view of San Sebastián" class="w-full h-64 md:h-80 object-cover">
+            <img src="/static/bars/images/donostia1.jpg" alt="Beautiful view of San Sebastián" class="w-full h-64 md:h-80 object-cover">
             <div class="absolute inset-0 bg-gradient-to-r from-red-900/70 via-red-800/50 to-amber-900/70"></div>
         </div>
         <div class="relative z-10 px-8 py-12 md:py-16 text-center">
