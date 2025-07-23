@@ -100,7 +100,7 @@ class BarCreateView(CreateView):
     template_name = 'bars/form.html'
     
     def dispatch(self, request, *args, **kwargs):
-        if not can_write(request):
+        if not is_admin(request):
             messages.error(request, 'You need write permissions to create bars.')
             return redirect('bars:home')
         return super().dispatch(request, *args, **kwargs)
@@ -116,7 +116,7 @@ class BarUpdateView(UpdateView):
     template_name = 'bars/form.html'
     
     def dispatch(self, request, *args, **kwargs):
-        if not can_write(request):
+        if not is_admin(request):
             messages.error(request, 'You need write permissions to edit bars.')
             return redirect('bars:home')
         return super().dispatch(request, *args, **kwargs)
@@ -128,7 +128,7 @@ class BarUpdateView(UpdateView):
 
 def quick_note(request, pk):
     """Add a quick note to an existing bar"""
-    if not can_write(request):
+    if not is_admin(request):
         messages.error(request, 'You need write permissions to add notes.')
         return redirect('bars:detail', pk=pk)
         
@@ -156,7 +156,7 @@ def quick_note(request, pk):
 
 def quick_photo(request, pk):
     """Add a quick photo to an existing bar"""
-    if not can_write(request):
+    if not is_admin(request):
         messages.error(request, 'You need write permissions to add photos.')
         return redirect('bars:detail', pk=pk)
         
