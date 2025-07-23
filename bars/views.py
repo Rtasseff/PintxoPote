@@ -3,14 +3,33 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.http import JsonResponse
 from django.db.models import Q
 from django.contrib import messages
+from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.models import User
+from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.urls import reverse_lazy
 from django.views.generic import ListView, DetailView, CreateView, UpdateView
-from .models import Bar, BarPhoto
+from .models import Bar, BarPhoto, UserProfile
 from .forms import BarForm, QuickNoteForm, QuickPhotoForm
 
 
+def can_write(request):
+    """Check if user has write privileges"""
+    if not request.user.is_authenticated:
+        return False
+    try:
+        return request.user.profile.can_write
+    except UserProfile.DoesNotExist:
+        # Create profile if it doesn't exist
+        UserProfile.objects.create(user=request.user, can_write=False)
+        return False
+
 def is_admin(request):
-    """Check if user has admin privileges"""
+    """Check if user has admin privileges (legacy token + new user system)"""
+    # Check new user system first
+    if can_write(request):
+        return True
+    
+    # Fall back to token system for backwards compatibility
     admin_token = os.getenv('ADMIN_TOKEN')
     if not admin_token:
         return False
@@ -57,6 +76,7 @@ class BarListView(ListView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['is_admin'] = is_admin(self.request)
+        context['can_write'] = can_write(self.request)
         context['search_query'] = self.request.GET.get('search', '')
         return context
 
@@ -69,6 +89,7 @@ class BarDetailView(DetailView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['is_admin'] = is_admin(self.request)
+        context['can_write'] = can_write(self.request)
         context['photos'] = self.object.photos.all()
         return context
 
@@ -79,7 +100,8 @@ class BarCreateView(CreateView):
     template_name = 'bars/form.html'
     
     def dispatch(self, request, *args, **kwargs):
-        if not is_admin(request):
+        if not can_write(request):
+            messages.error(request, 'You need write permissions to create bars.')
             return redirect('bars:home')
         return super().dispatch(request, *args, **kwargs)
     
@@ -94,7 +116,8 @@ class BarUpdateView(UpdateView):
     template_name = 'bars/form.html'
     
     def dispatch(self, request, *args, **kwargs):
-        if not is_admin(request):
+        if not can_write(request):
+            messages.error(request, 'You need write permissions to edit bars.')
             return redirect('bars:home')
         return super().dispatch(request, *args, **kwargs)
     
@@ -105,7 +128,8 @@ class BarUpdateView(UpdateView):
 
 def quick_note(request, pk):
     """Add a quick note to an existing bar"""
-    if not is_admin(request):
+    if not can_write(request):
+        messages.error(request, 'You need write permissions to add notes.')
         return redirect('bars:detail', pk=pk)
         
     bar = get_object_or_404(Bar, pk=pk)
@@ -132,7 +156,8 @@ def quick_note(request, pk):
 
 def quick_photo(request, pk):
     """Add a quick photo to an existing bar"""
-    if not is_admin(request):
+    if not can_write(request):
+        messages.error(request, 'You need write permissions to add photos.')
         return redirect('bars:detail', pk=pk)
         
     bar = get_object_or_404(Bar, pk=pk)
@@ -161,3 +186,49 @@ def admin_login(request):
         request.session['admin_authenticated'] = True
         messages.success(request, 'Admin access granted!')
     return redirect('bars:home')
+
+
+def user_login(request):
+    """User login view"""
+    if request.method == 'POST':
+        form = AuthenticationForm(request, data=request.POST)
+        if form.is_valid():
+            username = form.cleaned_data.get('username')
+            password = form.cleaned_data.get('password')
+            user = authenticate(username=username, password=password)
+            if user is not None:
+                login(request, user)
+                messages.success(request, f'Welcome back, {username}!')
+                return redirect('bars:home')
+        else:
+            messages.error(request, 'Invalid username or password.')
+    else:
+        form = AuthenticationForm()
+    
+    return render(request, 'bars/login.html', {'form': form})
+
+
+def user_logout(request):
+    """User logout view"""
+    logout(request)
+    messages.success(request, 'You have been logged out.')
+    return redirect('bars:home')
+
+
+def user_register(request):
+    """User registration view"""
+    if request.method == 'POST':
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            # Create user profile with default permissions
+            UserProfile.objects.create(user=user, can_write=False)
+            username = form.cleaned_data.get('username')
+            messages.success(request, f'Account created for {username}! You can now log in.')
+            return redirect('bars:login')
+        else:
+            messages.error(request, 'Please correct the errors below.')
+    else:
+        form = UserCreationForm()
+    
+    return render(request, 'bars/register.html', {'form': form})

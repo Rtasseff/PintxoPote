@@ -6,7 +6,7 @@
 | **Working name** | PintxoPote |
 | **Primary goal** | Record notes on pintxo bars while visiting, look them up on‑street, optionally share with a few friends |
 | **Intended users** | You + 3 friends (initial), public read‑only later |
-| **Privacy / Edit rights** | Content may be public, but editing rights stay with owner via admin token |
+| **Privacy / Edit rights** | Content is public, but editing rights controlled by user accounts with write permissions |
 | **Long‑term vision** | Personal tool first; could later be opened to tourists |
 
 ---
@@ -83,7 +83,7 @@
 | Backend | **Django** + SQLite |
 | Front‑end | HTMX + Tailwind (no build) |
 | Photo storage | `/static/uploads` |
-| Auth | Admin token via env var |
+| Auth | Django user accounts with write permissions flag |
 | Hosting | Railway (auto‑deploy on push) |
 | PWA | manifest.json + minimal SW |
 

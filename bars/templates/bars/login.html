@@ -1,0 +1,76 @@
+{% extends 'bars/base.html' %}
+
+{% block title %}Login - PintxoPote{% endblock %}
+
+{% block content %}
+<div class="max-w-md mx-auto bg-white rounded-lg shadow-md p-6 border border-amber-200">
+    <div class="text-center mb-6">
+        <h2 class="text-2xl font-bold text-gray-800">Login to PintxoPote</h2>
+        <p class="text-gray-600 mt-2">Access your pintxo bar collection</p>
+    </div>
+
+    <form method="post" class="space-y-4">
+        {% csrf_token %}
+        
+        <div>
+            <label for="{{ form.username.id_for_label }}" class="block text-sm font-medium text-gray-700 mb-2">
+                Username
+            </label>
+            {{ form.username }}
+            {% if form.username.errors %}
+                <div class="text-red-600 text-sm mt-1">
+                    {{ form.username.errors }}
+                </div>
+            {% endif %}
+        </div>
+
+        <div>
+            <label for="{{ form.password.id_for_label }}" class="block text-sm font-medium text-gray-700 mb-2">
+                Password
+            </label>
+            {{ form.password }}
+            {% if form.password.errors %}
+                <div class="text-red-600 text-sm mt-1">
+                    {{ form.password.errors }}
+                </div>
+            {% endif %}
+        </div>
+
+        {% if form.non_field_errors %}
+            <div class="text-red-600 text-sm">
+                {{ form.non_field_errors }}
+            </div>
+        {% endif %}
+
+        <button type="submit" class="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-4 rounded-lg transition-colors">
+            Login
+        </button>
+    </form>
+
+    <div class="text-center mt-6">
+        <p class="text-gray-600">
+            Don't have an account? 
+            <a href="{% url 'bars:register' %}" class="text-red-600 hover:text-red-700 font-medium">Register here</a>
+        </p>
+    </div>
+</div>
+
+<style>
+    /* Style form inputs */
+    input[type="text"], input[type="password"] {
+        width: 100%;
+        padding: 0.75rem;
+        border: 1px solid #d1d5db;
+        border-radius: 0.5rem;
+        background-color: #fff;
+        color: #374151;
+    }
+    
+    input[type="text"]:focus, input[type="password"]:focus {
+        outline: none;
+        ring: 2px;
+        ring-color: #eab308;
+        border-color: transparent;
+    }
+</style>
+{% endblock %}

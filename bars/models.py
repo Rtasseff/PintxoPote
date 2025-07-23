@@ -1,6 +1,26 @@
 import uuid
 from django.db import models
 from django.urls import reverse
+from django.contrib.auth.models import User
+
+
+class UserProfile(models.Model):
+    """
+    Extends Django User model with PintxoPote-specific permissions
+    """
+    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='profile')
+    can_write = models.BooleanField(
+        default=False, 
+        help_text="Allow this user to add, edit, and manage bars"
+    )
+    created_at = models.DateTimeField(auto_now_add=True)
+    
+    def __str__(self):
+        return f"{self.user.username} ({'Writer' if self.can_write else 'Reader'})"
+    
+    class Meta:
+        verbose_name = "User Profile"
+        verbose_name_plural = "User Profiles"
 
 
 class Bar(models.Model):

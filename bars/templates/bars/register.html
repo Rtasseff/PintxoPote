@@ -1,0 +1,110 @@
+{% extends 'bars/base.html' %}
+
+{% block title %}Register - PintxoPote{% endblock %}
+
+{% block content %}
+<div class="max-w-md mx-auto bg-white rounded-lg shadow-md p-6 border border-amber-200">
+    <div class="text-center mb-6">
+        <h2 class="text-2xl font-bold text-gray-800">Join PintxoPote</h2>
+        <p class="text-gray-600 mt-2">Create your account to start discovering pintxo bars</p>
+    </div>
+
+    <form method="post" class="space-y-4">
+        {% csrf_token %}
+        
+        <div>
+            <label for="{{ form.username.id_for_label }}" class="block text-sm font-medium text-gray-700 mb-2">
+                Username
+            </label>
+            {{ form.username }}
+            {% if form.username.errors %}
+                <div class="text-red-600 text-sm mt-1">
+                    {{ form.username.errors }}
+                </div>
+            {% endif %}
+            {% if form.username.help_text %}
+                <div class="text-gray-500 text-xs mt-1">
+                    {{ form.username.help_text }}
+                </div>
+            {% endif %}
+        </div>
+
+        <div>
+            <label for="{{ form.password1.id_for_label }}" class="block text-sm font-medium text-gray-700 mb-2">
+                Password
+            </label>
+            {{ form.password1 }}
+            {% if form.password1.errors %}
+                <div class="text-red-600 text-sm mt-1">
+                    {{ form.password1.errors }}
+                </div>
+            {% endif %}
+            {% if form.password1.help_text %}
+                <div class="text-gray-500 text-xs mt-1">
+                    {{ form.password1.help_text }}
+                </div>
+            {% endif %}
+        </div>
+
+        <div>
+            <label for="{{ form.password2.id_for_label }}" class="block text-sm font-medium text-gray-700 mb-2">
+                Confirm Password
+            </label>
+            {{ form.password2 }}
+            {% if form.password2.errors %}
+                <div class="text-red-600 text-sm mt-1">
+                    {{ form.password2.errors }}
+                </div>
+            {% endif %}
+            {% if form.password2.help_text %}
+                <div class="text-gray-500 text-xs mt-1">
+                    {{ form.password2.help_text }}
+                </div>
+            {% endif %}
+        </div>
+
+        {% if form.non_field_errors %}
+            <div class="text-red-600 text-sm">
+                {{ form.non_field_errors }}
+            </div>
+        {% endif %}
+
+        <div class="bg-amber-50 border border-amber-200 rounded-lg p-4">
+            <p class="text-amber-800 text-sm">
+                <strong>Note:</strong> New accounts are created with read-only access. 
+                Contact an administrator to request write permissions for adding and editing bars.
+            </p>
+        </div>
+
+        <button type="submit" class="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-4 rounded-lg transition-colors">
+            Create Account
+        </button>
+    </form>
+
+    <div class="text-center mt-6">
+        <p class="text-gray-600">
+            Already have an account? 
+            <a href="{% url 'bars:login' %}" class="text-red-600 hover:text-red-700 font-medium">Login here</a>
+        </p>
+    </div>
+</div>
+
+<style>
+    /* Style form inputs */
+    input[type="text"], input[type="password"] {
+        width: 100%;
+        padding: 0.75rem;
+        border: 1px solid #d1d5db;
+        border-radius: 0.5rem;
+        background-color: #fff;
+        color: #374151;
+    }
+    
+    input[type="text"]:focus, input[type="password"]:focus {
+        outline: none;
+        ring: 2px;
+        ring-color: #eab308;
+        border-color: transparent;
+    }
+</style>
+{% endblock %}

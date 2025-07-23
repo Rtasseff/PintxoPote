@@ -28,9 +28,16 @@
                 <h1 class="text-2xl font-bold text-gray-100">
                     <a href="{% url 'bars:home' %}" class="hover:text-amber-100 transition-colors">PintxoPote</a>
                 </h1>
-                <div class="flex space-x-2">
-                    {% if is_admin %}
-                        <span class="bg-emerald-600 text-white text-xs px-2 py-1 rounded-full">Admin</span>
+                <div class="flex items-center space-x-4">
+                    {% if user.is_authenticated %}
+                        <span class="text-amber-100">Hello, {{ user.username }}</span>
+                        {% if is_admin %}
+                            <span class="bg-emerald-600 text-white text-xs px-2 py-1 rounded-full">Writer</span>
+                        {% endif %}
+                        <a href="{% url 'bars:logout' %}" class="bg-red-800 hover:bg-red-900 text-white px-3 py-1 rounded-md text-sm transition-colors">Logout</a>
+                    {% else %}
+                        <a href="{% url 'bars:login' %}" class="bg-amber-600 hover:bg-amber-700 text-white px-3 py-1 rounded-md text-sm transition-colors">Login</a>
+                        <a href="{% url 'bars:register' %}" class="border border-amber-200 text-amber-100 hover:bg-amber-700 px-3 py-1 rounded-md text-sm transition-colors">Register</a>
                     {% endif %}
                 </div>
             </div>
