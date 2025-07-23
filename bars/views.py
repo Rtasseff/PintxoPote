@@ -235,3 +235,47 @@ def user_register(request):
         form = UserCreationForm()
     
     return render(request, 'bars/register.html', {'form': form})
+
+
+def photo_management(request, pk):
+    """Photo management view for a specific bar"""
+    if not is_admin(request):
+        messages.error(request, 'You need write permissions to manage photos.')
+        return redirect('bars:detail', pk=pk)
+        
+    bar = get_object_or_404(Bar.objects.prefetch_related('photos'), pk=pk)
+    photos = bar.photos.all()
+    
+    return render(request, 'bars/photo_management.html', {
+        'bar': bar,
+        'photos': photos
+    })
+
+
+def delete_photo(request, photo_id):
+    """Delete a specific photo"""
+    if not is_admin(request):
+        messages.error(request, 'You need write permissions to delete photos.')
+        return redirect('bars:home')
+        
+    photo = get_object_or_404(BarPhoto, id=photo_id)
+    bar_pk = photo.bar.pk
+    
+    if request.method == 'POST':
+        photo_name = f"Photo for {photo.bar.name}"
+        if photo.caption:
+            photo_name += f" ({photo.caption})"
+        photo.delete()  # This will trigger our custom delete method
+        messages.success(request, f'{photo_name} deleted successfully!')
+        
+        # Redirect back to where they came from
+        next_url = request.POST.get('next', 'bars:detail')
+        if next_url == 'bars:photo_management':
+            return redirect('bars:photo_management', pk=bar_pk)
+        else:
+            return redirect('bars:detail', pk=bar_pk)
+    
+    return render(request, 'bars/delete_photo_confirm.html', {
+        'photo': photo,
+        'bar': photo.bar
+    })

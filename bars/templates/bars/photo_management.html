@@ -1,0 +1,106 @@
+{% extends 'bars/base.html' %}
+
+{% block title %}Manage Photos - {{ bar.name }} - PintxoPote{% endblock %}
+
+{% block content %}
+<div class="max-w-4xl mx-auto">
+    <!-- Header -->
+    <div class="mb-6">
+        <div class="flex items-center justify-between">
+            <div>
+                <h1 class="text-3xl font-bold text-gray-800">Manage Photos</h1>
+                <p class="text-gray-600 mt-1">{{ bar.name }}</p>
+            </div>
+            <div class="flex space-x-3">
+                <a href="{% url 'bars:detail' bar.pk %}" class="bg-gray-100 hover:bg-gray-200 text-gray-700 px-4 py-2 rounded-lg transition-colors">
+                    Back to Bar
+                </a>
+                <a href="{% url 'bars:quick_photo' bar.pk %}" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition-colors">
+                    Add Photo
+                </a>
+            </div>
+        </div>
+    </div>
+
+    {% if photos %}
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {% for photo in photos %}
+                <div class="bg-white rounded-lg shadow-md overflow-hidden border {% if photo.is_featured %}border-yellow-500{% else %}border-gray-200{% endif %}">
+                    <!-- Photo -->
+                    <div class="aspect-square relative">
+                        <img src="{{ photo.image.url }}" alt="Photo of {{ bar.name }}" class="w-full h-full object-cover">
+                        {% if photo.is_featured %}
+                            <div class="absolute top-2 right-2 bg-yellow-500 text-white px-2 py-1 rounded-full text-xs font-bold">
+                                ★ Featured
+                            </div>
+                        {% endif %}
+                    </div>
+                    
+                    <!-- Photo Info -->
+                    <div class="p-4">
+                        {% if photo.caption %}
+                            <p class="text-gray-800 font-medium mb-2">{{ photo.caption }}</p>
+                        {% else %}
+                            <p class="text-gray-500 italic mb-2">No caption</p>
+                        {% endif %}
+                        
+                        <p class="text-xs text-gray-500 mb-3">
+                            Uploaded: {{ photo.uploaded_at|date:"M d, Y" }}
+                        </p>
+                        
+                        <!-- Actions -->
+                        <div class="flex space-x-2">
+                            {% if not photo.is_featured %}
+                                <form method="post" action="{% url 'admin:bars_barphoto_changelist' %}" class="inline">
+                                    {% csrf_token %}
+                                    <input type="hidden" name="action" value="make_featured">
+                                    <input type="hidden" name="_selected_action" value="{{ photo.id }}">
+                                    <button type="submit" class="bg-yellow-500 hover:bg-yellow-600 text-white text-xs px-3 py-1 rounded transition-colors">
+                                        Make Featured
+                                    </button>
+                                </form>
+                            {% else %}
+                                <span class="bg-yellow-100 text-yellow-800 text-xs px-3 py-1 rounded">
+                                    Currently Featured
+                                </span>
+                            {% endif %}
+                            
+                            <form method="post" action="{% url 'bars:delete_photo' photo.id %}" class="inline" onsubmit="return confirm('Are you sure you want to delete this photo? This cannot be undone.');">
+                                {% csrf_token %}
+                                <input type="hidden" name="next" value="bars:photo_management">
+                                <button type="submit" class="bg-red-500 hover:bg-red-600 text-white text-xs px-3 py-1 rounded transition-colors">
+                                    Delete
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        
+        <div class="mt-8 bg-amber-50 border border-amber-200 rounded-lg p-4">
+            <h3 class="font-bold text-amber-800 mb-2">Photo Management Tips:</h3>
+            <ul class="text-sm text-amber-700 space-y-1">
+                <li>• <strong>Featured photos</strong> are displayed on the home page for this bar</li>
+                <li>• Only one photo per bar can be featured at a time</li>
+                <li>• Deleting photos permanently removes them from the server</li>
+                <li>• If you delete the featured photo, the most recent photo will be shown instead</li>
+            </ul>
+        </div>
+    {% else %}
+        <div class="text-center py-12 bg-gray-50 rounded-lg border-2 border-dashed border-gray-300">
+            <svg class="w-16 h-16 mx-auto text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+            </svg>
+            <h3 class="text-xl font-bold text-gray-800 mt-4">No photos yet</h3>
+            <p class="text-gray-600 mt-2">Add some photos to showcase this bar!</p>
+            <a href="{% url 'bars:quick_photo' bar.pk %}" class="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 mt-6 font-medium transition-colors">
+                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
+                </svg>
+                Add First Photo
+            </a>
+        </div>
+    {% endif %}
+</div>
+{% endblock %}

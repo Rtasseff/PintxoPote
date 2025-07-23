@@ -14,11 +14,19 @@ class BarAdmin(admin.ModelAdmin):
 
 @admin.register(BarPhoto)
 class BarPhotoAdmin(admin.ModelAdmin):
-    list_display = ['bar', 'caption', 'is_featured', 'uploaded_at']
-    list_filter = ['is_featured', 'uploaded_at']
+    list_display = ['bar', 'caption', 'is_featured', 'uploaded_at', 'image_preview']
+    list_filter = ['is_featured', 'uploaded_at', 'bar']
     search_fields = ['bar__name', 'caption']
     list_editable = ['is_featured']
-    actions = ['make_featured', 'remove_featured']
+    actions = ['make_featured', 'remove_featured', 'delete_selected_photos']
+    readonly_fields = ['image_preview']
+    
+    def image_preview(self, obj):
+        if obj.image:
+            return f'<img src="{obj.image.url}" style="max-width: 100px; max-height: 100px; object-fit: cover;" />'
+        return "No image"
+    image_preview.allow_tags = True
+    image_preview.short_description = "Preview"
     
     def make_featured(self, request, queryset):
         updated = 0
@@ -35,6 +43,14 @@ class BarPhotoAdmin(admin.ModelAdmin):
     def remove_featured(self, request, queryset):
         updated = queryset.update(is_featured=False)
         self.message_user(request, f'{updated} photo(s) removed from featured.')
+    remove_featured.short_description = "Remove featured status"
+    
+    def delete_selected_photos(self, request, queryset):
+        count = queryset.count()
+        for photo in queryset:
+            photo.delete()  # This will trigger our custom delete method
+        self.message_user(request, f'{count} photo(s) and their files deleted successfully.')
+    delete_selected_photos.short_description = "Delete selected photos and files"
 
 
 @admin.register(UserProfile)

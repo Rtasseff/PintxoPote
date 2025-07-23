@@ -105,3 +105,10 @@ class BarPhoto(models.Model):
         if self.is_featured:
             BarPhoto.objects.filter(bar=self.bar, is_featured=True).update(is_featured=False)
         super().save(*args, **kwargs)
+    
+    def delete(self, *args, **kwargs):
+        # Delete the actual image file when the model instance is deleted
+        if self.image:
+            if self.image.storage.exists(self.image.name):
+                self.image.storage.delete(self.image.name)
+        super().delete(*args, **kwargs)

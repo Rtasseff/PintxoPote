@@ -1,0 +1,66 @@
+{% extends 'bars/base.html' %}
+
+{% block title %}Delete Photo - {{ bar.name }} - PintxoPote{% endblock %}
+
+{% block content %}
+<div class="max-w-2xl mx-auto">
+    <div class="bg-white rounded-lg shadow-md p-8 border border-red-200">
+        <div class="text-center mb-6">
+            <svg class="w-16 h-16 mx-auto text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L4.082 16.5c-.77.833.192 2.5 1.732 2.5z"></path>
+            </svg>
+            <h1 class="text-2xl font-bold text-gray-800 mt-4">Delete Photo</h1>
+            <p class="text-gray-600 mt-2">Are you sure you want to delete this photo?</p>
+        </div>
+
+        <!-- Photo Preview -->
+        <div class="mb-6">
+            <div class="aspect-video max-w-md mx-auto rounded-lg overflow-hidden border-2 border-gray-200">
+                <img src="{{ photo.image.url }}" alt="Photo to delete" class="w-full h-full object-cover">
+            </div>
+            {% if photo.caption %}
+                <p class="text-center text-gray-700 mt-2 font-medium">{{ photo.caption }}</p>
+            {% endif %}
+            {% if photo.is_featured %}
+                <div class="text-center mt-2">
+                    <span class="bg-yellow-500 text-white px-3 py-1 rounded-full text-sm font-bold">
+                        ★ Featured Photo
+                    </span>
+                </div>
+            {% endif %}
+        </div>
+
+        <!-- Warning -->
+        <div class="bg-red-50 border border-red-200 rounded-lg p-4 mb-6">
+            <div class="flex items-start">
+                <svg class="w-5 h-5 text-red-500 mt-0.5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L4.082 16.5c-.77.833.192 2.5 1.732 2.5z"></path>
+                </svg>
+                <div>
+                    <h3 class="font-bold text-red-800">This action cannot be undone</h3>
+                    <p class="text-red-700 text-sm mt-1">
+                        The photo file will be permanently deleted from the server.
+                        {% if photo.is_featured %}
+                        Since this is the featured photo, the most recent photo will be displayed on the home page instead.
+                        {% endif %}
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Actions -->
+        <div class="flex flex-col sm:flex-row gap-4">
+            <form method="post" class="flex-1">
+                {% csrf_token %}
+                <input type="hidden" name="next" value="{{ request.GET.next|default:'bars:detail' }}">
+                <button type="submit" class="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-6 rounded-lg transition-colors">
+                    Yes, Delete Photo
+                </button>
+            </form>
+            <a href="{% url 'bars:detail' bar.pk %}" class="flex-1 bg-gray-200 hover:bg-gray-300 text-gray-800 font-medium py-3 px-6 rounded-lg text-center transition-colors">
+                Cancel
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock %}
