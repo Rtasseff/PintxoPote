@@ -12,6 +12,7 @@ urlpatterns = [
     path('bar/<uuid:pk>/quick-photo/', views.quick_photo, name='quick_photo'),
     path('bar/<uuid:pk>/photos/', views.photo_management, name='photo_management'),
     path('photo/<int:photo_id>/delete/', views.delete_photo, name='delete_photo'),
+    path('bar/<uuid:pk>/comment/', views.add_comment, name='add_comment'),
     path('login/', views.user_login, name='login'),
     path('logout/', views.user_logout, name='logout'),
     path('register/', views.user_register, name='register'),

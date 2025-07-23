@@ -8,8 +8,8 @@ from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.urls import reverse_lazy
 from django.views.generic import ListView, DetailView, CreateView, UpdateView
-from .models import Bar, BarPhoto, UserProfile
-from .forms import BarForm, QuickNoteForm, QuickPhotoForm
+from .models import Bar, BarPhoto, UserProfile, BarComment
+from .forms import BarForm, QuickNoteForm, QuickPhotoForm, CommentForm
 
 
 def can_write(request):
@@ -91,6 +91,8 @@ class BarDetailView(DetailView):
         context['is_admin'] = is_admin(self.request)
         context['can_write'] = can_write(self.request)
         context['photos'] = self.object.photos.all()
+        context['comments'] = self.object.comments.filter(is_approved=True).select_related('user')
+        context['comment_form'] = CommentForm() if self.request.user.is_authenticated else None
         return context
 
 
@@ -279,3 +281,26 @@ def delete_photo(request, photo_id):
         'photo': photo,
         'bar': photo.bar
     })
+
+
+def add_comment(request, pk):
+    """Add a comment to a bar (any authenticated user)"""
+    if not request.user.is_authenticated:
+        messages.error(request, 'You need to be logged in to leave a comment.')
+        return redirect('bars:detail', pk=pk)
+        
+    bar = get_object_or_404(Bar, pk=pk)
+    
+    if request.method == 'POST':
+        form = CommentForm(request.POST)
+        if form.is_valid():
+            comment = form.save(commit=False)
+            comment.bar = bar
+            comment.user = request.user
+            comment.save()
+            messages.success(request, 'Your comment has been added!')
+            return redirect('bars:detail', pk=pk)
+        else:
+            messages.error(request, 'Please check your comment and try again.')
+    
+    return redirect('bars:detail', pk=pk)

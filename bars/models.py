@@ -112,3 +112,29 @@ class BarPhoto(models.Model):
             if self.image.storage.exists(self.image.name):
                 self.image.storage.delete(self.image.name)
         super().delete(*args, **kwargs)
+
+
+class BarComment(models.Model):
+    """
+    User comments on bars - allows any logged-in user to share experiences
+    """
+    bar = models.ForeignKey(Bar, on_delete=models.CASCADE, related_name='comments')
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    comment = models.TextField(
+        max_length=1000,
+        help_text="Share your experience at this bar (max 1000 characters)"
+    )
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+    is_approved = models.BooleanField(
+        default=True,
+        help_text="Admin can moderate inappropriate comments"
+    )
+    
+    class Meta:
+        ordering = ['-created_at']
+        verbose_name = "Bar Comment"
+        verbose_name_plural = "Bar Comments"
+    
+    def __str__(self):
+        return f"{self.user.username} on {self.bar.name}: {self.comment[:50]}..."

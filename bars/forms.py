@@ -1,5 +1,5 @@
 from django import forms
-from .models import Bar, BarPhoto
+from .models import Bar, BarPhoto, BarComment
 
 
 class BarForm(forms.ModelForm):
@@ -42,4 +42,21 @@ class QuickPhotoForm(forms.ModelForm):
             'image': forms.FileInput(attrs={'class': 'w-full px-4 py-3 border border-amber-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 bg-white text-gray-700', 'accept': 'image/*'}),
             'caption': forms.TextInput(attrs={'class': 'w-full px-4 py-3 border border-amber-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 bg-white text-gray-700', 'placeholder': 'Describe this photo...'}),
             'is_featured': forms.CheckboxInput(attrs={'class': 'w-4 h-4 text-yellow-600 bg-gray-100 border-gray-300 rounded focus:ring-yellow-500 focus:ring-2'}),
+        }
+
+
+class CommentForm(forms.ModelForm):
+    class Meta:
+        model = BarComment
+        fields = ['comment']
+        widgets = {
+            'comment': forms.Textarea(attrs={
+                'rows': 4,
+                'class': 'w-full px-4 py-3 border border-amber-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 bg-white text-gray-700 resize-none',
+                'placeholder': 'Share your experience at this bar... (max 1000 characters)',
+                'maxlength': 1000,
+            }),
+        }
+        labels = {
+            'comment': 'Your Comment',
         }

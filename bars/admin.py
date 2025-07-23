@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
 from django.contrib.auth.models import User
-from .models import Bar, BarPhoto, UserProfile
+from .models import Bar, BarPhoto, UserProfile, BarComment
 
 
 @admin.register(Bar)
@@ -76,6 +76,30 @@ class CustomUserAdmin(UserAdmin):
         if not obj:
             return list()
         return super().get_inline_instances(request, obj)
+
+
+@admin.register(BarComment)
+class BarCommentAdmin(admin.ModelAdmin):
+    list_display = ['bar', 'user', 'comment_preview', 'is_approved', 'created_at']
+    list_filter = ['is_approved', 'created_at', 'bar']
+    search_fields = ['bar__name', 'user__username', 'comment']
+    list_editable = ['is_approved']
+    date_hierarchy = 'created_at'
+    actions = ['approve_comments', 'unapprove_comments']
+    
+    def comment_preview(self, obj):
+        return obj.comment[:50] + "..." if len(obj.comment) > 50 else obj.comment
+    comment_preview.short_description = "Comment Preview"
+    
+    def approve_comments(self, request, queryset):
+        updated = queryset.update(is_approved=True)
+        self.message_user(request, f'{updated} comment(s) approved.')
+    approve_comments.short_description = "Approve selected comments"
+    
+    def unapprove_comments(self, request, queryset):
+        updated = queryset.update(is_approved=False)
+        self.message_user(request, f'{updated} comment(s) unapproved.')
+    unapprove_comments.short_description = "Unapprove selected comments"
 
 
 # Unregister the default User admin and register our custom one
