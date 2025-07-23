@@ -142,7 +142,7 @@ STATIC_ROOT = DATA_DIR / "static"
 
 # Additional locations of static files
 STATICFILES_DIRS = [
-    BASE_DIR / "bars" / "static",
+    # No additional static directories - we use data/static for collected files
 ]
 
 # Default primary key field type
