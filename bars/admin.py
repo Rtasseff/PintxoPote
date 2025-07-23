@@ -14,9 +14,27 @@ class BarAdmin(admin.ModelAdmin):
 
 @admin.register(BarPhoto)
 class BarPhotoAdmin(admin.ModelAdmin):
-    list_display = ['bar', 'caption', 'uploaded_at']
-    list_filter = ['uploaded_at']
+    list_display = ['bar', 'caption', 'is_featured', 'uploaded_at']
+    list_filter = ['is_featured', 'uploaded_at']
     search_fields = ['bar__name', 'caption']
+    list_editable = ['is_featured']
+    actions = ['make_featured', 'remove_featured']
+    
+    def make_featured(self, request, queryset):
+        updated = 0
+        for photo in queryset:
+            # Unfeatured other photos of the same bar first
+            BarPhoto.objects.filter(bar=photo.bar, is_featured=True).update(is_featured=False)
+            # Then feature this photo
+            photo.is_featured = True
+            photo.save()
+            updated += 1
+        self.message_user(request, f'{updated} photo(s) marked as featured.')
+    make_featured.short_description = "Mark selected photos as featured"
+    
+    def remove_featured(self, request, queryset):
+        updated = queryset.update(is_featured=False)
+        self.message_user(request, f'{updated} photo(s) removed from featured.')
 
 
 @admin.register(UserProfile)

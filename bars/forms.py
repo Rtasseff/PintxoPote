@@ -37,8 +37,9 @@ class QuickNoteForm(forms.Form):
 class QuickPhotoForm(forms.ModelForm):
     class Meta:
         model = BarPhoto
-        fields = ['image', 'caption']
+        fields = ['image', 'caption', 'is_featured']
         widgets = {
             'image': forms.FileInput(attrs={'class': 'w-full px-4 py-3 border border-amber-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 bg-white text-gray-700', 'accept': 'image/*'}),
             'caption': forms.TextInput(attrs={'class': 'w-full px-4 py-3 border border-amber-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 bg-white text-gray-700', 'placeholder': 'Describe this photo...'}),
+            'is_featured': forms.CheckboxInput(attrs={'class': 'w-4 h-4 text-yellow-600 bg-gray-100 border-gray-300 rounded focus:ring-yellow-500 focus:ring-2'}),
         }

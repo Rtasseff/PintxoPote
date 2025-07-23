@@ -74,16 +74,34 @@ class Bar(models.Model):
         if self.tags:
             return [tag.strip() for tag in self.tags.split(',') if tag.strip()]
         return []
+    
+    def get_display_photo(self):
+        """Return the featured photo, or the most recent photo if no featured photo"""
+        featured_photo = self.photos.filter(is_featured=True).first()
+        if featured_photo:
+            return featured_photo
+        return self.photos.first()
 
 
 class BarPhoto(models.Model):
     bar = models.ForeignKey(Bar, on_delete=models.CASCADE, related_name='photos')
     image = models.ImageField(upload_to='bars/')
     caption = models.CharField(max_length=200, blank=True)
+    is_featured = models.BooleanField(
+        default=False, 
+        help_text="Display this photo on the home page list for this bar"
+    )
     uploaded_at = models.DateTimeField(auto_now_add=True)
     
     class Meta:
-        ordering = ['-uploaded_at']
+        ordering = ['-is_featured', '-uploaded_at']
     
     def __str__(self):
-        return f"Photo for {self.bar.name}"
+        featured_text = " (Featured)" if self.is_featured else ""
+        return f"Photo for {self.bar.name}{featured_text}"
+    
+    def save(self, *args, **kwargs):
+        # Ensure only one featured photo per bar
+        if self.is_featured:
+            BarPhoto.objects.filter(bar=self.bar, is_featured=True).update(is_featured=False)
+        super().save(*args, **kwargs)

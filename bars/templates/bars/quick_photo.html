@@ -49,6 +49,22 @@
                     <p class="text-red-600 text-sm mt-2">{{ form.caption.errors.0 }}</p>
                 {% endif %}
             </div>
+            
+            <div class="bg-white rounded-lg p-6 border border-amber-300">
+                <div class="flex items-center space-x-3">
+                    {{ form.is_featured }}
+                    <label for="{{ form.is_featured.id_for_label }}" class="text-lg font-bold text-gray-800">
+                        Featured Photo
+                    </label>
+                </div>
+                <p class="text-sm text-gray-600 mt-2">
+                    Make this the main photo shown on the home page for this bar. 
+                    Only one photo per bar can be featured.
+                </p>
+                {% if form.is_featured.errors %}
+                    <p class="text-red-600 text-sm mt-2">{{ form.is_featured.errors.0 }}</p>
+                {% endif %}
+            </div>
 
             <!-- Existing Photos Preview -->
             {% with recent_photos=bar.photos.all|slice:":6" %}
@@ -62,8 +78,13 @@
                     </h3>
                     <div class="grid grid-cols-3 gap-3">
                         {% for photo in recent_photos %}
-                            <div class="aspect-square border-2 border-amber-200 rounded-lg overflow-hidden">
+                            <div class="aspect-square border-2 {% if photo.is_featured %}border-yellow-500{% else %}border-amber-200{% endif %} rounded-lg overflow-hidden relative">
                                 <img src="{{ photo.image.url }}" alt="Photo of {{ bar.name }}" class="w-full h-full object-cover">
+                                {% if photo.is_featured %}
+                                    <div class="absolute top-1 right-1 bg-yellow-500 text-white text-xs px-1 rounded" title="Currently Featured">
+                                        ★
+                                    </div>
+                                {% endif %}
                             </div>
                         {% endfor %}
                     </div>

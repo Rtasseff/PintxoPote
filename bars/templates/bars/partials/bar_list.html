@@ -40,9 +40,15 @@
                     </div>
                     
                     <div class="ml-6">
-                        {% if bar.photos.exists %}
-                            <div class="w-20 h-20 rounded-lg overflow-hidden border-2 border-amber-200">
-                                <img src="{{ bar.photos.first.image.url }}" alt="{{ bar.name }}" class="w-full h-full object-cover">
+                        {% with display_photo=bar.get_display_photo %}
+                        {% if display_photo %}
+                            <div class="w-20 h-20 rounded-lg overflow-hidden border-2 border-amber-200 relative">
+                                <img src="{{ display_photo.image.url }}" alt="{{ bar.name }}" class="w-full h-full object-cover">
+                                {% if display_photo.is_featured %}
+                                    <div class="absolute top-0 right-0 bg-yellow-500 text-white text-xs px-1 rounded-bl" title="Featured Photo">
+                                        ★
+                                    </div>
+                                {% endif %}
                             </div>
                         {% else %}
                             <div class="w-20 h-20 rounded-lg bg-amber-200 flex items-center justify-center border-2 border-amber-300">
@@ -51,6 +57,7 @@
                                 </svg>
                             </div>
                         {% endif %}
+                        {% endwith %}
                     </div>
                 </div>
                 
