@@ -81,6 +81,24 @@ class Bar(models.Model):
         if featured_photo:
             return featured_photo
         return self.photos.first()
+    
+    def get_google_maps_url(self):
+        """Return Google Maps URL for this bar's location"""
+        import urllib.parse
+        
+        # If we have coordinates, use them for more accuracy
+        if self.latitude and self.longitude:
+            # Use coordinates for precise location
+            query = f"{self.latitude},{self.longitude}"
+        else:
+            # Fall back to address search
+            query = f"{self.name}, {self.address}"
+        
+        # URL encode the query
+        encoded_query = urllib.parse.quote(query)
+        
+        # Return Google Maps URL that works on mobile and desktop
+        return f"https://www.google.com/maps/search/?api=1&query={encoded_query}"
 
 
 class BarPhoto(models.Model):
