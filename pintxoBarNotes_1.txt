@@ -1,0 +1,28 @@
+Name	Address	Map Link	Specialties	Price Range	Caña Price	Crowd Level	Last Visited	Tags	Notes
+Bar Astelena	Fermín Calbetón Kalea 26, San Sebastián, Spain		Fish skewers	€€				fish	classical
+Bar Bergara	Portu Kalea 8, San Sebastián, Spain		Foie gras	€€€				gourmet	fancy
+Bar Central	Santiago Kalea 2, San Sebastián, Spain		Mixed pintxos	€€				classic	mixed
+Bar Ezkurra	San Jerónimo Kalea 15, San Sebastián, Spain		Ensaladilla rusa	€€				salad	classic
+Bar Martinez	31 de Agosto Kalea 9, San Sebastián, Spain		Bonito & artichoke	€€				fish	classical
+Bar Nestor	Arrandegi Kalea 11, San Sebastián, Spain		Tortilla + ribeye	€€€				meat	classic
+Bar Sport	Fermín Calbetón Kalea 10, San Sebastián, Spain		Gildas, tortilla, foie	€–€€				classic	stall
+Bar Txalota	Fermín Calbetón Kalea 4, San Sebastián, Spain		Fried squid, mussels	€€€				seafood	classic
+Bar Txepetxa	Arrandegi Kalea 5, San Sebastián, Spain		Anchovies Jardinera	€–€€				fish	anchovies
+Bare Bare	Portu Kalea 6, San Sebastián, Spain		Seafood tempura	€€€				seafood	classical
+Beharri	Narrika Kalea 2, San Sebastián, Spain		Cider & cheese balls	€€				cider	cider-house
+Borda Berri	Fermín Calbetón Kalea 12, San Sebastián, Spain		Risotto, pig ear	€€–€€€				meat	modern
+Casa Ricardo	Mayor Kalea 19, San Sebastián, Spain		Mussel croquette	€€				croquetas	classic
+Casa Urola	Fermín Calbetón Kalea 20, San Sebastián, Spain		Scallops & foie	€€–€€€				seafood	modern
+Casa Vallés	Fermín Calbetón Kalea 2, San Sebastián, Spain		Gildas	€–€€				classic	anchovies
+Ganbara	San Jerónimo Kalea 19, San Sebastián, Spain		Mushrooms & jamón	€€€				mushrooms	classic
+Gandarias	31 de Agosto Kalea 23, San Sebastián, Spain		Steak & chuleta	€–€€				meat	steak
+JOSE Mari Taberna	Fermín Calbetón Kalea 14, San Sebastián, Spain		Modern creations	€€€				modern	innovative
+La Cepa de Bernardo	31 de Agosto Kalea 7, San Sebastián, Spain		Jamón + Gilda	€€				ham	classic
+La Cuchara de San Telmo	31 de Agosto Kalea 28, San Sebastián, Spain		Hot pintxos	€€–€€€				hot	modern
+La Mejillonera	Plaza de la Constitución, San Sebastián, Spain		Mussels pintxo	€€				mussels	seafood
+La Viña	31 de Agosto Kalea 3, San Sebastián, Spain		Burnt cheesecake	€€				dessert	bakery
+Txuleta	Plaza de la Constitución 11, San Sebastián, Spain		Chuleton	€€€				meat	steak
+Bar Etxeberria	Iñigo Kalea, 8, 20003 Donostia, Gipuzkoa	https://maps.app.goo.gl/RW3a4KXsZbGzWmVu5?g_st=ic				Med	7/12/2025	Craft beer, local	Small beards, next to big beards, is unique as it has craft and import beer while still attracting a mostly local crowd. Not much for pintxos though.
+Etxebe taberna	Iñigo Kalea, 6, 20003 Donostia, Gipuzkoa	https://maps.app.goo.gl/f1ufw8Jf8LBR1ZVU7?g_st=ic			2,50	Low		Local	Big beards!  Local place, good classic pinto selection. Friendly owner always there.
+Garua	Iñigo Kalea, 5, 20003 Donostia, Gipuzkoa	https://maps.app.goo.gl/fETCVY54xDy37tF58?g_st=ic				Low			
+Irrintz	Arrandegi Kalea, 12, 20003 Donostia, Gipuzkoa	https://maps.app.goo.gl/CKYfVCmkYGTcMeio9?g_st=ic	Charcutería 				7/12/2025	Local	Great little local place, sliced meats and cheeses from local sources a small but good selection of pintxos.  Owners always there
