@@ -1,4 +1,5 @@
 import os
+import tarfile
 from django.shortcuts import render, get_object_or_404, redirect
 from django.http import JsonResponse
 from django.db.models import Q
@@ -8,6 +9,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.urls import reverse_lazy
 from django.views.generic import ListView, DetailView, CreateView, UpdateView
+from django.conf import settings
 from .models import Bar, BarPhoto, UserProfile, BarComment
 from .forms import BarForm, QuickNoteForm, QuickPhotoForm, CommentForm
 
@@ -305,3 +307,41 @@ def add_comment(request, pk):
             messages.error(request, 'Please check your comment and try again.')
     
     return redirect('bars:detail', pk=pk)
+
+
+# TEMPORARY: Railway Data Upload View - REMOVE AFTER USE
+def railway_upload(request):
+    """Temporary view to upload data archive to Railway"""
+    if request.method == 'POST' and 'data_archive' in request.FILES:
+        uploaded_file = request.FILES['data_archive']
+        
+        if not uploaded_file.name.endswith('.tar.gz'):
+            messages.error(request, 'Please upload a .tar.gz file')
+            return render(request, 'bars/railway_upload.html')
+        
+        try:
+            # Save uploaded file temporarily
+            temp_path = f'/tmp/{uploaded_file.name}'
+            with open(temp_path, 'wb+') as destination:
+                for chunk in uploaded_file.chunks():
+                    destination.write(chunk)
+            
+            # Extract to /app/data (Railway volume mount)
+            if hasattr(settings, 'DATA_DIR'):
+                extract_path = settings.DATA_DIR.parent  # /app (parent of /app/data)
+            else:
+                extract_path = '/app'
+            
+            with tarfile.open(temp_path, 'r:gz') as tar:
+                tar.extractall(path=extract_path)
+            
+            # Clean up temp file
+            os.remove(temp_path)
+            
+            messages.success(request, f'Data archive extracted successfully to {extract_path}!')
+            return redirect('bars:home')
+            
+        except Exception as e:
+            messages.error(request, f'Upload failed: {str(e)}')
+    
+    return render(request, 'bars/railway_upload.html')

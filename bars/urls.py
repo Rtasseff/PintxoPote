@@ -17,4 +17,6 @@ urlpatterns = [
     path('logout/', views.user_logout, name='logout'),
     path('register/', views.user_register, name='register'),
     path('admin-login/', views.admin_login, name='admin_login'),
+    # TEMPORARY: Remove after Railway data upload
+    path('railway-upload/', views.railway_upload, name='railway_upload'),
 ]
