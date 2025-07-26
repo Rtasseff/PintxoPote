@@ -315,8 +315,10 @@ def railway_upload(request):
     if request.method == 'POST' and 'data_archive' in request.FILES:
         uploaded_file = request.FILES['data_archive']
         
-        if not uploaded_file.name.endswith('.tar.gz'):
-            messages.error(request, 'Please upload a .tar.gz file')
+        # More flexible file type checking
+        valid_extensions = ['.tar.gz', '.tgz', '.tar', '.gz']
+        if not any(uploaded_file.name.endswith(ext) for ext in valid_extensions):
+            messages.error(request, f'Please upload a tar.gz file. Got: {uploaded_file.name}')
             return render(request, 'bars/railway_upload.html')
         
         try:
@@ -326,22 +328,44 @@ def railway_upload(request):
                 for chunk in uploaded_file.chunks():
                     destination.write(chunk)
             
-            # Extract to /app/data (Railway volume mount)
+            # Extract to /app (Railway volume mount parent)
             if hasattr(settings, 'DATA_DIR'):
                 extract_path = settings.DATA_DIR.parent  # /app (parent of /app/data)
             else:
                 extract_path = '/app'
             
-            with tarfile.open(temp_path, 'r:gz') as tar:
-                tar.extractall(path=extract_path)
+            # Try different tar modes
+            try:
+                with tarfile.open(temp_path, 'r:gz') as tar:
+                    tar.extractall(path=extract_path)
+            except tarfile.ReadError:
+                with tarfile.open(temp_path, 'r:*') as tar:  # Auto-detect format
+                    tar.extractall(path=extract_path)
             
             # Clean up temp file
             os.remove(temp_path)
             
-            messages.success(request, f'Data archive extracted successfully to {extract_path}!')
+            # Verify extraction worked
+            data_path = os.path.join(extract_path, 'data')
+            if os.path.exists(data_path):
+                db_path = os.path.join(data_path, 'db.sqlite3')
+                uploads_path = os.path.join(data_path, 'uploads')
+                status = f'✅ Data extracted to {extract_path}!'
+                if os.path.exists(db_path):
+                    status += f' Database found: {os.path.getsize(db_path)} bytes.'
+                if os.path.exists(uploads_path):
+                    photo_count = len([f for f in os.listdir(os.path.join(uploads_path, 'bars')) if f.endswith('.jpg')])
+                    status += f' Found {photo_count} photos.'
+                messages.success(request, status)
+            else:
+                messages.warning(request, f'Archive extracted but data/ folder not found in {extract_path}')
+            
             return redirect('bars:home')
             
         except Exception as e:
             messages.error(request, f'Upload failed: {str(e)}')
+            # Clean up on error
+            if os.path.exists(temp_path):
+                os.remove(temp_path)
     
     return render(request, 'bars/railway_upload.html')
