@@ -57,6 +57,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
+    "whitenoise.middleware.WhiteNoiseMiddleware",  # For static file serving
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
@@ -101,6 +102,10 @@ MEDIA_ROOT = DATA_DIR / "uploads"
 MEDIA_URL = "/media/"
 # Make sure MEDIA_ROOT exists at startup (works locally & in Railway)
 MEDIA_ROOT.mkdir(parents=True, exist_ok=True)
+
+# WhiteNoise configuration for serving media files in production
+WHITENOISE_USE_FINDERS = True
+WHITENOISE_AUTOREFRESH = True
 
 
 # Password validation

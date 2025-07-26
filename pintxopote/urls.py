@@ -25,5 +25,6 @@ urlpatterns = [
     path("", include("bars.urls")),
 ]
 
-if settings.DEBUG:
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+# Serve media files in development and production
+# In a larger production setup, you'd use a proper web server (nginx) or CDN
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
