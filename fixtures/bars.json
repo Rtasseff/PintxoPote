@@ -1,0 +1,1342 @@
+[
+{
+  "model": "bars.bar",
+  "pk": "004141ff-29a9-4975-a1f7-4aadc08b2a76",
+  "fields": {
+    "name": "La Mejillonera",
+    "address": "Plaza de la Constitución, San Sebastián, Spain",
+    "notes": "seafood",
+    "latitude": null,
+    "longitude": null,
+    "map_link": "",
+    "specialties": "Mussels pintxo",
+    "price_range": "€€",
+    "cana_price": null,
+    "crowd_level": "",
+    "last_visited": null,
+    "tags": "mussels",
+    "created_at": "2025-07-26T22:05:20.319Z",
+    "updated_at": "2025-07-26T22:05:20.319Z"
+  }
+},
+{
+  "model": "bars.bar",
+  "pk": "01d700ea-416e-4ad0-bce6-793b9af06e80",
+  "fields": {
+    "name": "Picaro",
+    "address": "",
+    "notes": "Drink: Caña y gilda - 4.90 Over the bridge and near the beach i found a corner with several small bars. I stoped at one Food: which was more if a small restaurant then a pintxo bar.  Has nice little outside space but I am not sure if the sun would ever shine directly here given the taller buildings and narrow street.  Maybe at high noon.  I am a little depressed today and I am trying to remind my self how Lucky i am, at least Until the bank takes the last lf our miney. Service was a bit slow and I felt ignored, the bread and cheese were dried out. The outside is Food: nice.  The menu has a list of pintxos not on display, with the cheapest being croquettes at 2.50.  I like to go with whats in the case and right now I am trying to train myself into enjoying fish. The Vibe: Gildas are a local clasic and easy for me given the vinegary peppers.",
+    "latitude": null,
+    "longitude": null,
+    "map_link": "",
+    "specialties": "",
+    "price_range": "",
+    "cana_price": null,
+    "crowd_level": "",
+    "last_visited": null,
+    "tags": "",
+    "created_at": "2025-07-26T22:05:20.323Z",
+    "updated_at": "2025-07-26T22:05:20.323Z"
+  }
+},
+{
+  "model": "bars.bar",
+  "pk": "02bd5f35-df12-4146-802f-66cc766c5ac2",
+  "fields": {
+    "name": "Bar Nestor",
+    "address": "Arrandegi Kalea 11, San Sebastián, Spain",
+    "notes": "Vibe: classic 7:45p on 20220115 Old town Food: Tortilla and cana 4.40.  Good size for both Food: *best tortilla Food: Well known for their tortillas pinxo, you typically have to order in advance to reserve a slice. Cecilia and I were super lucky to show up our first time and to have two spits left.  15 min later Food: right out of the oven and on our plate. And it is the best tortilla so far!  It is a runny version, so the Food: fork and plate are critial!  Future reference, the tortilla list starts at 7p.",
+    "latitude": null,
+    "longitude": null,
+    "map_link": "",
+    "specialties": "Tortilla + ribeye",
+    "price_range": "€€€",
+    "cana_price": null,
+    "crowd_level": "",
+    "last_visited": "2022-01-15",
+    "tags": "meat",
+    "created_at": "2025-07-26T22:05:20.286Z",
+    "updated_at": "2025-07-26T22:05:20.286Z"
+  }
+},
+{
+  "model": "bars.bar",
+  "pk": "07e4853e-34bd-4374-9c73-dd5e90f82281",
+  "fields": {
+    "name": "Narru",
+    "address": "",
+    "notes": "20220304 13h00 Drink: Caña y chestora - 5.80 Vibe: A fancyish resturant a little outside parte vajha.   Went here for a nice lunch once.  Great bread Food: service!  Came back to sit on the front terrace.  Unfortunately no actual pintxos but they have Food: medio rationas,, which is basically two pintxos.  Price was better then expected.",
+    "latitude": null,
+    "longitude": null,
+    "map_link": "",
+    "specialties": "",
+    "price_range": "",
+    "cana_price": null,
+    "crowd_level": "",
+    "last_visited": "2022-03-04",
+    "tags": "",
+    "created_at": "2025-07-26T22:05:20.321Z",
+    "updated_at": "2025-07-26T22:05:20.321Z"
+  }
+},
+{
+  "model": "bars.bar",
+  "pk": "0cf86f41-a29f-4e33-a2c3-10f2fc925e8d",
+  "fields": {
+    "name": "Casa Vergara",
+    "address": "",
+    "notes": "Parte beja 12:30 20220216 Cana jamón tomate y queso - 6 *great choices *best croquettes Food: Fun inside atmo.  Poppy jazzy US music. A bit fancier then the typical pintxo bar. The choices are great.  Lots of them and of different types.  Gives options if you are getting a bit tired of the staples - not that you could. They even had the sea urchant *insert relavance here. Ask for a menu for hot ones.  They even have a guy with the ccheif hat. Minu oyster bar and lots of seating for full meal. Also the croquettes are cooked to order, not microwaved.",
+    "latitude": null,
+    "longitude": null,
+    "map_link": "",
+    "specialties": "",
+    "price_range": "",
+    "cana_price": null,
+    "crowd_level": "",
+    "last_visited": "2022-02-16",
+    "tags": "",
+    "created_at": "2025-07-26T22:05:20.303Z",
+    "updated_at": "2025-07-26T22:05:20.303Z"
+  }
+},
+{
+  "model": "bars.bar",
+  "pk": "10f746cc-be04-413e-bbe3-504ca87e83dd",
+  "fields": {
+    "name": "Baluarte",
+    "address": "",
+    "notes": "Parte vajha 1p 20220210 Vino tinto y tortila - 4:30 *good place to sit Vibe: Fancy place but the prices are pretty standard.  Great space outside and inside there are Food: couches. Unfortunately the tortilla was freezing cold and there was no offer to warm it. Cecilia got a good looking ghilda.  One of the best I have seen",
+    "latitude": null,
+    "longitude": null,
+    "map_link": "",
+    "specialties": "",
+    "price_range": "",
+    "cana_price": null,
+    "crowd_level": "",
+    "last_visited": "2022-02-10",
+    "tags": "",
+    "created_at": "2025-07-26T22:05:20.274Z",
+    "updated_at": "2025-07-26T22:05:20.274Z"
+  }
+},
+{
+  "model": "bars.bar",
+  "pk": "15d1dad9-5d4a-48a5-b02e-169f90c2ec5a",
+  "fields": {
+    "name": "Bar irrintz",
+    "address": "",
+    "notes": "20220408 12h30 Parte vajha Drink: Caña y jamón - 5.30 Food: A fairly classic pintxo setup very small place with a pair of tables outside. typical with a few locals Food: hanging around.  It has a very small pintxo selection but they have several cured meats they will Drink: slice for you. A generous amount of good quality jamón on my pintxo. Unfortunately the caña pour was rather small.",
+    "latitude": null,
+    "longitude": null,
+    "map_link": "",
+    "specialties": "",
+    "price_range": "",
+    "cana_price": null,
+    "crowd_level": "",
+    "last_visited": "2022-04-08",
+    "tags": "",
+    "created_at": "2025-07-26T22:05:20.291Z",
+    "updated_at": "2025-07-26T22:05:20.292Z"
+  }
+},
+{
+  "model": "bars.bar",
+  "pk": "1ad97346-6a98-4916-8755-15b2daf4e4ca",
+  "fields": {
+    "name": "Bar Haizea",
+    "address": "",
+    "notes": "20220223 19:30 Parte baja Drink: Caña y huevo con mayonesa Place right next to ours. Nice little lical nook.  Only one table outside and a small inside but it is Vibe: good to grab a bite.  It is particularly popular for an early aperitivo or coffee.",
+    "latitude": null,
+    "longitude": null,
+    "map_link": "",
+    "specialties": "",
+    "price_range": "",
+    "cana_price": null,
+    "crowd_level": "",
+    "last_visited": "2022-02-23",
+    "tags": "",
+    "created_at": "2025-07-26T22:05:20.283Z",
+    "updated_at": "2025-07-26T22:05:20.283Z"
+  }
+},
+{
+  "model": "bars.bar",
+  "pk": "23b1df39-b626-4ef0-b775-d97bb20d254f",
+  "fields": {
+    "name": "La Viña",
+    "address": "31 de Agosto Kalea 3, San Sebastián, Spain",
+    "notes": "bakery",
+    "latitude": null,
+    "longitude": null,
+    "map_link": "",
+    "specialties": "Burnt cheesecake",
+    "price_range": "€€",
+    "cana_price": null,
+    "crowd_level": "",
+    "last_visited": null,
+    "tags": "dessert",
+    "created_at": "2025-07-26T22:05:20.320Z",
+    "updated_at": "2025-07-26T22:05:20.320Z"
+  }
+},
+{
+  "model": "bars.bar",
+  "pk": "259f2898-3d1b-4766-a88d-48cc67b4c4aa",
+  "fields": {
+    "name": "Bar Martinez",
+    "address": "Kale Nagusia 13, 20003 Donostia-San Sebastián",
+    "notes": "Great for breakfast pintxos and coffee. Opens early, perfect for starting the day.",
+    "latitude": null,
+    "longitude": null,
+    "map_link": "",
+    "specialties": "Breakfast pintxos, Coffee",
+    "price_range": "€",
+    "cana_price": "1.80",
+    "crowd_level": "quiet",
+    "last_visited": "2025-07-19",
+    "tags": "breakfast, coffee, early-opening, budget-friendly",
+    "created_at": "2025-07-22T14:59:00.233Z",
+    "updated_at": "2025-07-22T14:59:00.233Z"
+  }
+},
+{
+  "model": "bars.bar",
+  "pk": "2ba351ce-b074-497a-a5e4-201ce7afb1a0",
+  "fields": {
+    "name": "Bar Bergara",
+    "address": "Portu Kalea 8, San Sebastián, Spain",
+    "notes": "Vibe: fancy",
+    "latitude": null,
+    "longitude": null,
+    "map_link": "",
+    "specialties": "Foie gras",
+    "price_range": "€€€",
+    "cana_price": null,
+    "crowd_level": "",
+    "last_visited": null,
+    "tags": "gourmet",
+    "created_at": "2025-07-26T22:05:20.278Z",
+    "updated_at": "2025-07-26T22:05:20.278Z"
+  }
+},
+{
+  "model": "bars.bar",
+  "pk": "2f74b50d-884d-47eb-b654-52d2e905409c",
+  "fields": {
+    "name": "Aita mari",
+    "address": "",
+    "notes": "20220412 1h00 Parte vajha Drink: Caña y bolla de carne - 5.40 Food: Mainly a moderately priced restaurant, this place does have a few pintxo offerings including a very Food: thick tortilla. They do have a nice selection of fancier hot pintxos  and raciones. At the end of the old city by la concha.  Wind was really picking up, glad we had our new Donostia rain jackets.",
+    "latitude": null,
+    "longitude": null,
+    "map_link": "",
+    "specialties": "",
+    "price_range": "",
+    "cana_price": null,
+    "crowd_level": "",
+    "last_visited": "2022-04-12",
+    "tags": "",
+    "created_at": "2025-07-26T22:05:20.273Z",
+    "updated_at": "2025-07-26T22:05:20.273Z"
+  }
+},
+{
+  "model": "bars.bar",
+  "pk": "3767a04f-f8db-492e-9ce5-b0a498ba38ff",
+  "fields": {
+    "name": "Bar Etxeberria",
+    "address": "Iñigo Kalea, 8, 20003 Donostia, Gipuzkoa",
+    "notes": "Food: Small beards, next to big beards, is unique as it has craft and import beer while still attracting a mostly local crowd. Not much for pintxos though.",
+    "latitude": null,
+    "longitude": null,
+    "map_link": "https://maps.app.goo.gl/RW3a4KXsZbGzWmVu5?g_st=ic",
+    "specialties": "",
+    "price_range": "",
+    "cana_price": null,
+    "crowd_level": "Med",
+    "last_visited": null,
+    "tags": "Craft beer, local",
+    "created_at": "2025-07-26T22:05:20.281Z",
+    "updated_at": "2025-07-26T22:05:20.281Z"
+  }
+},
+{
+  "model": "bars.bar",
+  "pk": "3a2735c7-1dca-43ef-8b09-caaa6fad0b7b",
+  "fields": {
+    "name": "Igeldo jatetxea",
+    "address": "",
+    "notes": "20220203 port by la concha Txakoli y Gilda - 4.8 *great view Food: No beer on tap and a bit expensive for pintxos.  Most things come in multiples ñile raciones or full plates.  But the view to peer is fantastic and it is the only seaside place open right now - maybe due to the season or covid.",
+    "latitude": null,
+    "longitude": null,
+    "map_link": "",
+    "specialties": "",
+    "price_range": "",
+    "cana_price": null,
+    "crowd_level": "",
+    "last_visited": "2022-02-03",
+    "tags": "",
+    "created_at": "2025-07-26T22:05:20.310Z",
+    "updated_at": "2025-07-26T22:05:20.310Z"
+  }
+},
+{
+  "model": "bars.bar",
+  "pk": "3a60386e-776d-4478-8df8-45245b09b2c2",
+  "fields": {
+    "name": "Casa Urola",
+    "address": "Fermín Calbetón Kalea 20, San Sebastián, Spain",
+    "notes": "modern 20220304 20h30 Parte vajha Zthurito y alcachofa frío- 3.80 *creative offerings Ran into another couple frome Cinci, guy was a chem e and the lady worked at a flavor house. What a coincidence.  Got to tell them about our part in the great resignation!  The place it self is a quaint little spot, at least down in the bar.  Full resturant upstairs but I have not been. They had Food: several novel offerings.  Although i did not get it they had a small txuleta pintxo that looked great. My little veggie cracker was actually on a bed of philo dough.  Very good. Cecilia got a mini tartaleta hongos.",
+    "latitude": null,
+    "longitude": null,
+    "map_link": "",
+    "specialties": "Scallops & foie",
+    "price_range": "€€–€€€",
+    "cana_price": null,
+    "crowd_level": "",
+    "last_visited": "2022-03-04",
+    "tags": "seafood",
+    "created_at": "2025-07-26T22:05:20.301Z",
+    "updated_at": "2025-07-26T22:05:20.301Z"
+  }
+},
+{
+  "model": "bars.bar",
+  "pk": "3af40ad9-2a4e-4338-97dc-27d1cdb1527b",
+  "fields": {
+    "name": "Atari",
+    "address": "Mayor 18, 20003 Donostia-San Sebastián",
+    "notes": "Hidden gem with amazing mushroom risotto pintxos. Quieter than most places in the old town.",
+    "latitude": null,
+    "longitude": null,
+    "map_link": "",
+    "specialties": "Mushroom risotto, Seasonal pintxos",
+    "price_range": "€€",
+    "cana_price": "2.80",
+    "crowd_level": "quiet",
+    "last_visited": "2025-07-15",
+    "tags": "hidden-gem, mushrooms, seasonal, quiet",
+    "created_at": "2025-07-22T14:59:00.232Z",
+    "updated_at": "2025-07-22T14:59:00.232Z"
+  }
+},
+{
+  "model": "bars.bar",
+  "pk": "3eafb88f-f112-4b4b-b34b-a89bbdfe192e",
+  "fields": {
+    "name": "Goiz Argi",
+    "address": "",
+    "notes": "20220302 20h00 Parte vajha Drink: Caña y pintxo con jamón, champiñones, peminto y huevo - 6.10 Nice little place. Good selection particularly if you look at the board for hot options.  There is a good charicter here that is difficult to verbalize, but it is overly expensive, particularly for the small beer pour. Although Cecilia got something unique that she rather liked.",
+    "latitude": null,
+    "longitude": null,
+    "map_link": "",
+    "specialties": "",
+    "price_range": "",
+    "cana_price": null,
+    "crowd_level": "",
+    "last_visited": "2022-03-02",
+    "tags": "",
+    "created_at": "2025-07-26T22:05:20.309Z",
+    "updated_at": "2025-07-26T22:05:20.309Z"
+  }
+},
+{
+  "model": "bars.bar",
+  "pk": "45b647c4-c1be-4bdc-81b8-17fb9f20c69b",
+  "fields": {
+    "name": "Bar Martinez",
+    "address": "31 de Agosto Kalea 9, San Sebastián, Spain",
+    "notes": "Vibe: classical 20220302 12:15 Parte vajha Drink: Caña y champiñones - 4:40 Good little spot with several different offerings including some on the board that are not out for show.  I have been here in the evenings and they had even more choices.  Today we stopped by on an early weekday and they were just opening.  Cery freindly to us and the dogs.",
+    "latitude": null,
+    "longitude": null,
+    "map_link": "",
+    "specialties": "Bonito & artichoke",
+    "price_range": "€€",
+    "cana_price": null,
+    "crowd_level": "",
+    "last_visited": "2022-03-02",
+    "tags": "fish",
+    "created_at": "2025-07-26T22:05:20.284Z",
+    "updated_at": "2025-07-26T22:05:20.284Z"
+  }
+},
+{
+  "model": "bars.bar",
+  "pk": "4639ab60-9857-4730-8065-f09ea29f90a6",
+  "fields": {
+    "name": "Urgulleko Polboriña",
+    "address": "",
+    "notes": "20220404 12h30 Urgull Drink: Caña y 1/2 humas - 5.80 *it is a bar in a fort on a hill Food: Not really a pintxo bar, but come one.  It is a bar in a fort on a hill. They have snacks. We got some hummas (7, 3.5 each).  But you come here for the view.  Also, its a nice short hike up the hill",
+    "latitude": null,
+    "longitude": null,
+    "map_link": "",
+    "specialties": "",
+    "price_range": "",
+    "cana_price": null,
+    "crowd_level": "",
+    "last_visited": "2022-04-04",
+    "tags": "",
+    "created_at": "2025-07-26T22:05:20.328Z",
+    "updated_at": "2025-07-26T22:05:20.328Z"
+  }
+},
+{
+  "model": "bars.bar",
+  "pk": "491605ab-3d79-4ed6-b35c-3e5ff8b2e559",
+  "fields": {
+    "name": "Lasarte",
+    "address": "",
+    "notes": "20220224 13:00 Parte vieja Drink: Caña y pintxo con chestora *novel selección Nice looking place with a small splash of elegance, well as mich as you can have in a place with Food: an electronic slot machine.  The pintxo selección is not large but it is diverse.  Mostly various topimgs on bread.  Some really good stuff. They also have fried gambas.  Never been for lunch, but there is a larger back room for full meals. I just noted at the end that the also have a card with Food: additional pintxo made ro order.",
+    "latitude": null,
+    "longitude": null,
+    "map_link": "",
+    "specialties": "",
+    "price_range": "",
+    "cana_price": null,
+    "crowd_level": "",
+    "last_visited": "2022-02-24",
+    "tags": "",
+    "created_at": "2025-07-26T22:05:20.321Z",
+    "updated_at": "2025-07-26T22:05:20.321Z"
+  }
+},
+{
+  "model": "bars.bar",
+  "pk": "4d6eace8-e609-4291-9735-6e362aeba4fd",
+  "fields": {
+    "name": "Tanger Bar",
+    "address": "",
+    "notes": "20220222 12:50 boulevard Drink: Caña y tortilla chorizo Food: Small place for lunch or pintxos.  Lots of choices on the tortilla. On a nice day they have a rather large door to open straight frome the bar to the outside.  You can find several regulars hangout in this space getting aperitivos.",
+    "latitude": null,
+    "longitude": null,
+    "map_link": "",
+    "specialties": "",
+    "price_range": "",
+    "cana_price": null,
+    "crowd_level": "",
+    "last_visited": "2022-02-22",
+    "tags": "",
+    "created_at": "2025-07-26T22:05:20.325Z",
+    "updated_at": "2025-07-26T22:05:20.325Z"
+  }
+},
+{
+  "model": "bars.bar",
+  "pk": "50822127-d644-429c-9f8e-bb6450e37305",
+  "fields": {
+    "name": "Donostiarra",
+    "address": "",
+    "notes": "20220318 18h30 Parte vajha Cana y empanada - 5.20 *good selection *very creative Note that evening aperitivo starts at 7:30. While, it has been a while.  Incapacitated for more than a week by my short comings, I am fianally back at it.  This fisrt place out is a pretty cool twist, I guess 2020 hip is what comes to mind. It has a sign that says there is no wifi - talk to each other. Food: Got to get off my phone. A bit fancy or different it offer pintxos plus a cheese selection and oyster bar. Still not too pricey. They also have a gintonaria.  Coming back for that!  And 12 monkeys memorabilia on the wall.",
+    "latitude": null,
+    "longitude": null,
+    "map_link": "",
+    "specialties": "",
+    "price_range": "",
+    "cana_price": null,
+    "crowd_level": "",
+    "last_visited": "2022-03-18",
+    "tags": "",
+    "created_at": "2025-07-26T22:05:20.303Z",
+    "updated_at": "2025-07-26T22:05:20.303Z"
+  }
+},
+{
+  "model": "bars.bar",
+  "pk": "564e8dfc-9818-418c-8bdf-79d4953d32c5",
+  "fields": {
+    "name": "Ordizia",
+    "address": "",
+    "notes": "20220405 12:30 Parte vajha Drink: Caña Bollo con carne - 4.20 Definitely not a tourist place.  A small place filled with regulars. In some cases the bar tender Food: already seems to have drinks ready for some goups. Still a good set of traditional pintxo offerings at a good price and a lively atmosphere.",
+    "latitude": null,
+    "longitude": null,
+    "map_link": "",
+    "specialties": "",
+    "price_range": "",
+    "cana_price": null,
+    "crowd_level": "",
+    "last_visited": "2022-04-05",
+    "tags": "",
+    "created_at": "2025-07-26T22:05:20.322Z",
+    "updated_at": "2025-07-26T22:05:20.322Z"
+  }
+},
+{
+  "model": "bars.bar",
+  "pk": "5f4ce3d8-0abe-45bc-a000-12dc28ef168d",
+  "fields": {
+    "name": "Bar Txalota",
+    "address": "Fermín Calbetón Kalea 4, San Sebastián, Spain",
+    "notes": "Vibe: classic",
+    "latitude": null,
+    "longitude": null,
+    "map_link": "",
+    "specialties": "Fried squid, mussels",
+    "price_range": "€€€",
+    "cana_price": null,
+    "crowd_level": "",
+    "last_visited": null,
+    "tags": "seafood",
+    "created_at": "2025-07-26T22:05:20.288Z",
+    "updated_at": "2025-07-26T22:05:20.288Z"
+  }
+},
+{
+  "model": "bars.bar",
+  "pk": "6027c9bf-4f14-49c7-8cfe-4f14ac0996b6",
+  "fields": {
+    "name": "Bartolo",
+    "address": "",
+    "notes": "20220402 21:00 Parte vajha Food: Cana y tortilla de ropa vieja 5.70 A bit turisticy with food pictures all over the front.  It is bigger and lots of seating.  They seem to Food: facor folks seated and being served.  Decent compliment of pintxos. Pop music, or is that Drink: techcno. Cañas are a bit pricey.",
+    "latitude": null,
+    "longitude": null,
+    "map_link": "",
+    "specialties": "",
+    "price_range": "",
+    "cana_price": null,
+    "crowd_level": "",
+    "last_visited": "2022-04-02",
+    "tags": "",
+    "created_at": "2025-07-26T22:05:20.294Z",
+    "updated_at": "2025-07-26T22:05:20.294Z"
+  }
+},
+{
+  "model": "bars.bar",
+  "pk": "64c37665-b932-4f33-8f74-106bd9f22f79",
+  "fields": {
+    "name": "La Cepa de Bernardo",
+    "address": "31 de Agosto Kalea 7, San Sebastián, Spain",
+    "notes": "Vibe: classic",
+    "latitude": null,
+    "longitude": null,
+    "map_link": "",
+    "specialties": "Jamón + Gilda",
+    "price_range": "€€",
+    "cana_price": null,
+    "crowd_level": "",
+    "last_visited": null,
+    "tags": "ham",
+    "created_at": "2025-07-26T22:05:20.316Z",
+    "updated_at": "2025-07-26T22:05:20.316Z"
+  }
+},
+{
+  "model": "bars.bar",
+  "pk": "69721da4-cb40-433a-abaa-bd4a2e014231",
+  "fields": {
+    "name": "Restaurante munto jatetxed",
+    "address": "",
+    "notes": "Old town Drink: Caña y pitxo morcilla con pimientos huevo qual - 4.90 Another place in the ild town.  Downstairs they do a silid menu for lunch - nothing fance but good Food: stapeles at a good price including wine.  Up top is the pintxo bar.  Pretty good offerings, no croquetas but multiple tortias and several variations of stuff on a peice bread.  Mine was pregood. They take it in back, heat it up and add some sauce",
+    "latitude": null,
+    "longitude": null,
+    "map_link": "",
+    "specialties": "",
+    "price_range": "",
+    "cana_price": null,
+    "crowd_level": "",
+    "last_visited": null,
+    "tags": "",
+    "created_at": "2025-07-26T22:05:20.324Z",
+    "updated_at": "2025-07-26T22:05:20.324Z"
+  }
+},
+{
+  "model": "bars.bar",
+  "pk": "6a953953-7fd9-4950-af0d-2a8b230b66ef",
+  "fields": {
+    "name": "Kukurruku",
+    "address": "",
+    "notes": "20220306 13h30 Parte vajha Drink: Caña y croquetas- 4.00 *best croquettes Vibe: *classic Food: In this little basque bar, the quintessential pintxo bar thatbis often over flowing with older Spanish dudes at Aperotivo time, they offer Croquetas (and other fryables) that are cooked right to order. Very good. Also they do chickens to go off the rotisserie.  I will try for next Sundayunch and let tou know - got one, very good, comes with its own juces in a beer bottle. My kind of a protest! 20220306 13h30 Parte vajha Txocoli y bollo de carne *creative offerings good quality If decedence was a place you could walk into, this is it. It actually had a Micheleen star.  Great serving sizes, all kinds of creative stuff.  Not just seafood either! A hiden secret - ham and cheese in a fried container. Oh ya.",
+    "latitude": null,
+    "longitude": null,
+    "map_link": "",
+    "specialties": "",
+    "price_range": "",
+    "cana_price": null,
+    "crowd_level": "",
+    "last_visited": "2022-03-06",
+    "tags": "",
+    "created_at": "2025-07-26T22:05:20.315Z",
+    "updated_at": "2025-07-26T22:05:20.315Z"
+  }
+},
+{
+  "model": "bars.bar",
+  "pk": "701df48a-c5a1-46f2-b0bb-106eae9cd1ec",
+  "fields": {
+    "name": "Itxar Pena",
+    "address": "",
+    "notes": "20220318 19h00 Parte vajha Food: Cana y tortilla de ropa vieja 5.70 *good selection A bit more upscale place.  I was first brought here for a plate of the mushrooms. Today I went with Food: a tortilla of ropa vieja- this last part (old clothes) refers to leftovers.  It is not leftovers:) tortilla is a thin one, but perfectly cooked with it runny just on the inside.",
+    "latitude": null,
+    "longitude": null,
+    "map_link": "",
+    "specialties": "",
+    "price_range": "",
+    "cana_price": null,
+    "crowd_level": "",
+    "last_visited": "2022-03-18",
+    "tags": "",
+    "created_at": "2025-07-26T22:05:20.312Z",
+    "updated_at": "2025-07-26T22:05:20.312Z"
+  }
+},
+{
+  "model": "bars.bar",
+  "pk": "746cfe71-49be-43e4-a68a-19bb4234a796",
+  "fields": {
+    "name": "Paco Bueno",
+    "address": "",
+    "notes": "Old town 20220123 Drink: Caña y gamba - 4.40 *best gamba Food: Best fried shrimp pintxo place in town.  I remember this place from my first vist 7 years ago but it Food: tool me (actually my wife) a few weeks to redecover.  Pintxos are a flat rate at 2 each and it is mostly sea food.  The shrimp has a thick breading but it is still light and crispy.  Still hot too.  Even after the afternoon rush they still have plenty.  I think the fry the sheimp all day long",
+    "latitude": null,
+    "longitude": null,
+    "map_link": "",
+    "specialties": "",
+    "price_range": "",
+    "cana_price": null,
+    "crowd_level": "",
+    "last_visited": "2022-01-23",
+    "tags": "",
+    "created_at": "2025-07-26T22:05:20.322Z",
+    "updated_at": "2025-07-26T22:05:20.322Z"
+  }
+},
+{
+  "model": "bars.bar",
+  "pk": "7f202d03-86db-4665-b7af-0a7975805f76",
+  "fields": {
+    "name": "Bar Nestor",
+    "address": "Kale Nagusia 11, 20003 Donostia-San Sebastián",
+    "notes": "Famous for their tortilla and txuleta. Always packed but worth the wait. Cash only!",
+    "latitude": null,
+    "longitude": null,
+    "map_link": "https://maps.google.com/?q=Bar+Nestor+San+Sebastian",
+    "specialties": "Tortilla de patatas, Txuleta",
+    "price_range": "€€",
+    "cana_price": "2.50",
+    "crowd_level": "crowded",
+    "last_visited": "2025-07-20",
+    "tags": "traditional, tortilla, cash-only, famous",
+    "created_at": "2025-07-22T14:59:00.231Z",
+    "updated_at": "2025-07-22T14:59:00.231Z"
+  }
+},
+{
+  "model": "bars.bar",
+  "pk": "7f37e47a-e53c-4fc3-875c-4af3a4a0d823",
+  "fields": {
+    "name": "Txalupa",
+    "address": "",
+    "notes": "20220314 19h25 Parte vajha Vino tinto y croqueta jambon Food: Crazy little rock bar.  Got a neon of the lips from The Rolling Stones.  Nearly no pintxo options here but they do have a kitchen and they do make up some really good (and affordable) croquettes - one serveing comes with two and they are fried in the moment not microwaved.  Also natchos and some plates. Fun place",
+    "latitude": null,
+    "longitude": null,
+    "map_link": "",
+    "specialties": "",
+    "price_range": "",
+    "cana_price": null,
+    "crowd_level": "",
+    "last_visited": "2022-03-14",
+    "tags": "",
+    "created_at": "2025-07-26T22:05:20.326Z",
+    "updated_at": "2025-07-26T22:05:20.326Z"
+  }
+},
+{
+  "model": "bars.bar",
+  "pk": "89652631-ca2d-4054-a336-116c44cbfa90",
+  "fields": {
+    "name": "Bar Central",
+    "address": "Santiago Kalea 2, San Sebastián, Spain",
+    "notes": "mixed",
+    "latitude": null,
+    "longitude": null,
+    "map_link": "",
+    "specialties": "Mixed pintxos",
+    "price_range": "€€",
+    "cana_price": null,
+    "crowd_level": "",
+    "last_visited": null,
+    "tags": "classic",
+    "created_at": "2025-07-26T22:05:20.279Z",
+    "updated_at": "2025-07-26T22:05:20.279Z"
+  }
+},
+{
+  "model": "bars.bar",
+  "pk": "8e96a98e-3a8c-4b6f-b3bf-2f2ad684ff8b",
+  "fields": {
+    "name": "Bodega donostiarra",
+    "address": "",
+    "notes": "20220406 12h30 Parte vajha Drink: Caña y jamón y queso - 4.50 *clasic Food: A prototypical pintxo bar.  A small place with standard choices, a few seats outside, a window to order from, TV to watch the game on and the same bartender day in and day out.  A place I like to frequent.",
+    "latitude": null,
+    "longitude": null,
+    "map_link": "",
+    "specialties": "",
+    "price_range": "",
+    "cana_price": null,
+    "crowd_level": "",
+    "last_visited": "2022-04-06",
+    "tags": "",
+    "created_at": "2025-07-26T22:05:20.296Z",
+    "updated_at": "2025-07-26T22:05:20.296Z"
+  }
+},
+{
+  "model": "bars.bar",
+  "pk": "98f08377-b2b1-4a5a-ba50-2462691822e6",
+  "fields": {
+    "name": "Bar Sport",
+    "address": "Fermín Calbetón Kalea 10, San Sebastián, Spain",
+    "notes": "stall Parte vajha 20220304 20h00 Zthurito y mini hamburguesas de chuleta- 4.90 *best foie a la plancha, creative choices, good quality A place well know for its best foie a la plancha. This time around I did not get it, although i have had it before.  I could not resist this cool mini burger made from steak!   Cecilia got a crep de txangurro - crab.",
+    "latitude": null,
+    "longitude": null,
+    "map_link": "",
+    "specialties": "Gildas, tortilla, foie",
+    "price_range": "€–€€",
+    "cana_price": null,
+    "crowd_level": "",
+    "last_visited": "2022-03-04",
+    "tags": "classic",
+    "created_at": "2025-07-26T22:05:20.287Z",
+    "updated_at": "2025-07-26T22:05:20.287Z"
+  }
+},
+{
+  "model": "bars.bar",
+  "pk": "9be83dc8-63f2-4acb-89a5-22f73a72cf15",
+  "fields": {
+    "name": "Casa Ricardo",
+    "address": "Mayor Kalea 19, San Sebastián, Spain",
+    "notes": "Vibe: classic",
+    "latitude": null,
+    "longitude": null,
+    "map_link": "",
+    "specialties": "Mussel croquette",
+    "price_range": "€€",
+    "cana_price": null,
+    "crowd_level": "",
+    "last_visited": null,
+    "tags": "croquetas",
+    "created_at": "2025-07-26T22:05:20.300Z",
+    "updated_at": "2025-07-26T22:05:20.300Z"
+  }
+},
+{
+  "model": "bars.bar",
+  "pk": "9d2f3d1c-c6ff-4278-a41e-8fbd2d362d9d",
+  "fields": {
+    "name": "Gorriti Taberna",
+    "address": "",
+    "notes": "11:30 on 20220115 Old town San Lorenzo Food: Pepper tortilla and a Cana - 4.80 Vibe: *classic basque One of my favorite places, and right next to my home. When it just opens on Saturday there are really great offerings and just enough people to add some life.  Clearly a lot of regulars hit it up at this time.  Although it is one of the few places I have seen in the old town that keeps a reasonable offering all day. I have been here a dozen times because it is so close to my home and i like the view to people watch, but I always seemed to get charged something different.",
+    "latitude": null,
+    "longitude": null,
+    "map_link": "",
+    "specialties": "",
+    "price_range": "",
+    "cana_price": null,
+    "crowd_level": "",
+    "last_visited": "2022-01-15",
+    "tags": "",
+    "created_at": "2025-07-26T22:05:20.309Z",
+    "updated_at": "2025-07-26T22:05:20.309Z"
+  }
+},
+{
+  "model": "bars.bar",
+  "pk": "9dc072ce-154b-429a-9905-97e6693217cc",
+  "fields": {
+    "name": "Bar Ezkurra",
+    "address": "San Jerónimo Kalea 15, San Sebastián, Spain",
+    "notes": "Vibe: classic",
+    "latitude": null,
+    "longitude": null,
+    "map_link": "",
+    "specialties": "Ensaladilla rusa",
+    "price_range": "€€",
+    "cana_price": null,
+    "crowd_level": "",
+    "last_visited": null,
+    "tags": "salad",
+    "created_at": "2025-07-26T22:05:20.282Z",
+    "updated_at": "2025-07-26T22:05:20.282Z"
+  }
+},
+{
+  "model": "bars.bar",
+  "pk": "9f65e2eb-79cf-425b-ac94-3342897d2db4",
+  "fields": {
+    "name": "Bardulia",
+    "address": "",
+    "notes": "20220225 1:30 Parte vajha Drink: Caña y bolla con carne - 4.75 Food: Decet place with reasonable pintxo selection.  Not the friendliest place in town and be sure ti pay when you take the food, not after you eat.  Menues avalible in many languages.",
+    "latitude": null,
+    "longitude": null,
+    "map_link": "",
+    "specialties": "",
+    "price_range": "",
+    "cana_price": null,
+    "crowd_level": "",
+    "last_visited": "2022-02-25",
+    "tags": "",
+    "created_at": "2025-07-26T22:05:20.292Z",
+    "updated_at": "2025-07-26T22:05:20.292Z"
+  }
+},
+{
+  "model": "bars.bar",
+  "pk": "a1c6eaf1-7b1b-4333-a48b-11873f333b6f",
+  "fields": {
+    "name": "Txuleta",
+    "address": "Plaza de la Constitución 11, San Sebastián, Spain",
+    "notes": "steak",
+    "latitude": null,
+    "longitude": null,
+    "map_link": "",
+    "specialties": "Chuleton",
+    "price_range": "€€€",
+    "cana_price": null,
+    "crowd_level": "",
+    "last_visited": null,
+    "tags": "meat",
+    "created_at": "2025-07-26T22:05:20.328Z",
+    "updated_at": "2025-07-26T22:05:20.328Z"
+  }
+},
+{
+  "model": "bars.bar",
+  "pk": "a618a748-98ab-454c-addf-b118500b7f94",
+  "fields": {
+    "name": "Bar Aralar",
+    "address": "",
+    "notes": "20220408 21h30 Parte vajha Drink: Zurito y chicken wings - 4.00 Food: One of those places where tou have to fill out a form by number for ordering your pintxos.  It helps Food: with order particularly if tou want to get several pintxos at once. But its not my style. They are also sticklers for people sitting as opposed to the typical free for all.",
+    "latitude": null,
+    "longitude": null,
+    "map_link": "",
+    "specialties": "",
+    "price_range": "",
+    "cana_price": null,
+    "crowd_level": "",
+    "last_visited": "2022-04-08",
+    "tags": "",
+    "created_at": "2025-07-26T22:05:20.275Z",
+    "updated_at": "2025-07-26T22:05:20.275Z"
+  }
+},
+{
+  "model": "bars.bar",
+  "pk": "a7733f77-31bb-4244-937c-47466604676f",
+  "fields": {
+    "name": "Bar Astelena",
+    "address": "Fermín Calbetón Kalea 26, San Sebastián, Spain",
+    "notes": "Vibe: classical",
+    "latitude": null,
+    "longitude": null,
+    "map_link": "",
+    "specialties": "Fish skewers",
+    "price_range": "€€",
+    "cana_price": null,
+    "crowd_level": "",
+    "last_visited": null,
+    "tags": "fish",
+    "created_at": "2025-07-26T22:05:20.277Z",
+    "updated_at": "2025-07-26T22:05:20.277Z"
+  }
+},
+{
+  "model": "bars.bar",
+  "pk": "a9d51fda-0366-4e54-8165-d2d58e441fd7",
+  "fields": {
+    "name": "Beharri",
+    "address": "Narrika Kalea 2, San Sebastián, Spain",
+    "notes": "cider-house Old town 20220126 18h Drink: Caña y jamón - 4.9 *cidarea Walking with dogs abd Cecilia and just stopped randomly.  A snak before cooking for dinner. Looks to be a sidrería",
+    "latitude": null,
+    "longitude": null,
+    "map_link": "",
+    "specialties": "Cider & cheese balls",
+    "price_range": "€€",
+    "cana_price": null,
+    "crowd_level": "",
+    "last_visited": "2022-01-26",
+    "tags": "cider",
+    "created_at": "2025-07-26T22:05:20.295Z",
+    "updated_at": "2025-07-26T22:05:20.295Z"
+  }
+},
+{
+  "model": "bars.bar",
+  "pk": "aa8a78f1-a106-4793-9422-b87680269cbd",
+  "fields": {
+    "name": "Txakolina",
+    "address": "",
+    "notes": "9:45p on 20220115 Old town Pinxo jamon & caso and cana 5.40. *nice atmosphere creative offerings Vibe: Some fancy ham cheese combinations.  Looks like a good and reasonably priced wine selection too",
+    "latitude": null,
+    "longitude": null,
+    "map_link": "",
+    "specialties": "",
+    "price_range": "",
+    "cana_price": null,
+    "crowd_level": "",
+    "last_visited": "2022-01-15",
+    "tags": "",
+    "created_at": "2025-07-26T22:05:20.326Z",
+    "updated_at": "2025-07-26T22:05:20.326Z"
+  }
+},
+{
+  "model": "bars.bar",
+  "pk": "ab034c8b-3880-464e-b69c-c8a1476e559a",
+  "fields": {
+    "name": "Restaurante zumeltzegi",
+    "address": "",
+    "notes": "20220228 21h00 parte veja Drink: Caña y caso de cabra y jamón - 5.40 Ñ Food: A bit pricy for a pintxo joint, but they do have some good quality stuff, including platos.  The chuluta looks particularly good.  There is a full restaurant downstairs.",
+    "latitude": null,
+    "longitude": null,
+    "map_link": "",
+    "specialties": "",
+    "price_range": "",
+    "cana_price": null,
+    "crowd_level": "",
+    "last_visited": "2022-02-28",
+    "tags": "",
+    "created_at": "2025-07-26T22:05:20.325Z",
+    "updated_at": "2025-07-26T22:05:20.325Z"
+  }
+},
+{
+  "model": "bars.bar",
+  "pk": "b34dfb9e-dbda-4d7b-8f79-218383452f65",
+  "fields": {
+    "name": "Casa Alcalde",
+    "address": "",
+    "notes": "20220221 12:30 parte bejo Drink: Caña y pintxo chestora - 5.60 *good selection Food: Livly music sourounds a pintxo manufacturing line.  While the choices are great the have systemtized order via a nimber system.  You can pick out want you want via number on pre printed sheets that double as a menue.  Order in bulk and they will bring it to tou table.  Service was par and food quality was ok. I could see this a a good turistas spot so you can try a lot without fumbleing all over the language.",
+    "latitude": null,
+    "longitude": null,
+    "map_link": "",
+    "specialties": "",
+    "price_range": "",
+    "cana_price": null,
+    "crowd_level": "",
+    "last_visited": "2022-02-21",
+    "tags": "",
+    "created_at": "2025-07-26T22:05:20.298Z",
+    "updated_at": "2025-07-26T22:05:20.298Z"
+  }
+},
+{
+  "model": "bars.bar",
+  "pk": "b460436e-6bc6-48a2-ae5f-a10da17578f6",
+  "fields": {
+    "name": "Bar Narrika",
+    "address": "",
+    "notes": "Food: Nice place for locals. Very tiny but fun crowd.  Small pintxo selection but good, classic offings. Actually fried not microwaved.",
+    "latitude": null,
+    "longitude": null,
+    "map_link": "",
+    "specialties": "",
+    "price_range": "",
+    "cana_price": null,
+    "crowd_level": "",
+    "last_visited": null,
+    "tags": "",
+    "created_at": "2025-07-26T22:05:20.285Z",
+    "updated_at": "2025-07-26T22:05:20.285Z"
+  }
+},
+{
+  "model": "bars.bar",
+  "pk": "b5883140-21c0-4fdc-a47d-966c271c4b74",
+  "fields": {
+    "name": "Gandarias",
+    "address": "Kale Nagusia 23, 20003 Donostia-San Sebastián",
+    "notes": "Traditional atmosphere with excellent jamón and cheese. Good value for money.",
+    "latitude": null,
+    "longitude": null,
+    "map_link": "",
+    "specialties": "Jamón ibérico, Manchego cheese, Traditional pintxos",
+    "price_range": "€€",
+    "cana_price": null,
+    "crowd_level": "medium",
+    "last_visited": "2025-07-21",
+    "tags": "traditional, jamon, cheese, good-value",
+    "created_at": "2025-07-22T14:59:00.232Z",
+    "updated_at": "2025-07-26T22:13:21.519Z"
+  }
+},
+{
+  "model": "bars.bar",
+  "pk": "bd55fa9e-21a3-47e9-89cf-d544c7ba6968",
+  "fields": {
+    "name": "Casa Vallés",
+    "address": "Fermín Calbetón Kalea 2, San Sebastián, Spain",
+    "notes": "anchovies",
+    "latitude": null,
+    "longitude": null,
+    "map_link": "",
+    "specialties": "Gildas",
+    "price_range": "€–€€",
+    "cana_price": null,
+    "crowd_level": "",
+    "last_visited": null,
+    "tags": "classic",
+    "created_at": "2025-07-26T22:05:20.302Z",
+    "updated_at": "2025-07-26T22:05:20.302Z"
+  }
+},
+{
+  "model": "bars.bar",
+  "pk": "be86922f-8cb3-4d76-a944-f10038c4d18b",
+  "fields": {
+    "name": "Gandarias",
+    "address": "31 de Agosto Kalea 23, San Sebastián, Spain",
+    "notes": "steak",
+    "latitude": null,
+    "longitude": null,
+    "map_link": "",
+    "specialties": "Steak & chuleta",
+    "price_range": "€–€€",
+    "cana_price": null,
+    "crowd_level": "",
+    "last_visited": null,
+    "tags": "meat",
+    "created_at": "2025-07-26T22:05:20.307Z",
+    "updated_at": "2025-07-26T22:05:20.307Z"
+  }
+},
+{
+  "model": "bars.bar",
+  "pk": "bf880425-a6b7-48ec-b854-c0ba0f9a5024",
+  "fields": {
+    "name": "Borda Berri",
+    "address": "Fermín Calbetón Kalea 12, San Sebastián, Spain",
+    "notes": "modern Parte vajha 20220304 20h15 Parte vajha Creantha y rizoto de untalette - 5.40 *creative offerings, fantastic quality Food: The fine dining of pintxo bars in the old town. There is nothing on the bar as all offerings are Food: made to order.  It is a bit pricey on the pintxos but the drinks are standard price.  Worth a stop.",
+    "latitude": null,
+    "longitude": null,
+    "map_link": "",
+    "specialties": "Risotto, pig ear",
+    "price_range": "€€–€€€",
+    "cana_price": null,
+    "crowd_level": "",
+    "last_visited": "2022-03-04",
+    "tags": "meat",
+    "created_at": "2025-07-26T22:05:20.297Z",
+    "updated_at": "2025-07-26T22:05:20.297Z"
+  }
+},
+{
+  "model": "bars.bar",
+  "pk": "c1ee5533-8f30-47f4-80b6-9fd1ae724465",
+  "fields": {
+    "name": "JOSE Mari Taberna",
+    "address": "Fermín Calbetón Kalea 14, San Sebastián, Spain",
+    "notes": "innovative Parte vajha 202203002 8h30 Drink: Caña y bolló con carne - 4.40 *good choices *place to regular? Food: A resturant pintxo a lace with several good options on the table, the board and the csrd.  The bollo was cery good, crisp and even a bit spicy for spain. Cecilia got a croquette and it was very goood for the price.  Still crunch and the cheese on the inside actually had some flavor!  For fun they throw a peice of jamon under the crocette. Tender is nice, seems to be regulars. Great price Food: for on pintxo made in the moment",
+    "latitude": null,
+    "longitude": null,
+    "map_link": "",
+    "specialties": "Modern creations",
+    "price_range": "€€€",
+    "cana_price": null,
+    "crowd_level": "",
+    "last_visited": null,
+    "tags": "modern",
+    "created_at": "2025-07-26T22:05:20.314Z",
+    "updated_at": "2025-07-26T22:05:20.314Z"
+  }
+},
+{
+  "model": "bars.bar",
+  "pk": "c3246b5b-161c-4e8d-abbd-6aa7bb4d58b5",
+  "fields": {
+    "name": "Etxebe taberna",
+    "address": "Iñigo Kalea, 6, 20003 Donostia, Gipuzkoa",
+    "notes": "Vibe: Big beards!  Local place, good classic pinto selection. Friendly owner always there.",
+    "latitude": null,
+    "longitude": null,
+    "map_link": "https://maps.app.goo.gl/f1ufw8Jf8LBR1ZVU7?g_st=ic",
+    "specialties": "",
+    "price_range": "",
+    "cana_price": "2.50",
+    "crowd_level": "Low",
+    "last_visited": null,
+    "tags": "Local",
+    "created_at": "2025-07-26T22:05:20.304Z",
+    "updated_at": "2025-07-26T22:05:20.304Z"
+  }
+},
+{
+  "model": "bars.bar",
+  "pk": "c5656cf4-5c0b-4ef0-bec6-76bfc80553e6",
+  "fields": {
+    "name": "Bar Txistu",
+    "address": "",
+    "notes": "11:30 on 20220115 Old town - square Pnixo  chastor and cana - 6.30 Picture is partally eaten *quality ingredients I forgot the keys to the apartment again, so the dogs and I wondered the old town.  Coco actually did really good off leash.  We stopped here for a bereak. Water for the dogs, cana for me and a shared chistorra pinxo!  Sausage was hot and bread crisp - not microwaved, had to write it down. Of course it is twice the cost! Note: got here at 1:45 and it was empty, 15 min later, it is full",
+    "latitude": null,
+    "longitude": null,
+    "map_link": "",
+    "specialties": "",
+    "price_range": "",
+    "cana_price": null,
+    "crowd_level": "",
+    "last_visited": "2022-01-15",
+    "tags": "",
+    "created_at": "2025-07-26T22:05:20.291Z",
+    "updated_at": "2025-07-26T22:05:20.291Z"
+  }
+},
+{
+  "model": "bars.bar",
+  "pk": "c72871ce-aecc-4c19-b158-f232679614e9",
+  "fields": {
+    "name": "Heme retzi",
+    "address": "",
+    "notes": "20220408 22h00 Creantha y jamón y queso - 6.10 Food: Very bright, very white. Pintxo bar crossed with a very small seafood restaurant.  You can actually Food: pick out the fresh seafood you want and watch them cook it up.  As a pintxo bar, it is pretty typical.  For some reason this place eluded us for weeeks.  We kept going sown the weong streets.  Cecilia got a cheese cake.  Although expensive, it was very interesting.  A true cheesy gureair inside!  Not your typical US cheese cake. All together, very expensive. Same group as the one star.",
+    "latitude": null,
+    "longitude": null,
+    "map_link": "",
+    "specialties": "",
+    "price_range": "",
+    "cana_price": null,
+    "crowd_level": "",
+    "last_visited": "2022-04-08",
+    "tags": "",
+    "created_at": "2025-07-26T22:05:20.310Z",
+    "updated_at": "2025-07-26T22:05:20.310Z"
+  }
+},
+{
+  "model": "bars.bar",
+  "pk": "c8f8b773-6554-4dc0-bcc9-4990f52c6ba0",
+  "fields": {
+    "name": "Ganbara",
+    "address": "San Jerónimo Kalea 19, San Sebastián, Spain",
+    "notes": "Vibe: classic 20220223 12:30 Parte beja Drink: Caña y crosanta con jamón - 5.30 Food: *best pintxo - jamón pintxo, i mean it comes on a crosant Maybe my pallet is not properly in tune with the basque, but this place’s twist on the little jamón Food: sándwich pintxo is my favorite as it is on a perfect little crescent.  As is a lot of their pintxos. If you really want the best, you need to wait until they run out of something (which they will do quickly) and then replace it with crusants right out of the oven. The best. At night it is packed but it is one of my favorite places to sit and order one thing after another.  Really a great selection all over.",
+    "latitude": null,
+    "longitude": null,
+    "map_link": "",
+    "specialties": "Mushrooms & jamón",
+    "price_range": "€€€",
+    "cana_price": null,
+    "crowd_level": "",
+    "last_visited": "2022-02-23",
+    "tags": "mushrooms",
+    "created_at": "2025-07-26T22:05:20.306Z",
+    "updated_at": "2025-07-26T22:05:20.306Z"
+  }
+},
+{
+  "model": "bars.bar",
+  "pk": "ddb4f7cd-a109-4594-8edf-f93ac529e05c",
+  "fields": {
+    "name": "Bare Bare",
+    "address": "Portu Kalea 6, San Sebastián, Spain",
+    "notes": "Vibe: classical",
+    "latitude": null,
+    "longitude": null,
+    "map_link": "",
+    "specialties": "Seafood tempura",
+    "price_range": "€€€",
+    "cana_price": null,
+    "crowd_level": "",
+    "last_visited": null,
+    "tags": "seafood",
+    "created_at": "2025-07-26T22:05:20.293Z",
+    "updated_at": "2025-07-26T22:05:20.293Z"
+  }
+},
+{
+  "model": "bars.bar",
+  "pk": "ddfda11a-3b72-4fcc-9c92-566e78758c7a",
+  "fields": {
+    "name": "La Cuchara de San Telmo",
+    "address": "Kale Nagusia 4, 20003 Donostia-San Sebastián",
+    "notes": "Creative pintxos with modern twists. The foie micuit is incredible. Great wine selection.",
+    "latitude": null,
+    "longitude": null,
+    "map_link": "https://maps.google.com/?q=La+Cuchara+San+Telmo",
+    "specialties": "Modern pintxos, Foie micuit, Wine",
+    "price_range": "€€€",
+    "cana_price": "3.00",
+    "crowd_level": "medium",
+    "last_visited": "2025-07-17",
+    "tags": "modern, creative, wine, upscale",
+    "created_at": "2025-07-22T14:59:00.232Z",
+    "updated_at": "2025-07-22T14:59:00.232Z"
+  }
+},
+{
+  "model": "bars.bar",
+  "pk": "e29e2a4f-99c2-4b38-abd6-d43085483f9c",
+  "fields": {
+    "name": "Casa Grandarias Bar",
+    "address": "",
+    "notes": "20220303 13h30 Parte vajha Drink: Caña y tartaleta - 4.40 *great deal *good selection Food: Great place, fairly large inside and out.  Good choices at a great price.  My special pintxo (a mini Food: seafood torta) was 2.10 but the typical pintxo is a low 2.  Good selection too.  Although we did not get it today, I have had the txiporona brochette served with ink sauce.  I am told it is the best in the city for that. They have various others including lamb brochettes.",
+    "latitude": null,
+    "longitude": null,
+    "map_link": "",
+    "specialties": "",
+    "price_range": "",
+    "cana_price": null,
+    "crowd_level": "",
+    "last_visited": "2022-03-03",
+    "tags": "",
+    "created_at": "2025-07-26T22:05:20.298Z",
+    "updated_at": "2025-07-26T22:05:20.298Z"
+  }
+},
+{
+  "model": "bars.bar",
+  "pk": "e5817d61-6515-407a-b43e-0f0258029a97",
+  "fields": {
+    "name": "Izkina",
+    "address": "",
+    "notes": "20220228 21h30 parte vajha Drink: Zurito y pintxo chestora 4.70 Drink: Decent choices at this pintxo/ cafeateria place.  I went with the zurito as opposed to a full pour Drink: caña.  My conversion is now complete!  Needing smaller beers to more effectively move from one Food: pintxo bar to the next! Cecilia got a really good leak quishe like thing. Pintxo s were on the high side of price 20220301 12:30 Off the boulevard Drink: Caña y borrato con jamon y quoaso 5,40 Several tables outside and on a terrace.  Sitting outside guves you sercice at you seat, they prefer Food: that to you ordering at the bar if you are not sitting inside.  Minimal pintxo choices but they, one beer, cider only if you get the whole bottle.  They do have a full bar and coffee.  They also had ceisonts and several types of coffe cakes.  Not my place, but ok. Pricy",
+    "latitude": null,
+    "longitude": null,
+    "map_link": "",
+    "specialties": "",
+    "price_range": "",
+    "cana_price": null,
+    "crowd_level": "",
+    "last_visited": "2022-02-28",
+    "tags": "",
+    "created_at": "2025-07-26T22:05:20.313Z",
+    "updated_at": "2025-07-26T22:05:20.313Z"
+  }
+},
+{
+  "model": "bars.bar",
+  "pk": "e88d0aaf-37cd-4954-aa24-8a5a8071806e",
+  "fields": {
+    "name": "Irrintz",
+    "address": "Arrandegi Kalea, 12, 20003 Donostia, Gipuzkoa",
+    "notes": "Food: Great little local place, sliced meats and cheeses from local sources a small but good selection of pintxos.  Owners always there",
+    "latitude": null,
+    "longitude": null,
+    "map_link": "https://maps.app.goo.gl/CKYfVCmkYGTcMeio9?g_st=ic",
+    "specialties": "Charcutería",
+    "price_range": "",
+    "cana_price": null,
+    "crowd_level": "",
+    "last_visited": null,
+    "tags": "Local",
+    "created_at": "2025-07-26T22:05:20.311Z",
+    "updated_at": "2025-07-26T22:05:20.311Z"
+  }
+},
+{
+  "model": "bars.bar",
+  "pk": "f284f04d-a86c-444f-b060-28012be2d5a7",
+  "fields": {
+    "name": "Bar Tximista",
+    "address": "",
+    "notes": "20220203 1h30 Parte vajha. Center Txakoli y gamba frito - 4.90 *good selection Food: Good pintxo selection, including mushroom and ganaba, but average quality.   They did mess up Drink: my order and bring 2 txakolis instead of 1 and 1 caña, but they alos gave us some extra gambas. Overall good.",
+    "latitude": null,
+    "longitude": null,
+    "map_link": "",
+    "specialties": "",
+    "price_range": "",
+    "cana_price": null,
+    "crowd_level": "",
+    "last_visited": "2022-02-03",
+    "tags": "",
+    "created_at": "2025-07-26T22:05:20.290Z",
+    "updated_at": "2025-07-26T22:05:20.290Z"
+  }
+},
+{
+  "model": "bars.bar",
+  "pk": "f4f8befd-c1db-4d35-8c4b-e36a1cc90757",
+  "fields": {
+    "name": "Raviolina",
+    "address": "",
+    "notes": "Esta parte vajha lunch 20220204 Food: Great place to eat lunch and the pizza is the best in the city.  Bu not a pintxo bar!",
+    "latitude": null,
+    "longitude": null,
+    "map_link": "",
+    "specialties": "",
+    "price_range": "",
+    "cana_price": null,
+    "crowd_level": "",
+    "last_visited": "2022-02-04",
+    "tags": "",
+    "created_at": "2025-07-26T22:05:20.324Z",
+    "updated_at": "2025-07-26T22:05:20.324Z"
+  }
+},
+{
+  "model": "bars.bar",
+  "pk": "faae0478-6ee6-4add-b6d8-ca72cdffc37b",
+  "fields": {
+    "name": "Garua",
+    "address": "Iñigo Kalea, 5, 20003 Donostia, Gipuzkoa",
+    "notes": "",
+    "latitude": null,
+    "longitude": null,
+    "map_link": "https://maps.app.goo.gl/fETCVY54xDy37tF58?g_st=ic",
+    "specialties": "",
+    "price_range": "",
+    "cana_price": null,
+    "crowd_level": "Low",
+    "last_visited": null,
+    "tags": "",
+    "created_at": "2025-07-26T22:05:20.308Z",
+    "updated_at": "2025-07-26T22:05:20.308Z"
+  }
+},
+{
+  "model": "bars.bar",
+  "pk": "faeebba8-33f4-4cfb-9cfa-3b76e56f5311",
+  "fields": {
+    "name": "Pub Txurrut",
+    "address": "Constitución Plaza, 9, 20003 Donostia, Gipuzkoa",
+    "notes": "Parte vejha square Drink: Caña - 3 Some how this place has no food.  It is odd given how early it is. Not coming back here.",
+    "latitude": null,
+    "longitude": null,
+    "map_link": "",
+    "specialties": "",
+    "price_range": "",
+    "cana_price": null,
+    "crowd_level": "",
+    "last_visited": "2022-02-03",
+    "tags": "",
+    "created_at": "2025-07-26T22:05:20.323Z",
+    "updated_at": "2025-07-26T22:19:40.738Z"
+  }
+},
+{
+  "model": "bars.bar",
+  "pk": "fca3ec97-2aae-49c4-9c86-0323e7760d88",
+  "fields": {
+    "name": "La Cuchara de San Telmo",
+    "address": "31 de Agosto Kalea 28, San Sebastián, Spain",
+    "notes": "modern",
+    "latitude": null,
+    "longitude": null,
+    "map_link": "",
+    "specialties": "Hot pintxos",
+    "price_range": "€€–€€€",
+    "cana_price": null,
+    "crowd_level": "",
+    "last_visited": null,
+    "tags": "hot",
+    "created_at": "2025-07-26T22:05:20.317Z",
+    "updated_at": "2025-07-26T22:05:20.317Z"
+  }
+},
+{
+  "model": "bars.bar",
+  "pk": "fd25e244-9c0b-4e85-aee9-93f32e76fc0f",
+  "fields": {
+    "name": "Bar Txepetxa",
+    "address": "Arrandegi Kalea 5, San Sebastián, Spain",
+    "notes": "anchovies",
+    "latitude": null,
+    "longitude": null,
+    "map_link": "",
+    "specialties": "Anchovies Jardinera",
+    "price_range": "€–€€",
+    "cana_price": null,
+    "crowd_level": "",
+    "last_visited": null,
+    "tags": "fish",
+    "created_at": "2025-07-26T22:05:20.290Z",
+    "updated_at": "2025-07-26T22:05:20.290Z"
+  }
+}
+]

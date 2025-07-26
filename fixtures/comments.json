@@ -1,0 +1,14 @@
+[
+{
+  "model": "bars.barcomment",
+  "pk": 1,
+  "fields": {
+    "bar": "b5883140-21c0-4fdc-a47d-966c271c4b74",
+    "user": 3,
+    "comment": "Test comment from Django shell - this bar has great pintxos\\!",
+    "created_at": "2025-07-23T15:00:54.719Z",
+    "updated_at": "2025-07-23T15:00:54.719Z",
+    "is_approved": true
+  }
+}
+]

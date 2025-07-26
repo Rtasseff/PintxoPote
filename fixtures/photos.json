@@ -1,0 +1,1082 @@
+[
+{
+  "model": "bars.barphoto",
+  "pk": 4,
+  "fields": {
+    "bar": "7f202d03-86db-4665-b7af-0a7975805f76",
+    "image": "bars/bar-nestor-1.jpg",
+    "caption": "",
+    "uploaded_by": null,
+    "is_featured": false,
+    "uploaded_at": "2025-07-26T22:03:56.393Z"
+  }
+},
+{
+  "model": "bars.barphoto",
+  "pk": 10,
+  "fields": {
+    "bar": "259f2898-3d1b-4766-a88d-48cc67b4c4aa",
+    "image": "bars/bar-martinez-1.jpg",
+    "caption": "",
+    "uploaded_by": null,
+    "is_featured": false,
+    "uploaded_at": "2025-07-26T22:03:56.405Z"
+  }
+},
+{
+  "model": "bars.barphoto",
+  "pk": 11,
+  "fields": {
+    "bar": "9d2f3d1c-c6ff-4278-a41e-8fbd2d362d9d",
+    "image": "bars/gorriti-taberna-1.jpg",
+    "caption": "",
+    "uploaded_by": null,
+    "is_featured": false,
+    "uploaded_at": "2025-07-26T22:05:29.815Z"
+  }
+},
+{
+  "model": "bars.barphoto",
+  "pk": 12,
+  "fields": {
+    "bar": "9d2f3d1c-c6ff-4278-a41e-8fbd2d362d9d",
+    "image": "bars/gorriti-taberna-2.jpg",
+    "caption": "",
+    "uploaded_by": null,
+    "is_featured": false,
+    "uploaded_at": "2025-07-26T22:05:29.816Z"
+  }
+},
+{
+  "model": "bars.barphoto",
+  "pk": 13,
+  "fields": {
+    "bar": "9d2f3d1c-c6ff-4278-a41e-8fbd2d362d9d",
+    "image": "bars/gorriti-taberna-3.jpg",
+    "caption": "",
+    "uploaded_by": null,
+    "is_featured": false,
+    "uploaded_at": "2025-07-26T22:05:29.817Z"
+  }
+},
+{
+  "model": "bars.barphoto",
+  "pk": 14,
+  "fields": {
+    "bar": "c5656cf4-5c0b-4ef0-bec6-76bfc80553e6",
+    "image": "bars/bar-txistu-1.jpg",
+    "caption": "",
+    "uploaded_by": null,
+    "is_featured": true,
+    "uploaded_at": "2025-07-26T22:05:29.818Z"
+  }
+},
+{
+  "model": "bars.barphoto",
+  "pk": 15,
+  "fields": {
+    "bar": "c5656cf4-5c0b-4ef0-bec6-76bfc80553e6",
+    "image": "bars/bar-txistu-2.jpg",
+    "caption": "",
+    "uploaded_by": null,
+    "is_featured": false,
+    "uploaded_at": "2025-07-26T22:05:29.819Z"
+  }
+},
+{
+  "model": "bars.barphoto",
+  "pk": 16,
+  "fields": {
+    "bar": "aa8a78f1-a106-4793-9422-b87680269cbd",
+    "image": "bars/txakolina-1.jpg",
+    "caption": "",
+    "uploaded_by": null,
+    "is_featured": true,
+    "uploaded_at": "2025-07-26T22:05:29.820Z"
+  }
+},
+{
+  "model": "bars.barphoto",
+  "pk": 17,
+  "fields": {
+    "bar": "aa8a78f1-a106-4793-9422-b87680269cbd",
+    "image": "bars/txakolina-2.jpg",
+    "caption": "",
+    "uploaded_by": null,
+    "is_featured": false,
+    "uploaded_at": "2025-07-26T22:05:29.821Z"
+  }
+},
+{
+  "model": "bars.barphoto",
+  "pk": 18,
+  "fields": {
+    "bar": "69721da4-cb40-433a-abaa-bd4a2e014231",
+    "image": "bars/restaurante-munto-jatetxed-1.jpg",
+    "caption": "",
+    "uploaded_by": null,
+    "is_featured": false,
+    "uploaded_at": "2025-07-26T22:05:29.822Z"
+  }
+},
+{
+  "model": "bars.barphoto",
+  "pk": 19,
+  "fields": {
+    "bar": "69721da4-cb40-433a-abaa-bd4a2e014231",
+    "image": "bars/restaurante-munto-jatetxed-2.jpg",
+    "caption": "",
+    "uploaded_by": null,
+    "is_featured": true,
+    "uploaded_at": "2025-07-26T22:05:29.823Z"
+  }
+},
+{
+  "model": "bars.barphoto",
+  "pk": 20,
+  "fields": {
+    "bar": "69721da4-cb40-433a-abaa-bd4a2e014231",
+    "image": "bars/restaurante-munto-jatetxed-3.jpg",
+    "caption": "",
+    "uploaded_by": null,
+    "is_featured": false,
+    "uploaded_at": "2025-07-26T22:05:29.824Z"
+  }
+},
+{
+  "model": "bars.barphoto",
+  "pk": 21,
+  "fields": {
+    "bar": "746cfe71-49be-43e4-a68a-19bb4234a796",
+    "image": "bars/paco-bueno-1.jpg",
+    "caption": "",
+    "uploaded_by": null,
+    "is_featured": false,
+    "uploaded_at": "2025-07-26T22:05:29.824Z"
+  }
+},
+{
+  "model": "bars.barphoto",
+  "pk": 22,
+  "fields": {
+    "bar": "01d700ea-416e-4ad0-bce6-793b9af06e80",
+    "image": "bars/picaro-1.jpg",
+    "caption": "",
+    "uploaded_by": null,
+    "is_featured": false,
+    "uploaded_at": "2025-07-26T22:05:29.825Z"
+  }
+},
+{
+  "model": "bars.barphoto",
+  "pk": 23,
+  "fields": {
+    "bar": "01d700ea-416e-4ad0-bce6-793b9af06e80",
+    "image": "bars/picaro-2.jpg",
+    "caption": "",
+    "uploaded_by": null,
+    "is_featured": false,
+    "uploaded_at": "2025-07-26T22:05:29.826Z"
+  }
+},
+{
+  "model": "bars.barphoto",
+  "pk": 24,
+  "fields": {
+    "bar": "01d700ea-416e-4ad0-bce6-793b9af06e80",
+    "image": "bars/picaro-3.jpg",
+    "caption": "",
+    "uploaded_by": null,
+    "is_featured": false,
+    "uploaded_at": "2025-07-26T22:05:29.827Z"
+  }
+},
+{
+  "model": "bars.barphoto",
+  "pk": 25,
+  "fields": {
+    "bar": "a9d51fda-0366-4e54-8165-d2d58e441fd7",
+    "image": "bars/beharri-1.jpg",
+    "caption": "",
+    "uploaded_by": null,
+    "is_featured": true,
+    "uploaded_at": "2025-07-26T22:05:29.828Z"
+  }
+},
+{
+  "model": "bars.barphoto",
+  "pk": 26,
+  "fields": {
+    "bar": "a9d51fda-0366-4e54-8165-d2d58e441fd7",
+    "image": "bars/beharri-2.jpg",
+    "caption": "",
+    "uploaded_by": null,
+    "is_featured": false,
+    "uploaded_at": "2025-07-26T22:05:29.828Z"
+  }
+},
+{
+  "model": "bars.barphoto",
+  "pk": 27,
+  "fields": {
+    "bar": "3a2735c7-1dca-43ef-8b09-caaa6fad0b7b",
+    "image": "bars/igeldo-jatetxea-1.jpg",
+    "caption": "",
+    "uploaded_by": null,
+    "is_featured": false,
+    "uploaded_at": "2025-07-26T22:05:29.829Z"
+  }
+},
+{
+  "model": "bars.barphoto",
+  "pk": 28,
+  "fields": {
+    "bar": "faeebba8-33f4-4cfb-9cfa-3b76e56f5311",
+    "image": "bars/pub-txurrut-1.jpg",
+    "caption": "",
+    "uploaded_by": null,
+    "is_featured": false,
+    "uploaded_at": "2025-07-26T22:05:29.830Z"
+  }
+},
+{
+  "model": "bars.barphoto",
+  "pk": 29,
+  "fields": {
+    "bar": "f284f04d-a86c-444f-b060-28012be2d5a7",
+    "image": "bars/bar-tximista-1.jpg",
+    "caption": "",
+    "uploaded_by": null,
+    "is_featured": false,
+    "uploaded_at": "2025-07-26T22:05:29.831Z"
+  }
+},
+{
+  "model": "bars.barphoto",
+  "pk": 30,
+  "fields": {
+    "bar": "f284f04d-a86c-444f-b060-28012be2d5a7",
+    "image": "bars/bar-tximista-2.jpg",
+    "caption": "",
+    "uploaded_by": null,
+    "is_featured": false,
+    "uploaded_at": "2025-07-26T22:05:29.831Z"
+  }
+},
+{
+  "model": "bars.barphoto",
+  "pk": 31,
+  "fields": {
+    "bar": "f4f8befd-c1db-4d35-8c4b-e36a1cc90757",
+    "image": "bars/raviolina-1.jpg",
+    "caption": "",
+    "uploaded_by": null,
+    "is_featured": false,
+    "uploaded_at": "2025-07-26T22:05:29.832Z"
+  }
+},
+{
+  "model": "bars.barphoto",
+  "pk": 32,
+  "fields": {
+    "bar": "10f746cc-be04-413e-bbe3-504ca87e83dd",
+    "image": "bars/baluarte-1.jpg",
+    "caption": "",
+    "uploaded_by": null,
+    "is_featured": false,
+    "uploaded_at": "2025-07-26T22:05:29.833Z"
+  }
+},
+{
+  "model": "bars.barphoto",
+  "pk": 33,
+  "fields": {
+    "bar": "0cf86f41-a29f-4e33-a2c3-10f2fc925e8d",
+    "image": "bars/casa-vergara-1.jpg",
+    "caption": "",
+    "uploaded_by": null,
+    "is_featured": false,
+    "uploaded_at": "2025-07-26T22:05:29.834Z"
+  }
+},
+{
+  "model": "bars.barphoto",
+  "pk": 34,
+  "fields": {
+    "bar": "0cf86f41-a29f-4e33-a2c3-10f2fc925e8d",
+    "image": "bars/casa-vergara-2.jpg",
+    "caption": "",
+    "uploaded_by": null,
+    "is_featured": false,
+    "uploaded_at": "2025-07-26T22:05:29.834Z"
+  }
+},
+{
+  "model": "bars.barphoto",
+  "pk": 35,
+  "fields": {
+    "bar": "0cf86f41-a29f-4e33-a2c3-10f2fc925e8d",
+    "image": "bars/casa-vergara-3.jpg",
+    "caption": "",
+    "uploaded_by": null,
+    "is_featured": false,
+    "uploaded_at": "2025-07-26T22:05:29.835Z"
+  }
+},
+{
+  "model": "bars.barphoto",
+  "pk": 36,
+  "fields": {
+    "bar": "b34dfb9e-dbda-4d7b-8f79-218383452f65",
+    "image": "bars/casa-alcalde-1.jpg",
+    "caption": "",
+    "uploaded_by": null,
+    "is_featured": false,
+    "uploaded_at": "2025-07-26T22:05:29.836Z"
+  }
+},
+{
+  "model": "bars.barphoto",
+  "pk": 37,
+  "fields": {
+    "bar": "b34dfb9e-dbda-4d7b-8f79-218383452f65",
+    "image": "bars/casa-alcalde-2.jpg",
+    "caption": "",
+    "uploaded_by": null,
+    "is_featured": true,
+    "uploaded_at": "2025-07-26T22:05:29.837Z"
+  }
+},
+{
+  "model": "bars.barphoto",
+  "pk": 38,
+  "fields": {
+    "bar": "b34dfb9e-dbda-4d7b-8f79-218383452f65",
+    "image": "bars/casa-alcalde-3.jpg",
+    "caption": "",
+    "uploaded_by": null,
+    "is_featured": false,
+    "uploaded_at": "2025-07-26T22:05:29.837Z"
+  }
+},
+{
+  "model": "bars.barphoto",
+  "pk": 39,
+  "fields": {
+    "bar": "4d6eace8-e609-4291-9735-6e362aeba4fd",
+    "image": "bars/tanger-bar-1.jpg",
+    "caption": "",
+    "uploaded_by": null,
+    "is_featured": false,
+    "uploaded_at": "2025-07-26T22:05:29.838Z"
+  }
+},
+{
+  "model": "bars.barphoto",
+  "pk": 40,
+  "fields": {
+    "bar": "c8f8b773-6554-4dc0-bcc9-4990f52c6ba0",
+    "image": "bars/ganbara-1.jpg",
+    "caption": "",
+    "uploaded_by": null,
+    "is_featured": false,
+    "uploaded_at": "2025-07-26T22:05:29.839Z"
+  }
+},
+{
+  "model": "bars.barphoto",
+  "pk": 41,
+  "fields": {
+    "bar": "c8f8b773-6554-4dc0-bcc9-4990f52c6ba0",
+    "image": "bars/ganbara-2.jpg",
+    "caption": "",
+    "uploaded_by": null,
+    "is_featured": true,
+    "uploaded_at": "2025-07-26T22:05:29.840Z"
+  }
+},
+{
+  "model": "bars.barphoto",
+  "pk": 42,
+  "fields": {
+    "bar": "c8f8b773-6554-4dc0-bcc9-4990f52c6ba0",
+    "image": "bars/ganbara-3.jpg",
+    "caption": "",
+    "uploaded_by": null,
+    "is_featured": false,
+    "uploaded_at": "2025-07-26T22:05:29.840Z"
+  }
+},
+{
+  "model": "bars.barphoto",
+  "pk": 43,
+  "fields": {
+    "bar": "1ad97346-6a98-4916-8755-15b2daf4e4ca",
+    "image": "bars/bar-haizea-1.jpg",
+    "caption": "",
+    "uploaded_by": null,
+    "is_featured": false,
+    "uploaded_at": "2025-07-26T22:05:29.841Z"
+  }
+},
+{
+  "model": "bars.barphoto",
+  "pk": 44,
+  "fields": {
+    "bar": "491605ab-3d79-4ed6-b35c-3e5ff8b2e559",
+    "image": "bars/lasarte-1.jpg",
+    "caption": "",
+    "uploaded_by": null,
+    "is_featured": false,
+    "uploaded_at": "2025-07-26T22:05:29.842Z"
+  }
+},
+{
+  "model": "bars.barphoto",
+  "pk": 45,
+  "fields": {
+    "bar": "9f65e2eb-79cf-425b-ac94-3342897d2db4",
+    "image": "bars/bardulia-1.jpg",
+    "caption": "",
+    "uploaded_by": null,
+    "is_featured": false,
+    "uploaded_at": "2025-07-26T22:05:29.843Z"
+  }
+},
+{
+  "model": "bars.barphoto",
+  "pk": 46,
+  "fields": {
+    "bar": "9f65e2eb-79cf-425b-ac94-3342897d2db4",
+    "image": "bars/bardulia-2.jpg",
+    "caption": "",
+    "uploaded_by": null,
+    "is_featured": false,
+    "uploaded_at": "2025-07-26T22:05:29.843Z"
+  }
+},
+{
+  "model": "bars.barphoto",
+  "pk": 47,
+  "fields": {
+    "bar": "9f65e2eb-79cf-425b-ac94-3342897d2db4",
+    "image": "bars/bardulia-3.jpg",
+    "caption": "",
+    "uploaded_by": null,
+    "is_featured": false,
+    "uploaded_at": "2025-07-26T22:05:29.844Z"
+  }
+},
+{
+  "model": "bars.barphoto",
+  "pk": 48,
+  "fields": {
+    "bar": "ab034c8b-3880-464e-b69c-c8a1476e559a",
+    "image": "bars/restaurante-zumeltzegi-1.jpg",
+    "caption": "",
+    "uploaded_by": null,
+    "is_featured": false,
+    "uploaded_at": "2025-07-26T22:05:29.845Z"
+  }
+},
+{
+  "model": "bars.barphoto",
+  "pk": 49,
+  "fields": {
+    "bar": "ab034c8b-3880-464e-b69c-c8a1476e559a",
+    "image": "bars/restaurante-zumeltzegi-2.jpg",
+    "caption": "",
+    "uploaded_by": null,
+    "is_featured": false,
+    "uploaded_at": "2025-07-26T22:05:29.846Z"
+  }
+},
+{
+  "model": "bars.barphoto",
+  "pk": 50,
+  "fields": {
+    "bar": "e5817d61-6515-407a-b43e-0f0258029a97",
+    "image": "bars/izkina-1.jpg",
+    "caption": "",
+    "uploaded_by": null,
+    "is_featured": false,
+    "uploaded_at": "2025-07-26T22:05:29.846Z"
+  }
+},
+{
+  "model": "bars.barphoto",
+  "pk": 51,
+  "fields": {
+    "bar": "e5817d61-6515-407a-b43e-0f0258029a97",
+    "image": "bars/izkina-2.jpg",
+    "caption": "",
+    "uploaded_by": null,
+    "is_featured": false,
+    "uploaded_at": "2025-07-26T22:05:29.847Z"
+  }
+},
+{
+  "model": "bars.barphoto",
+  "pk": 52,
+  "fields": {
+    "bar": "e5817d61-6515-407a-b43e-0f0258029a97",
+    "image": "bars/izkina-3.jpg",
+    "caption": "",
+    "uploaded_by": null,
+    "is_featured": false,
+    "uploaded_at": "2025-07-26T22:05:29.848Z"
+  }
+},
+{
+  "model": "bars.barphoto",
+  "pk": 53,
+  "fields": {
+    "bar": "3eafb88f-f112-4b4b-b34b-a89bbdfe192e",
+    "image": "bars/goiz-argi-1.jpg",
+    "caption": "",
+    "uploaded_by": null,
+    "is_featured": false,
+    "uploaded_at": "2025-07-26T22:05:29.849Z"
+  }
+},
+{
+  "model": "bars.barphoto",
+  "pk": 54,
+  "fields": {
+    "bar": "3eafb88f-f112-4b4b-b34b-a89bbdfe192e",
+    "image": "bars/goiz-argi-2.jpg",
+    "caption": "",
+    "uploaded_by": null,
+    "is_featured": false,
+    "uploaded_at": "2025-07-26T22:05:29.850Z"
+  }
+},
+{
+  "model": "bars.barphoto",
+  "pk": 55,
+  "fields": {
+    "bar": "3eafb88f-f112-4b4b-b34b-a89bbdfe192e",
+    "image": "bars/goiz-argi-3.jpg",
+    "caption": "",
+    "uploaded_by": null,
+    "is_featured": false,
+    "uploaded_at": "2025-07-26T22:05:29.851Z"
+  }
+},
+{
+  "model": "bars.barphoto",
+  "pk": 56,
+  "fields": {
+    "bar": "e29e2a4f-99c2-4b38-abd6-d43085483f9c",
+    "image": "bars/casa-grandarias-bar-1.jpg",
+    "caption": "",
+    "uploaded_by": null,
+    "is_featured": true,
+    "uploaded_at": "2025-07-26T22:05:29.852Z"
+  }
+},
+{
+  "model": "bars.barphoto",
+  "pk": 57,
+  "fields": {
+    "bar": "e29e2a4f-99c2-4b38-abd6-d43085483f9c",
+    "image": "bars/casa-grandarias-bar-2.jpg",
+    "caption": "",
+    "uploaded_by": null,
+    "is_featured": false,
+    "uploaded_at": "2025-07-26T22:05:29.853Z"
+  }
+},
+{
+  "model": "bars.barphoto",
+  "pk": 58,
+  "fields": {
+    "bar": "07e4853e-34bd-4374-9c73-dd5e90f82281",
+    "image": "bars/narru-1.jpg",
+    "caption": "",
+    "uploaded_by": null,
+    "is_featured": false,
+    "uploaded_at": "2025-07-26T22:05:29.854Z"
+  }
+},
+{
+  "model": "bars.barphoto",
+  "pk": 59,
+  "fields": {
+    "bar": "6a953953-7fd9-4950-af0d-2a8b230b66ef",
+    "image": "bars/kukurruku-1.jpg",
+    "caption": "",
+    "uploaded_by": null,
+    "is_featured": true,
+    "uploaded_at": "2025-07-26T22:05:29.856Z"
+  }
+},
+{
+  "model": "bars.barphoto",
+  "pk": 60,
+  "fields": {
+    "bar": "6a953953-7fd9-4950-af0d-2a8b230b66ef",
+    "image": "bars/kukurruku-2.jpg",
+    "caption": "",
+    "uploaded_by": null,
+    "is_featured": false,
+    "uploaded_at": "2025-07-26T22:05:29.857Z"
+  }
+},
+{
+  "model": "bars.barphoto",
+  "pk": 61,
+  "fields": {
+    "bar": "6a953953-7fd9-4950-af0d-2a8b230b66ef",
+    "image": "bars/kukurruku-3.jpg",
+    "caption": "",
+    "uploaded_by": null,
+    "is_featured": false,
+    "uploaded_at": "2025-07-26T22:05:29.858Z"
+  }
+},
+{
+  "model": "bars.barphoto",
+  "pk": 62,
+  "fields": {
+    "bar": "7f37e47a-e53c-4fc3-875c-4af3a4a0d823",
+    "image": "bars/txalupa-1.jpg",
+    "caption": "",
+    "uploaded_by": null,
+    "is_featured": false,
+    "uploaded_at": "2025-07-26T22:05:29.859Z"
+  }
+},
+{
+  "model": "bars.barphoto",
+  "pk": 63,
+  "fields": {
+    "bar": "50822127-d644-429c-9f8e-bb6450e37305",
+    "image": "bars/donostiarra-1.jpg",
+    "caption": "",
+    "uploaded_by": null,
+    "is_featured": false,
+    "uploaded_at": "2025-07-26T22:05:29.860Z"
+  }
+},
+{
+  "model": "bars.barphoto",
+  "pk": 64,
+  "fields": {
+    "bar": "50822127-d644-429c-9f8e-bb6450e37305",
+    "image": "bars/donostiarra-2.jpg",
+    "caption": "",
+    "uploaded_by": null,
+    "is_featured": false,
+    "uploaded_at": "2025-07-26T22:05:29.861Z"
+  }
+},
+{
+  "model": "bars.barphoto",
+  "pk": 65,
+  "fields": {
+    "bar": "50822127-d644-429c-9f8e-bb6450e37305",
+    "image": "bars/donostiarra-3.jpg",
+    "caption": "",
+    "uploaded_by": null,
+    "is_featured": true,
+    "uploaded_at": "2025-07-26T22:05:29.862Z"
+  }
+},
+{
+  "model": "bars.barphoto",
+  "pk": 66,
+  "fields": {
+    "bar": "50822127-d644-429c-9f8e-bb6450e37305",
+    "image": "bars/donostiarra-4.jpg",
+    "caption": "",
+    "uploaded_by": null,
+    "is_featured": false,
+    "uploaded_at": "2025-07-26T22:05:29.863Z"
+  }
+},
+{
+  "model": "bars.barphoto",
+  "pk": 67,
+  "fields": {
+    "bar": "701df48a-c5a1-46f2-b0bb-106eae9cd1ec",
+    "image": "bars/itxar-pena-1.jpg",
+    "caption": "",
+    "uploaded_by": null,
+    "is_featured": false,
+    "uploaded_at": "2025-07-26T22:05:29.864Z"
+  }
+},
+{
+  "model": "bars.barphoto",
+  "pk": 68,
+  "fields": {
+    "bar": "701df48a-c5a1-46f2-b0bb-106eae9cd1ec",
+    "image": "bars/itxar-pena-2.jpg",
+    "caption": "",
+    "uploaded_by": null,
+    "is_featured": true,
+    "uploaded_at": "2025-07-26T22:05:29.865Z"
+  }
+},
+{
+  "model": "bars.barphoto",
+  "pk": 69,
+  "fields": {
+    "bar": "701df48a-c5a1-46f2-b0bb-106eae9cd1ec",
+    "image": "bars/itxar-pena-3.jpg",
+    "caption": "",
+    "uploaded_by": null,
+    "is_featured": false,
+    "uploaded_at": "2025-07-26T22:05:29.866Z"
+  }
+},
+{
+  "model": "bars.barphoto",
+  "pk": 70,
+  "fields": {
+    "bar": "4639ab60-9857-4730-8065-f09ea29f90a6",
+    "image": "bars/urgulleko-polborina-1.jpg",
+    "caption": "",
+    "uploaded_by": null,
+    "is_featured": false,
+    "uploaded_at": "2025-07-26T22:05:29.867Z"
+  }
+},
+{
+  "model": "bars.barphoto",
+  "pk": 71,
+  "fields": {
+    "bar": "4639ab60-9857-4730-8065-f09ea29f90a6",
+    "image": "bars/urgulleko-polborina-2.jpg",
+    "caption": "",
+    "uploaded_by": null,
+    "is_featured": false,
+    "uploaded_at": "2025-07-26T22:05:29.867Z"
+  }
+},
+{
+  "model": "bars.barphoto",
+  "pk": 72,
+  "fields": {
+    "bar": "4639ab60-9857-4730-8065-f09ea29f90a6",
+    "image": "bars/urgulleko-polborina-3.jpg",
+    "caption": "",
+    "uploaded_by": null,
+    "is_featured": false,
+    "uploaded_at": "2025-07-26T22:05:29.868Z"
+  }
+},
+{
+  "model": "bars.barphoto",
+  "pk": 73,
+  "fields": {
+    "bar": "564e8dfc-9818-418c-8bdf-79d4953d32c5",
+    "image": "bars/ordizia-1.jpg",
+    "caption": "",
+    "uploaded_by": null,
+    "is_featured": false,
+    "uploaded_at": "2025-07-26T22:05:29.869Z"
+  }
+},
+{
+  "model": "bars.barphoto",
+  "pk": 74,
+  "fields": {
+    "bar": "564e8dfc-9818-418c-8bdf-79d4953d32c5",
+    "image": "bars/ordizia-2.jpg",
+    "caption": "",
+    "uploaded_by": null,
+    "is_featured": false,
+    "uploaded_at": "2025-07-26T22:05:29.870Z"
+  }
+},
+{
+  "model": "bars.barphoto",
+  "pk": 75,
+  "fields": {
+    "bar": "8e96a98e-3a8c-4b6f-b3bf-2f2ad684ff8b",
+    "image": "bars/bodega-donostiarra-1.jpg",
+    "caption": "",
+    "uploaded_by": null,
+    "is_featured": false,
+    "uploaded_at": "2025-07-26T22:05:29.871Z"
+  }
+},
+{
+  "model": "bars.barphoto",
+  "pk": 76,
+  "fields": {
+    "bar": "8e96a98e-3a8c-4b6f-b3bf-2f2ad684ff8b",
+    "image": "bars/bodega-donostiarra-2.jpg",
+    "caption": "",
+    "uploaded_by": null,
+    "is_featured": true,
+    "uploaded_at": "2025-07-26T22:05:29.871Z"
+  }
+},
+{
+  "model": "bars.barphoto",
+  "pk": 77,
+  "fields": {
+    "bar": "15d1dad9-5d4a-48a5-b02e-169f90c2ec5a",
+    "image": "bars/bar-irrintz-1.jpg",
+    "caption": "",
+    "uploaded_by": null,
+    "is_featured": false,
+    "uploaded_at": "2025-07-26T22:05:29.872Z"
+  }
+},
+{
+  "model": "bars.barphoto",
+  "pk": 78,
+  "fields": {
+    "bar": "15d1dad9-5d4a-48a5-b02e-169f90c2ec5a",
+    "image": "bars/bar-irrintz-2.jpg",
+    "caption": "",
+    "uploaded_by": null,
+    "is_featured": true,
+    "uploaded_at": "2025-07-26T22:05:29.873Z"
+  }
+},
+{
+  "model": "bars.barphoto",
+  "pk": 79,
+  "fields": {
+    "bar": "15d1dad9-5d4a-48a5-b02e-169f90c2ec5a",
+    "image": "bars/bar-irrintz-3.jpg",
+    "caption": "",
+    "uploaded_by": null,
+    "is_featured": false,
+    "uploaded_at": "2025-07-26T22:05:29.874Z"
+  }
+},
+{
+  "model": "bars.barphoto",
+  "pk": 80,
+  "fields": {
+    "bar": "a618a748-98ab-454c-addf-b118500b7f94",
+    "image": "bars/bar-aralar-1.jpg",
+    "caption": "",
+    "uploaded_by": null,
+    "is_featured": true,
+    "uploaded_at": "2025-07-26T22:05:29.874Z"
+  }
+},
+{
+  "model": "bars.barphoto",
+  "pk": 81,
+  "fields": {
+    "bar": "a618a748-98ab-454c-addf-b118500b7f94",
+    "image": "bars/bar-aralar-2.jpg",
+    "caption": "",
+    "uploaded_by": null,
+    "is_featured": false,
+    "uploaded_at": "2025-07-26T22:05:29.875Z"
+  }
+},
+{
+  "model": "bars.barphoto",
+  "pk": 82,
+  "fields": {
+    "bar": "c72871ce-aecc-4c19-b158-f232679614e9",
+    "image": "bars/heme-retzi-1.jpg",
+    "caption": "",
+    "uploaded_by": null,
+    "is_featured": false,
+    "uploaded_at": "2025-07-26T22:05:29.876Z"
+  }
+},
+{
+  "model": "bars.barphoto",
+  "pk": 83,
+  "fields": {
+    "bar": "c72871ce-aecc-4c19-b158-f232679614e9",
+    "image": "bars/heme-retzi-2.jpg",
+    "caption": "",
+    "uploaded_by": null,
+    "is_featured": false,
+    "uploaded_at": "2025-07-26T22:05:29.877Z"
+  }
+},
+{
+  "model": "bars.barphoto",
+  "pk": 84,
+  "fields": {
+    "bar": "2f74b50d-884d-47eb-b654-52d2e905409c",
+    "image": "bars/aita-mari-1.jpg",
+    "caption": "",
+    "uploaded_by": null,
+    "is_featured": false,
+    "uploaded_at": "2025-07-26T22:05:29.878Z"
+  }
+},
+{
+  "model": "bars.barphoto",
+  "pk": 85,
+  "fields": {
+    "bar": "b460436e-6bc6-48a2-ae5f-a10da17578f6",
+    "image": "bars/bar-narrika-1.jpg",
+    "caption": "",
+    "uploaded_by": null,
+    "is_featured": false,
+    "uploaded_at": "2025-07-26T22:05:29.879Z"
+  }
+},
+{
+  "model": "bars.barphoto",
+  "pk": 86,
+  "fields": {
+    "bar": "b460436e-6bc6-48a2-ae5f-a10da17578f6",
+    "image": "bars/bar-narrika-2.jpg",
+    "caption": "",
+    "uploaded_by": null,
+    "is_featured": true,
+    "uploaded_at": "2025-07-26T22:05:29.879Z"
+  }
+},
+{
+  "model": "bars.barphoto",
+  "pk": 87,
+  "fields": {
+    "bar": "b460436e-6bc6-48a2-ae5f-a10da17578f6",
+    "image": "bars/bar-narrika-3.jpg",
+    "caption": "",
+    "uploaded_by": null,
+    "is_featured": false,
+    "uploaded_at": "2025-07-26T22:05:29.880Z"
+  }
+},
+{
+  "model": "bars.barphoto",
+  "pk": 88,
+  "fields": {
+    "bar": "98f08377-b2b1-4a5a-ba50-2462691822e6",
+    "image": "bars/bar-sport-1.jpg",
+    "caption": "",
+    "uploaded_by": null,
+    "is_featured": false,
+    "uploaded_at": "2025-07-26T22:08:15.280Z"
+  }
+},
+{
+  "model": "bars.barphoto",
+  "pk": 89,
+  "fields": {
+    "bar": "98f08377-b2b1-4a5a-ba50-2462691822e6",
+    "image": "bars/bar-sport-2.jpg",
+    "caption": "",
+    "uploaded_by": null,
+    "is_featured": true,
+    "uploaded_at": "2025-07-26T22:08:15.282Z"
+  }
+},
+{
+  "model": "bars.barphoto",
+  "pk": 90,
+  "fields": {
+    "bar": "98f08377-b2b1-4a5a-ba50-2462691822e6",
+    "image": "bars/bar-sport-3.jpg",
+    "caption": "",
+    "uploaded_by": null,
+    "is_featured": false,
+    "uploaded_at": "2025-07-26T22:08:15.282Z"
+  }
+},
+{
+  "model": "bars.barphoto",
+  "pk": 91,
+  "fields": {
+    "bar": "bf880425-a6b7-48ec-b854-c0ba0f9a5024",
+    "image": "bars/bordaberri-1.jpg",
+    "caption": "",
+    "uploaded_by": null,
+    "is_featured": false,
+    "uploaded_at": "2025-07-26T22:10:19.391Z"
+  }
+},
+{
+  "model": "bars.barphoto",
+  "pk": 92,
+  "fields": {
+    "bar": "3a60386e-776d-4478-8df8-45245b09b2c2",
+    "image": "bars/casa-urola-resturant-1.jpg",
+    "caption": "",
+    "uploaded_by": null,
+    "is_featured": false,
+    "uploaded_at": "2025-07-26T22:10:19.392Z"
+  }
+},
+{
+  "model": "bars.barphoto",
+  "pk": 93,
+  "fields": {
+    "bar": "3a60386e-776d-4478-8df8-45245b09b2c2",
+    "image": "bars/casa-urola-resturant-2.jpg",
+    "caption": "",
+    "uploaded_by": null,
+    "is_featured": false,
+    "uploaded_at": "2025-07-26T22:10:19.393Z"
+  }
+},
+{
+  "model": "bars.barphoto",
+  "pk": 94,
+  "fields": {
+    "bar": "3a60386e-776d-4478-8df8-45245b09b2c2",
+    "image": "bars/casa-urola-resturant-3.jpg",
+    "caption": "",
+    "uploaded_by": null,
+    "is_featured": false,
+    "uploaded_at": "2025-07-26T22:10:19.394Z"
+  }
+},
+{
+  "model": "bars.barphoto",
+  "pk": 95,
+  "fields": {
+    "bar": "c1ee5533-8f30-47f4-80b6-9fd1ae724465",
+    "image": "bars/jose-mari-1.jpg",
+    "caption": "",
+    "uploaded_by": null,
+    "is_featured": false,
+    "uploaded_at": "2025-07-26T22:11:35.399Z"
+  }
+},
+{
+  "model": "bars.barphoto",
+  "pk": 96,
+  "fields": {
+    "bar": "c1ee5533-8f30-47f4-80b6-9fd1ae724465",
+    "image": "bars/jose-mari-2.jpg",
+    "caption": "",
+    "uploaded_by": null,
+    "is_featured": true,
+    "uploaded_at": "2025-07-26T22:11:35.400Z"
+  }
+},
+{
+  "model": "bars.barphoto",
+  "pk": 97,
+  "fields": {
+    "bar": "c1ee5533-8f30-47f4-80b6-9fd1ae724465",
+    "image": "bars/jose-mari-3.jpg",
+    "caption": "",
+    "uploaded_by": null,
+    "is_featured": false,
+    "uploaded_at": "2025-07-26T22:11:35.401Z"
+  }
+},
+{
+  "model": "bars.barphoto",
+  "pk": 98,
+  "fields": {
+    "bar": "c1ee5533-8f30-47f4-80b6-9fd1ae724465",
+    "image": "bars/jose-mari-4.jpg",
+    "caption": "",
+    "uploaded_by": null,
+    "is_featured": false,
+    "uploaded_at": "2025-07-26T22:11:35.402Z"
+  }
+}
+]
