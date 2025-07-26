@@ -9,6 +9,8 @@ from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.urls import reverse_lazy
 from django.views.generic import ListView, DetailView, CreateView, UpdateView
+from django.views.decorators.csrf import csrf_exempt
+from django.utils.decorators import method_decorator
 from django.conf import settings
 from .models import Bar, BarPhoto, UserProfile, BarComment
 from .forms import BarForm, QuickNoteForm, QuickPhotoForm, CommentForm
@@ -310,6 +312,7 @@ def add_comment(request, pk):
 
 
 # TEMPORARY: Railway Data Upload View - REMOVE AFTER USE
+@csrf_exempt
 def railway_upload(request):
     """Temporary view to upload data archive to Railway"""
     if request.method == 'POST' and 'data_archive' in request.FILES:
@@ -368,4 +371,12 @@ def railway_upload(request):
             if os.path.exists(temp_path):
                 os.remove(temp_path)
     
-    return render(request, 'bars/railway_upload.html')
+    # Add debug info for troubleshooting
+    context = {
+        'debug_info': {
+            'method': request.method,
+            'has_files': bool(request.FILES),
+            'csrf_token': request.META.get('CSRF_COOKIE', 'Not found'),
+        }
+    }
+    return render(request, 'bars/railway_upload.html', context)
