@@ -386,44 +386,63 @@ def railway_upload(request):
 @csrf_exempt
 def debug_files(request):
     """Debug view to check file paths and existence"""
-    debug_info = {
-        'DATA_DIR': str(settings.DATA_DIR) if hasattr(settings, 'DATA_DIR') else 'Not set',
-        'MEDIA_ROOT': str(settings.MEDIA_ROOT),
-        'MEDIA_URL': settings.MEDIA_URL,
-    }
+    debug_info = {}
     
-    # Check if data directory exists
-    if hasattr(settings, 'DATA_DIR'):
-        data_dir = settings.DATA_DIR
-        debug_info['data_dir_exists'] = data_dir.exists()
-        if data_dir.exists():
-            debug_info['data_dir_contents'] = list(data_dir.iterdir())
-    
-    # Check media root
-    media_root = settings.MEDIA_ROOT
-    debug_info['media_root_exists'] = media_root.exists()
-    if media_root.exists():
-        debug_info['media_root_contents'] = list(media_root.iterdir())
+    try:
+        debug_info['DATA_DIR'] = str(settings.DATA_DIR) if hasattr(settings, 'DATA_DIR') else 'Not set'
+        debug_info['MEDIA_ROOT'] = str(settings.MEDIA_ROOT)
+        debug_info['MEDIA_URL'] = settings.MEDIA_URL
         
-        # Check bars subfolder
-        bars_path = media_root / 'bars'
-        debug_info['bars_path_exists'] = bars_path.exists()
-        if bars_path.exists():
-            debug_info['bars_files_count'] = len(list(bars_path.glob('*.jpg')))
-            debug_info['first_5_files'] = list(bars_path.glob('*.jpg'))[:5]
+        # Check if data directory exists
+        if hasattr(settings, 'DATA_DIR'):
+            try:
+                data_dir = settings.DATA_DIR
+                debug_info['data_dir_exists'] = data_dir.exists()
+                if data_dir.exists():
+                    debug_info['data_dir_contents'] = [str(p) for p in data_dir.iterdir()]
+            except Exception as e:
+                debug_info['data_dir_error'] = str(e)
+        
+        # Check media root
+        try:
+            media_root = settings.MEDIA_ROOT
+            debug_info['media_root_exists'] = media_root.exists()
+            if media_root.exists():
+                debug_info['media_root_contents'] = [str(p) for p in media_root.iterdir()]
+                
+                # Check bars subfolder
+                bars_path = media_root / 'bars'
+                debug_info['bars_path_exists'] = bars_path.exists()
+                if bars_path.exists():
+                    jpg_files = list(bars_path.glob('*.jpg'))
+                    debug_info['bars_files_count'] = len(jpg_files)
+                    debug_info['first_5_files'] = [str(f) for f in jpg_files[:5]]
+        except Exception as e:
+            debug_info['media_root_error'] = str(e)
+        
+        # Check database photos
+        try:
+            from .models import BarPhoto
+            photos = BarPhoto.objects.all()[:5]
+            debug_info['db_photos'] = []
+            for photo in photos:
+                photo_info = {
+                    'id': photo.id,
+                    'image_path': str(photo.image) if photo.image else 'No image',
+                    'bar_name': photo.bar.name,
+                }
+                if photo.image:
+                    try:
+                        full_path = settings.MEDIA_ROOT / photo.image.name
+                        photo_info['full_path'] = str(full_path)
+                        photo_info['file_exists'] = full_path.exists()
+                    except Exception as e:
+                        photo_info['path_error'] = str(e)
+                debug_info['db_photos'].append(photo_info)
+        except Exception as e:
+            debug_info['db_photos_error'] = str(e)
+            
+    except Exception as e:
+        debug_info['general_error'] = str(e)
     
-    # Check database photos
-    from .models import BarPhoto
-    photos = BarPhoto.objects.all()[:5]
-    debug_info['db_photos'] = []
-    for photo in photos:
-        photo_info = {
-            'id': photo.id,
-            'image_path': str(photo.image),
-            'full_path': str(settings.MEDIA_ROOT / photo.image.name) if photo.image else 'No image',
-            'file_exists': (settings.MEDIA_ROOT / photo.image.name).exists() if photo.image else False,
-            'bar_name': photo.bar.name,
-        }
-        debug_info['db_photos'].append(photo_info)
-    
-    return JsonResponse(debug_info, indent=2)
+    return render(request, 'bars/debug.html', {'debug_info': debug_info})
