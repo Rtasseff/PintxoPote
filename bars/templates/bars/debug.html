@@ -74,6 +74,18 @@
         {% endif %}
     </div>
 
+    <div class="section">
+        <h2>URL Test</h2>
+        {% if debug_info.test_photo_url %}
+            <p>Test photo URL: <a href="{{ debug_info.test_photo_url }}" target="_blank">{{ debug_info.test_photo_url }}</a></p>
+            <p>Test photo name: {{ debug_info.test_photo_name }}</p>
+            <img src="{{ debug_info.test_photo_url }}" alt="Test image" style="max-width: 200px; border: 1px solid #ccc;">
+        {% endif %}
+        {% if debug_info.url_test_error %}
+            <p class="error">URL test error: {{ debug_info.url_test_error }}</p>
+        {% endif %}
+    </div>
+
     {% if debug_info.general_error %}
         <div class="section">
             <h2 class="error">General Error</h2>

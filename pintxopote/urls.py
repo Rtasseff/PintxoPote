@@ -16,7 +16,7 @@ Including another URLconf
 """
 
 from django.contrib import admin
-from django.urls import path, include
+from django.urls import path, include, re_path
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -25,6 +25,13 @@ urlpatterns = [
     path("", include("bars.urls")),
 ]
 
-# Serve media files in development and production
-# In a larger production setup, you'd use a proper web server (nginx) or CDN
-urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+# Try multiple approaches for media file serving
+if settings.DEBUG:
+    # Development - use Django's built-in serving
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+else:
+    # Production - use custom media serving view
+    from bars.views import serve_media
+    urlpatterns += [
+        re_path(r'^media/(?P<path>.*)$', serve_media, name='media'),
+    ]

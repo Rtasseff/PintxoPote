@@ -445,4 +445,35 @@ def debug_files(request):
     except Exception as e:
         debug_info['general_error'] = str(e)
     
+    # Test URL generation
+    try:
+        from .models import BarPhoto
+        first_photo = BarPhoto.objects.first()
+        if first_photo and first_photo.image:
+            debug_info['test_photo_url'] = first_photo.image.url
+            debug_info['test_photo_name'] = first_photo.image.name
+    except Exception as e:
+        debug_info['url_test_error'] = str(e)
+    
     return render(request, 'bars/debug.html', {'debug_info': debug_info})
+
+
+# TEMPORARY: Custom media file serving for Railway
+from django.http import FileResponse, Http404
+import mimetypes
+
+def serve_media(request, path):
+    """Serve media files directly"""
+    try:
+        file_path = settings.MEDIA_ROOT / path
+        if file_path.exists() and file_path.is_file():
+            content_type, _ = mimetypes.guess_type(str(file_path))
+            return FileResponse(
+                open(file_path, 'rb'),
+                content_type=content_type,
+                as_attachment=False
+            )
+        else:
+            raise Http404(f"Media file not found: {path}")
+    except Exception as e:
+        raise Http404(f"Error serving media: {str(e)}")

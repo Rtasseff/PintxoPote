@@ -103,9 +103,13 @@ MEDIA_URL = "/media/"
 # Make sure MEDIA_ROOT exists at startup (works locally & in Railway)
 MEDIA_ROOT.mkdir(parents=True, exist_ok=True)
 
-# WhiteNoise configuration for serving media files in production
+# WhiteNoise configuration - but it doesn't serve media files
+# We need Django to serve media files directly in production
 WHITENOISE_USE_FINDERS = True
 WHITENOISE_AUTOREFRESH = True
+
+# Configure static file serving  
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
 # Password validation
