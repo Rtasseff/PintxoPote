@@ -40,6 +40,25 @@ DEBUG = os.getenv("DEBUG", "False").lower() == "true"
 
 ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS", "localhost,127.0.0.1").split(",")
 
+# CSRF settings for Railway production
+if os.getenv("RAILWAY_STATIC_URL"):
+    # Railway production environment
+    CSRF_TRUSTED_ORIGINS = [
+        "https://*.railway.app",
+        "https://*.up.railway.app",
+    ]
+    # Allow CSRF cookies to work with Railway domains
+    CSRF_COOKIE_SECURE = True
+    CSRF_COOKIE_SAMESITE = 'Lax'
+    SESSION_COOKIE_SECURE = True
+    SESSION_COOKIE_SAMESITE = 'Lax'
+else:
+    # Local development
+    CSRF_TRUSTED_ORIGINS = [
+        "http://localhost:8000",
+        "http://127.0.0.1:8000",
+    ]
+
 
 
 # Application definition
