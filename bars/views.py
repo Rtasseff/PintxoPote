@@ -1,7 +1,6 @@
 import os
-import tarfile
 from django.shortcuts import render, get_object_or_404, redirect
-from django.http import JsonResponse
+from django.http import JsonResponse, FileResponse, Http404
 from django.db.models import Q
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
@@ -9,11 +8,10 @@ from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.urls import reverse_lazy
 from django.views.generic import ListView, DetailView, CreateView, UpdateView
-from django.views.decorators.csrf import csrf_exempt
-from django.utils.decorators import method_decorator
 from django.conf import settings
 from .models import Bar, BarPhoto, UserProfile, BarComment
 from .forms import BarForm, QuickNoteForm, QuickPhotoForm, CommentForm
+import mimetypes
 
 
 def can_write(request):
@@ -311,159 +309,9 @@ def add_comment(request, pk):
     return redirect('bars:detail', pk=pk)
 
 
-# TEMPORARY: Railway Data Upload View - REMOVE AFTER USE
-@csrf_exempt
-def railway_upload(request):
-    """Temporary view to upload data archive to Railway"""
-    if request.method == 'POST' and 'data_archive' in request.FILES:
-        uploaded_file = request.FILES['data_archive']
-        
-        # More flexible file type checking
-        valid_extensions = ['.tar.gz', '.tgz', '.tar', '.gz']
-        if not any(uploaded_file.name.endswith(ext) for ext in valid_extensions):
-            messages.error(request, f'Please upload a tar.gz file. Got: {uploaded_file.name}')
-            return render(request, 'bars/railway_upload.html')
-        
-        try:
-            # Save uploaded file temporarily
-            temp_path = f'/tmp/{uploaded_file.name}'
-            with open(temp_path, 'wb+') as destination:
-                for chunk in uploaded_file.chunks():
-                    destination.write(chunk)
-            
-            # Extract to /app (Railway volume mount parent)
-            if hasattr(settings, 'DATA_DIR'):
-                extract_path = settings.DATA_DIR.parent  # /app (parent of /app/data)
-            else:
-                extract_path = '/app'
-            
-            # Try different tar modes
-            try:
-                with tarfile.open(temp_path, 'r:gz') as tar:
-                    tar.extractall(path=extract_path)
-            except tarfile.ReadError:
-                with tarfile.open(temp_path, 'r:*') as tar:  # Auto-detect format
-                    tar.extractall(path=extract_path)
-            
-            # Clean up temp file
-            os.remove(temp_path)
-            
-            # Verify extraction worked
-            data_path = os.path.join(extract_path, 'data')
-            if os.path.exists(data_path):
-                db_path = os.path.join(data_path, 'db.sqlite3')
-                uploads_path = os.path.join(data_path, 'uploads')
-                status = f'✅ Data extracted to {extract_path}!'
-                if os.path.exists(db_path):
-                    status += f' Database found: {os.path.getsize(db_path)} bytes.'
-                if os.path.exists(uploads_path):
-                    photo_count = len([f for f in os.listdir(os.path.join(uploads_path, 'bars')) if f.endswith('.jpg')])
-                    status += f' Found {photo_count} photos.'
-                messages.success(request, status)
-            else:
-                messages.warning(request, f'Archive extracted but data/ folder not found in {extract_path}')
-            
-            return redirect('bars:home')
-            
-        except Exception as e:
-            messages.error(request, f'Upload failed: {str(e)}')
-            # Clean up on error
-            if os.path.exists(temp_path):
-                os.remove(temp_path)
-    
-    # Add debug info for troubleshooting
-    context = {
-        'debug_info': {
-            'method': request.method,
-            'has_files': bool(request.FILES),
-            'csrf_token': request.META.get('CSRF_COOKIE', 'Not found'),
-        }
-    }
-    return render(request, 'bars/railway_upload.html', context)
-
-
-# TEMPORARY: Debug view to check file system
-@csrf_exempt
-def debug_files(request):
-    """Debug view to check file paths and existence"""
-    debug_info = {}
-    
-    try:
-        debug_info['DATA_DIR'] = str(settings.DATA_DIR) if hasattr(settings, 'DATA_DIR') else 'Not set'
-        debug_info['MEDIA_ROOT'] = str(settings.MEDIA_ROOT)
-        debug_info['MEDIA_URL'] = settings.MEDIA_URL
-        
-        # Check if data directory exists
-        if hasattr(settings, 'DATA_DIR'):
-            try:
-                data_dir = settings.DATA_DIR
-                debug_info['data_dir_exists'] = data_dir.exists()
-                if data_dir.exists():
-                    debug_info['data_dir_contents'] = [str(p) for p in data_dir.iterdir()]
-            except Exception as e:
-                debug_info['data_dir_error'] = str(e)
-        
-        # Check media root
-        try:
-            media_root = settings.MEDIA_ROOT
-            debug_info['media_root_exists'] = media_root.exists()
-            if media_root.exists():
-                debug_info['media_root_contents'] = [str(p) for p in media_root.iterdir()]
-                
-                # Check bars subfolder
-                bars_path = media_root / 'bars'
-                debug_info['bars_path_exists'] = bars_path.exists()
-                if bars_path.exists():
-                    jpg_files = list(bars_path.glob('*.jpg'))
-                    debug_info['bars_files_count'] = len(jpg_files)
-                    debug_info['first_5_files'] = [str(f) for f in jpg_files[:5]]
-        except Exception as e:
-            debug_info['media_root_error'] = str(e)
-        
-        # Check database photos
-        try:
-            from .models import BarPhoto
-            photos = BarPhoto.objects.all()[:5]
-            debug_info['db_photos'] = []
-            for photo in photos:
-                photo_info = {
-                    'id': photo.id,
-                    'image_path': str(photo.image) if photo.image else 'No image',
-                    'bar_name': photo.bar.name,
-                }
-                if photo.image:
-                    try:
-                        full_path = settings.MEDIA_ROOT / photo.image.name
-                        photo_info['full_path'] = str(full_path)
-                        photo_info['file_exists'] = full_path.exists()
-                    except Exception as e:
-                        photo_info['path_error'] = str(e)
-                debug_info['db_photos'].append(photo_info)
-        except Exception as e:
-            debug_info['db_photos_error'] = str(e)
-            
-    except Exception as e:
-        debug_info['general_error'] = str(e)
-    
-    # Test URL generation
-    try:
-        from .models import BarPhoto
-        first_photo = BarPhoto.objects.first()
-        if first_photo and first_photo.image:
-            debug_info['test_photo_url'] = first_photo.image.url
-            debug_info['test_photo_name'] = first_photo.image.name
-    except Exception as e:
-        debug_info['url_test_error'] = str(e)
-    
-    return render(request, 'bars/debug.html', {'debug_info': debug_info})
-
-
-# TEMPORARY: Custom media file serving for Railway
-from django.http import FileResponse, Http404
-import mimetypes
-
+# Media file serving for Railway production
 def serve_media(request, path):
-    """Serve media files directly"""
+    """Serve media files directly in production"""
     try:
         file_path = settings.MEDIA_ROOT / path
         if file_path.exists() and file_path.is_file():
