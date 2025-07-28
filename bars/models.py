@@ -1,7 +1,13 @@
 import uuid
+import os
+import urllib.parse
 from django.db import models
 from django.urls import reverse
 from django.contrib.auth.models import User
+from django.conf import settings
+from PIL import Image
+from io import BytesIO
+from django.core.files.base import ContentFile
 
 
 class UserProfile(models.Model):
@@ -130,7 +136,52 @@ class BarPhoto(models.Model):
         # Ensure only one featured photo per bar
         if self.is_featured:
             BarPhoto.objects.filter(bar=self.bar, is_featured=True).update(is_featured=False)
+        
+        # Compress image before saving
+        if self.image:
+            self.image = self.compress_image(self.image)
+        
         super().save(*args, **kwargs)
+    
+    def compress_image(self, image_field):
+        """Compress and resize image to reduce file size"""
+        try:
+            # Open the image
+            img = Image.open(image_field)
+            
+            # Convert to RGB if necessary (handles RGBA, P mode images)
+            if img.mode in ('RGBA', 'P'):
+                img = img.convert('RGB')
+            
+            # Calculate new size maintaining aspect ratio
+            max_size = (1200, 1200)  # Max width/height in pixels
+            img.thumbnail(max_size, Image.Resampling.LANCZOS)
+            
+            # Create BytesIO object to save compressed image
+            output = BytesIO()
+            
+            # Save with JPEG compression (quality 85 is good balance)
+            img.save(output, format='JPEG', quality=85, optimize=True)
+            output.seek(0)
+            
+            # Create new ContentFile with compressed data
+            compressed_image = ContentFile(output.read())
+            
+            # Keep original filename but ensure .jpg extension
+            original_name = image_field.name
+            if original_name:
+                name_parts = os.path.splitext(original_name)
+                compressed_name = f"{name_parts[0]}.jpg"
+            else:
+                compressed_name = "compressed_image.jpg"
+            
+            compressed_image.name = compressed_name
+            return compressed_image
+            
+        except Exception as e:
+            # If compression fails, return original image
+            print(f"Image compression failed: {e}")
+            return image_field
     
     def delete(self, *args, **kwargs):
         # Delete the actual image file when the model instance is deleted
