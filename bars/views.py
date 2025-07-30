@@ -62,16 +62,36 @@ class BarListView(ListView):
         if price_filter:
             queryset = queryset.filter(price_range=price_filter)
             
-        cana_min = self.request.GET.get('cana_min')
-        cana_max = self.request.GET.get('cana_max')
-        if cana_min:
-            queryset = queryset.filter(cana_price__gte=cana_min)
-        if cana_max:
-            queryset = queryset.filter(cana_price__lte=cana_max)
+        # Single caña price with ±0.10 range
+        cana_price = self.request.GET.get('cana_price')
+        if cana_price:
+            try:
+                target_price = float(cana_price)
+                min_price = target_price - 0.10
+                max_price = target_price + 0.10
+                queryset = queryset.filter(
+                    cana_price__gte=min_price,
+                    cana_price__lte=max_price
+                )
+            except (ValueError, TypeError):
+                pass  # Invalid price, ignore filter
             
         tags_filter = self.request.GET.get('tags')
         if tags_filter:
             queryset = queryset.filter(tags__icontains=tags_filter)
+        
+        # Sorting functionality
+        sort_by = self.request.GET.get('sort_by', 'name')  # Default sort by name
+        if sort_by == 'name':
+            queryset = queryset.order_by('name')
+        elif sort_by == 'specialties':
+            queryset = queryset.order_by('specialties')
+        elif sort_by == 'cana_price':
+            queryset = queryset.order_by('cana_price')
+        elif sort_by == 'last_visited':
+            queryset = queryset.order_by('-last_visited')  # Most recent first
+        else:
+            queryset = queryset.order_by('name')  # Fallback to name
             
         return queryset
     
@@ -80,6 +100,10 @@ class BarListView(ListView):
         context['is_admin'] = is_admin(self.request)
         context['can_write'] = can_write(self.request)
         context['search_query'] = self.request.GET.get('search', '')
+        context['current_sort'] = self.request.GET.get('sort_by', 'name')
+        context['current_cana_price'] = self.request.GET.get('cana_price', '')
+        context['current_price_range'] = self.request.GET.get('price_range', '')
+        context['current_tags'] = self.request.GET.get('tags', '')
         return context
 
 
